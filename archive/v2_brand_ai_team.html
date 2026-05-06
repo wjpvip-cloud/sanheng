@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫尘阁 · 品牌战略与AI团队方案</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap');
+
+  :root {
+    --ink: #1a1208;
+    --gold: #b8860b;
+    --gold-light: #d4a843;
+    --gold-pale: #f5e6c0;
+    --vermillion: #c0392b;
+    --jade: #2e6b5e;
+    --parchment: #faf6ed;
+    --parchment-dark: #f0e8d4;
+    --mist: #8a7a65;
+    --divider: #d4c4a0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans SC', 'PingFang SC', sans-serif;
+    background: var(--parchment);
+    color: var(--ink);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* COVER */
+  .cover {
+    background: linear-gradient(160deg, #1a1208 0%, #2d200e 50%, #1a1208 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    padding: 60px 40px;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 40% at 50% 50%, rgba(184,134,11,0.12) 0%, transparent 70%),
+      repeating-linear-gradient(0deg, transparent, transparent 40px, rgba(184,134,11,0.03) 40px, rgba(184,134,11,0.03) 41px),
+      repeating-linear-gradient(90deg, transparent, transparent 40px, rgba(184,134,11,0.03) 40px, rgba(184,134,11,0.03) 41px);
+  }
+
+  .cover-border {
+    position: absolute;
+    inset: 24px;
+    border: 1px solid rgba(184,134,11,0.3);
+  }
+  .cover-border::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(184,134,11,0.15);
+  }
+
+  .cover-seal {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 11px;
+    color: rgba(184,134,11,0.5);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 48px;
+    position: relative;
+  }
+
+  .cover h1 {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: 8px;
+    margin-bottom: 12px;
+    position: relative;
+  }
+
+  .cover h1 span { color: var(--gold-light); }
+
+  .cover-sub {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 15px;
+    color: rgba(184,134,11,0.7);
+    letter-spacing: 6px;
+    margin-bottom: 64px;
+    position: relative;
+  }
+
+  .cover-divider {
+    width: 120px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 48px;
+    position: relative;
+  }
+
+  .cover-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 600px;
+    position: relative;
+  }
+
+  .cover-meta-item {
+    text-align: center;
+  }
+  .cover-meta-item .num {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 28px;
+    color: var(--gold-light);
+    display: block;
+  }
+  .cover-meta-item .label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 2px;
+  }
+
+  .cover-tag {
+    position: absolute;
+    bottom: 48px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 3px;
+  }
+
+  /* LAYOUT */
+  .doc {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 40px;
+  }
+
+  /* CHAPTER */
+  .chapter {
+    margin-bottom: 80px;
+  }
+
+  .chapter-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid var(--gold);
+  }
+
+  .chapter-num {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+    padding-top: 4px;
+    opacity: 0.7;
+  }
+
+  .chapter-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .chapter-title span {
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--mist);
+    letter-spacing: 3px;
+    margin-top: 6px;
+    font-family: 'Noto Sans SC', sans-serif;
+  }
+
+  /* SECTION */
+  .section { margin-bottom: 44px; }
+
+  .section-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--jade);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-title::before {
+    content: '';
+    width: 4px;
+    height: 18px;
+    background: var(--gold);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  p { margin-bottom: 12px; color: #3a2e1e; }
+
+  /* CALLOUT */
+  .callout {
+    background: linear-gradient(135deg, var(--parchment-dark), var(--gold-pale));
+    border-left: 4px solid var(--gold);
+    padding: 20px 24px;
+    margin: 24px 0;
+    border-radius: 0 8px 8px 0;
+  }
+  .callout.vermillion { border-color: var(--vermillion); background: linear-gradient(135deg, #fff5f5, #fde8e8); }
+  .callout.jade { border-color: var(--jade); background: linear-gradient(135deg, #f0f7f5, #e0f0ea); }
+
+  .callout-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .callout.vermillion .callout-title { color: var(--vermillion); }
+  .callout.jade .callout-title { color: var(--jade); }
+
+  .quote {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--ink);
+    text-align: center;
+    padding: 32px 40px;
+    margin: 32px 0;
+    border-top: 1px solid var(--divider);
+    border-bottom: 1px solid var(--divider);
+    line-height: 1.7;
+    position: relative;
+  }
+  .quote::before, .quote::after {
+    content: '◆';
+    color: var(--gold);
+    font-size: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .quote::before { left: 0; }
+  .quote::after { right: 0; }
+
+  /* TABLE */
+  .table-wrap { overflow-x: auto; margin: 20px 0; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  th {
+    background: var(--ink);
+    color: var(--gold-light);
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
+    padding: 12px 16px;
+    text-align: left;
+    letter-spacing: 1px;
+    font-size: 12px;
+  }
+  td {
+    padding: 11px 16px;
+    border-bottom: 1px solid var(--divider);
+    vertical-align: top;
+    color: #3a2e1e;
+  }
+  tr:nth-child(even) td { background: rgba(212,200,160,0.15); }
+  tr:hover td { background: rgba(184,134,11,0.08); }
+  td strong { color: var(--ink); font-weight: 600; }
+  td .tag {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 10px;
+    letter-spacing: 1px;
+    margin: 2px 2px 2px 0;
+    font-weight: 500;
+  }
+  td .tag.jade { background: var(--jade); }
+  td .tag.red { background: var(--vermillion); }
+  td .tag.gray { background: var(--mist); }
+
+  /* CARD GRID */
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .card {
+    background: white;
+    border: 1px solid var(--divider);
+    border-top: 3px solid var(--gold);
+    padding: 20px;
+    border-radius: 0 0 8px 8px;
+    position: relative;
+  }
+  .card.jade-card { border-top-color: var(--jade); }
+  .card.red-card { border-top-color: var(--vermillion); }
+  .card.dark-card { background: var(--ink); border-top-color: var(--gold); }
+
+  .card-badge {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    display: block;
+  }
+  .card.jade-card .card-badge { color: var(--jade); }
+  .card.red-card .card-badge { color: var(--vermillion); }
+  .card.dark-card .card-badge { color: var(--gold-light); }
+
+  .card-name {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .card.dark-card .card-name { color: white; }
+
+  .card-role {
+    font-size: 12px;
+    color: var(--mist);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .card.dark-card .card-role { color: rgba(212,180,100,0.7); }
+
+  .card-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+  .card-tag {
+    background: var(--gold-pale);
+    color: var(--gold);
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid rgba(184,134,11,0.2);
+  }
+  .card.jade-card .card-tag { background: #e8f4f0; color: var(--jade); border-color: rgba(46,107,94,0.2); }
+  .card.red-card .card-tag { background: #fde8e8; color: var(--vermillion); border-color: rgba(192,57,43,0.2); }
+
+  .card ul { list-style: none; }
+  .card ul li {
+    font-size: 12.5px;
+    color: #5a4a30;
+    padding: 4px 0;
+    border-bottom: 1px dashed rgba(212,196,160,0.5);
+    display: flex;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .card.dark-card ul li { color: rgba(255,255,255,0.7); border-color: rgba(255,255,255,0.1); }
+  .card ul li::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+
+  /* FLOW */
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 24px 0;
+    overflow-x: auto;
+  }
+  .flow-step {
+    flex: 1;
+    min-width: 120px;
+    background: white;
+    border: 1px solid var(--divider);
+    padding: 16px 14px;
+    text-align: center;
+    position: relative;
+  }
+  .flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gold);
+    font-size: 18px;
+    z-index: 1;
+    background: var(--parchment);
+    padding: 0 2px;
+  }
+  .flow-step-num {
+    width: 24px;
+    height: 24px;
+    background: var(--gold);
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+  }
+  .flow-step-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+  .flow-step-sub { font-size: 11px; color: var(--mist); }
+
+  /* MATRIX */
+  .matrix {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 32px;
+    margin: 24px 0;
+    color: white;
+  }
+  .matrix-title {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    color: var(--gold-light);
+    letter-spacing: 3px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .matrix-row {
+    display: grid;
+    grid-template-columns: 140px 1fr 1fr 1fr;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 13px;
+    align-items: center;
+  }
+  .matrix-row.header {
+    font-size: 11px;
+    color: rgba(212,168,67,0.6);
+    letter-spacing: 2px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(212,168,67,0.2);
+  }
+  .matrix-row .account-name {
+    font-family: 'Noto Serif SC', serif;
+    font-weight: 600;
+    color: var(--gold-light);
+  }
+  .matrix-row .platform { color: rgba(255,255,255,0.5); font-size: 11px; }
+  .matrix-row .content { color: rgba(255,255,255,0.8); line-height: 1.5; }
+  .matrix-row .goal { color: rgba(184,134,11,0.8); font-size: 12px; }
+
+  /* TOOL STACK */
+  .tool-row {
+    display: grid;
+    grid-template-columns: 160px 160px 1fr;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--divider);
+    align-items: center;
+    font-size: 13px;
+  }
+  .tool-row:first-child { border-top: 1px dashed var(--divider); }
+  .tool-name { font-weight: 600; color: var(--jade); }
+  .tool-platform {
+    font-size: 11px;
+    background: var(--jade);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  /* COMPLIANCE */
+  .compliance-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 20px 0;
+  }
+  .compliance-item {
+    background: white;
+    border: 1px solid var(--divider);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .compliance-item.danger { border-color: var(--vermillion); background: #fff8f8; }
+  .compliance-item.safe { border-color: var(--jade); background: #f5faf8; }
+  .compliance-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+  }
+  .compliance-item.danger .compliance-label { color: var(--vermillion); }
+  .compliance-item.safe .compliance-label { color: var(--jade); }
+  .compliance-item ul { list-style: none; }
+  .compliance-item ul li {
+    font-size: 12.5px;
+    padding: 5px 0;
+    border-bottom: 1px dashed rgba(0,0,0,0.06);
+    color: #5a4a30;
+    display: flex;
+    gap: 6px;
+  }
+  .compliance-item.danger ul li::before { content: '✗'; color: var(--vermillion); }
+  .compliance-item.safe ul li::before { content: '✓'; color: var(--jade); }
+
+  /* PAGE BREAK */
+  .break { margin: 60px 0; display: flex; align-items: center; gap: 16px; }
+  .break::before, .break::after { content: ''; flex: 1; height: 1px; background: var(--divider); }
+  .break-icon {
+    font-family: 'Noto Serif SC', serif;
+    font-size: 14px;
+    color: var(--gold);
+    letter-spacing: 4px;
+    white-space: nowrap;
+  }
+
+  .highlight { color: var(--gold); font-weight: 600; }
+  .em { color: var(--vermillion); }
+
+  @media print {
+    .cover { page-break-after: always; }
+    .chapter { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div style="background:#FBF0D8;border-bottom:1px solid #E8D8B0;padding:14px 24px;font-family:'Noto Serif SC',serif;font-size:13px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+    <a href="../index.html" style="color:#5C3200;text-decoration:none;letter-spacing:.05em;font-weight:600">← 返回文献库首页</a>
+    <span style="color:#A06820;font-size:11px;letter-spacing:.15em;font-weight:600">ARCHIVE · 历史归档</span>
+  </div>
+  <div style="color:#5C3200;font-size:12.5px;line-height:1.6">
+    <strong>⚠ 此文档为历史版本</strong>（v2 · 里斯品类+AI团队），核心内容已整合进 <a href="../docs/strategy-v3.html" style="color:#A06820;font-weight:600">《战略主干 v3.0》</a>。保留此文档仅用于历史追溯，不作为当前执行依据。
+  </div>
+</div>
+
+
+<!-- COVER -->
+<div class="cover">
+  <div class="cover-border"></div>
+  <div class="cover-seal">INTERNAL STRATEGY · CONFIDENTIAL</div>
+  <h1>大医派<span>紫尘阁</span></h1>
+  <div class="cover-sub">品牌战略 · 账号矩阵 · AI Agent团队</div>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-meta-item"><span class="num">五</span><span class="label">战略层级</span></div>
+    <div class="cover-meta-item"><span class="num">七</span><span class="label">矩阵账号</span></div>
+    <div class="cover-meta-item"><span class="num">六</span><span class="label">AI岗位</span></div>
+  </div>
+  <div class="cover-tag">大医精诚 · 济世救民 · 道统1300年</div>
+</div>
+
+<!-- DOCUMENT -->
+<div class="doc">
+
+  <!-- CHAPTER 1: 品类创新定位 -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-num">第一章</div>
+      <div>
+        <div class="chapter-title">
+          品类创新定位战略
+          <span>里斯品类理论 · 定位战略 · 爆品逻辑</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">一、里斯品类诊断：现有品类问题</div>
+      <p>中医养生内容赛道竞争极度白热化。<strong>小红书养生笔记超过1400万篇</strong>，抖音每天新增2.1万条健康科普内容。赛道不是没有机会，而是<span class="em">同质化严重</span>——几乎所有中医账号都在争夺"专业中医科普"这个已经过度拥挤的品类。</p>
+      <div class="callout vermillion">
+        <div class="callout-title">⚑ 现有品类的致命问题</div>
+        「中医科普」「养生博主」「健康知识」——这些都是存量品类，流量规则由头部占据，新进者极难突破。合规高压下，任何承诺功效的内容都面临封号风险。越专业，越像医疗广告，越危险。
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">二、里斯品类创新：开创新品类</div>
+      <p>里斯的核心理论：<strong>不要在现有品类中竞争，要创造一个新品类并成为第一</strong>。紫尘阁的机会在于跳出"中医"框架，开创一个新品类：</p>
+      <div class="quote">「道家生活方式」<br><small style="font-size:14px;color:var(--mist);font-weight:400">不是中医科普，不是养生知识，<br>是一套以道家哲学为根基的现代生活方式系统</small></div>
+
+      <div class="table-wrap">
+        <table>
+          <tr>
+            <th>维度</th>
+            <th>旧品类（中医科普）</th>
+            <th>新品类（道家生活方式）</th>
+          </tr>
+          <tr><td><strong>竞争对手</strong></td><td>欧阳会食养、各类中医博主</td><td><span class="tag">蓝海</span> 几乎无直接对手</td></tr>
+          <tr><td><strong>内容边界</strong></td><td>疾病、方子、症状</td><td>睡眠、情绪、饮食、关系、人生态度</td></tr>
+          <tr><td><strong>合规风险</strong></td><td>高（医疗功效承诺）</td><td><span class="tag jade">极低</span>（生活方式内容）</td></tr>
+          <tr><td><strong>用户关系</strong></td><td>患者找医生（一次性）</td><td>学员追随老师（长期信仰）</td></tr>
+          <tr><td><strong>变现天花板</strong></td><td>带货/问诊（有限）</td><td>课程+产品+社群（无限）</td></tr>
+          <tr><td><strong>流量逻辑</strong></td><td>知识密度、专业背书</td><td>价值共鸣、生活认同</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三、对标分析：学谁、不学谁</div>
+      <div class="card-grid">
+        <div class="card jade-card">
+          <span class="card-badge">✓ 深度对标</span>
+          <div class="card-name">东方甄选</div>
+          <div class="card-role">文化认同型带货。董宇辉卖的不是玉米，是文学精神和人生态度。用户购买的是一种"成为更好自己"的情感投射。</div>
+          <div class="card-tags"><span class="card-tag">文化IP</span><span class="card-tag">情感价值</span><span class="card-tag">信仰购买</span></div>
+          <ul><li>内容≠产品介绍，是生活方式表达</li><li>师父出镜≠讲中医，是讲人生智慧</li><li>产品是IP价值的实体载体</li></ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">✓ 策略对标</span>
+          <div class="card-name">欧阳会食养</div>
+          <div class="card-role">中医研究生→养生博主→品牌主理人。专业背书+生活化科普+自建品牌，小红书健康滋补第一，年销4000万+。</div>
+          <div class="card-tags"><span class="card-tag">专业转生活化</span><span class="card-tag">自建品牌</span></div>
+          <ul><li>用大白话讲中医理论（超高频更新）</li><li>从粉丝需求反推产品研发</li><li>私域一对一体质测试转化</li></ul>
+        </div>
+        <div class="card jade-card">
+          <span class="card-badge">✓ 形态对标</span>
+          <div class="card-name">刘畊宏</div>
+          <div class="card-role">运动本身是蓝海，但刘畊宏开创了"陪你一起运动的朋友"这个新品类。不是健身教练，是人格化的运动伴侣。</div>
+          <div class="card-tags"><span class="card-tag">品类创新</span><span class="card-tag">人格化</span></div>
+          <ul><li>道具极简，人格是核心</li><li>互动感、陪伴感>专业感</li><li>日常化、生活化是流量密码</li></ul>
+        </div>
+        <div class="card red-card">
+          <span class="card-badge">✗ 不要学</span>
+          <div class="card-name">传统中医号</div>
+          <div class="card-role">以疾病/方子/症状为主轴，功效承诺型内容。监管高压下极易封号，且无法建立长期信仰关系。</div>
+          <div class="card-tags"><span class="card-tag">高合规风险</span><span class="card-tag">低粘性</span></div>
+          <ul><li>内容以"治什么病"为卖点</li><li>挂科普名义实质推销产品</li><li>无法建立师徒式深度关系</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四、最终战略定位</div>
+      <div class="callout jade">
+        <div class="callout-title">◈ 核心品类定位</div>
+        <strong>「道家生活方式导师」</strong>——中国第一个以道家哲学为根基、以三衡理论为方法论的现代生活方式IP体系。不卖病方，卖活法；不是医者，是师者；不谈症状，谈人生。
+      </div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>定位层级</th><th>表达</th></tr>
+          <tr><td><strong>品类名称</strong></td><td>道家生活方式 · 现代三衡学</td></tr>
+          <tr><td><strong>一句话定位</strong></td><td>「把1300年的道家智慧，活成你今天的生活方式」</td></tr>
+          <tr><td><strong>用户承诺</strong></td><td>不教你治病，教你不生病；不讲道理，讲活法</td></tr>
+          <tr><td><strong>竞争壁垒</strong></td><td>1300年道统传承（不可复制）+ 三衡理论体系（独创）+ 40万临证积累（数字背书）</td></tr>
+          <tr><td><strong>合规框架</strong></td><td>生活方式科普，不涉及诊疗、方子、功效承诺</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">五、爆品逻辑：什么样的内容成为爆款</div>
+      <p>结合市场数据，<strong>24-40岁人群是养生内容最大消费群</strong>，且年轻化趋势明显（20-30岁购买健康团购同比增长近98%）。紫尘阁的爆品内容要满足三个条件：</p>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-title">反常识</div>
+          <div class="flow-step-sub">打破认知惯性，制造停留</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-title">生活化</div>
+          <div class="flow-step-sub">用日常场景解释道理</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-title">情绪升华</div>
+          <div class="flow-step-sub">从身体延伸到人生</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">4</div>
+          <div class="flow-step-title">零医疗词</div>
+          <div class="flow-step-sub">全程无治疗/功效词</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">5</div>
+          <div class="flow-step-title">引导追随</div>
+          <div class="flow-step-sub">私信/关注/加微</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="break"><div class="break-icon">◆ 账号矩阵 ◆</div></div>
+
+  <!-- CHAPTER 2: 账号矩阵 -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-num">第二章</div>
+      <div>
+        <div class="chapter-title">
+          账号矩阵设计
+          <span>7账号 · 各有人设 · 协同引流</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">一、矩阵整体逻辑</div>
+      <p>矩阵不是重复发布，而是<strong>不同角色扮演不同功能</strong>：核心账号建立信任，辅助账号扩大覆盖，学员账号提供社会证明，所有账号最终将流量导入私域变现。</p>
+      <div class="callout">
+        <div class="callout-title">◈ 矩阵三层结构</div>
+        <strong>第一层（主账号）</strong>：师父真人出镜，建立最高信任度。内容是灵魂，不可AI替代。<br>
+        <strong>第二层（矩阵账号）</strong>：分角色、分平台、分人群，AI生产为主，人工审核。<br>
+        <strong>第三层（生态账号）</strong>：学员故事、UGC、社群，形成社会证明和自然裂变。
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">二、7个账号详细人设</div>
+      <div class="card-grid">
+        <div class="card dark-card">
+          <span class="card-badge">ACCOUNT 01 · 核心主号</span>
+          <div class="card-name">赵无尘 · 紫尘阁主</div>
+          <div class="card-role">平台：抖音 + 视频号<br>定位：道家大医派第21代传人，"把中医活成一种人生的人"</div>
+          <ul>
+            <li>师父真人出镜，1-3分钟短视频</li>
+            <li>内容：生活化道医智慧，反常识+人生升华</li>
+            <li>人设：智者、师者，不是医者</li>
+            <li>AI辅助：脚本生成，师父对稿录制</li>
+            <li>目标：品牌认知第一入口</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">ACCOUNT 02 · 女性用户主攻</span>
+          <div class="card-name">紫尘阁主 · 小红书</div>
+          <div class="card-role">平台：小红书<br>定位：道家养生美学，面向28-40岁都市女性</div>
+          <ul>
+            <li>图文+短视频并重，视觉美学风格</li>
+            <li>内容：情志调达、气血、睡眠、情绪管理</li>
+            <li>人设：有智慧的精神导师，不说教</li>
+            <li>AI生产：图文笔记为主，日更</li>
+            <li>目标：私信引流，加微信</li>
+          </ul>
+        </div>
+        <div class="card jade-card">
+          <span class="card-badge">ACCOUNT 03 · 知识科普号</span>
+          <div class="card-name">三衡日课</div>
+          <div class="card-role">平台：小红书 + 抖音<br>定位：三衡理论的日常科普，简洁、实用、可截图收藏</div>
+          <ul>
+            <li>图文为主：每天一个三衡知识点</li>
+            <li>内容：起居/饮食/情志/福德，干货卡片</li>
+            <li>人设：紫尘阁书院助教（无需真人出镜）</li>
+            <li>AI全生产：模板化输出，极易批量化</li>
+            <li>目标：涨粉+搜索流量截取</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">ACCOUNT 04 · 深度内容号</span>
+          <div class="card-name">大医派紫尘阁</div>
+          <div class="card-role">平台：微信公众号<br>定位：传承文化深度内容，建立信仰感</div>
+          <ul>
+            <li>每周2篇深度长文，2000字+</li>
+            <li>内容：历史传承故事、道统背书、师父人生</li>
+            <li>人设：1300年道统的现代传播者</li>
+            <li>AI辅助：结构+初稿，人工打磨</li>
+            <li>目标：私域沉淀，购课高转化</li>
+          </ul>
+        </div>
+        <div class="card jade-card">
+          <span class="card-badge">ACCOUNT 05 · 男性用户</span>
+          <div class="card-name">终南山下</div>
+          <div class="card-role">平台：视频号 + 抖音<br>定位：道家修行生活方式，面向30-50岁有精神追求的男性</div>
+          <ul>
+            <li>视频为主：终南山风光+道家哲思</li>
+            <li>内容：福德深厚、修身养性、人生智慧</li>
+            <li>人设：修行者的同路人（素人感）</li>
+            <li>AI生产：脚本+配文，素材剪辑</li>
+            <li>目标：高净值男性用户引流</li>
+          </ul>
+        </div>
+        <div class="card red-card">
+          <span class="card-badge">ACCOUNT 06 · 学员证明号</span>
+          <div class="card-name">紫尘阁学员打卡</div>
+          <div class="card-role">平台：小红书<br>定位：真实学员UGC，社会证明</div>
+          <ul>
+            <li>内容：学员改变故事、打卡日记、产品体验</li>
+            <li>人设：普通学员视角（不是官方账号）</li>
+            <li>运营：鼓励真实学员发布，适当运营引导</li>
+            <li>AI辅助：内容框架模板提供给学员</li>
+            <li>目标：真实口碑，降低决策门槛</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">ACCOUNT 07 · 私域核心</span>
+          <div class="card-name">紫尘阁书院助手</div>
+          <div class="card-role">平台：企业微信 + 微信群<br>定位：私域流量承接，自动化服务</div>
+          <ul>
+            <li>智能客服Bot：自动答疑，24小时</li>
+            <li>内容推送：每日三衡提醒、节气养生</li>
+            <li>人设：书院小师妹/小师弟（亲切感）</li>
+            <li>工具：Coze搭建，接入企微</li>
+            <li>目标：私域激活+购课转化</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三、账号矩阵协同流量图</div>
+      <div class="matrix">
+        <div class="matrix-title">账号矩阵协同总览</div>
+        <div class="matrix-row header">
+          <div>账号</div><div>平台</div><div>核心内容</div><div>流量目标</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">赵无尘·紫尘阁主<div class="platform">抖音·视频号</div></div>
+          <div class="content">真人出镜，道家人生智慧，反常识故事</div>
+          <div class="goal">最高信任度入口，评论区引导私信</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">紫尘阁主<div class="platform">小红书</div></div>
+          <div class="content">养生美学图文，情志·气血·睡眠</div>
+          <div class="goal">女性用户为主，引导添加企微</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">三衡日课<div class="platform">小红书·抖音</div></div>
+          <div class="content">三衡知识点，干货卡片，收藏型内容</div>
+          <div class="goal">搜索流量截取，批量涨粉</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">大医派紫尘阁<div class="platform">微信公众号</div></div>
+          <div class="content">传承深度长文，道统故事，学员案例</div>
+          <div class="goal">高粘性私域沉淀，购课转化</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">终南山下<div class="platform">视频号·抖音</div></div>
+          <div class="content">修行生活方式，道家哲思，男性视角</div>
+          <div class="goal">男性高净值用户，拓展受众</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">学员打卡<div class="platform">小红书</div></div>
+          <div class="content">真实学员改变故事，产品UGC</div>
+          <div class="goal">社会证明，降低购买门槛</div>
+        </div>
+        <div class="matrix-row">
+          <div class="account-name">书院助手<div class="platform">企微·微信群</div></div>
+          <div class="content">AI客服Bot，节气推送，打卡提醒</div>
+          <div class="goal">私域激活，自动化转化</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="break"><div class="break-icon">◆ AI Agent团队 ◆</div></div>
+
+  <!-- CHAPTER 3: AI团队 -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-num">第三章</div>
+      <div>
+        <div class="chapter-title">
+          AI Agent团队搭建
+          <span>6个Agent岗位 · Coze工作流 · 每日高产出</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">一、工具选型：为什么用Coze（扣子）</div>
+      <p>你提到的"OpenClaw"（即OpenCog/Coze相关生态），目前国内最适合非技术团队搭建内容Agent的是<strong>字节扣子（Coze.cn）</strong>，理由如下：</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>工具</th><th>适用场景</th><th>门槛</th><th>推荐度</th></tr>
+          <tr><td><strong>扣子（Coze）</strong></td><td>内容生产流水线、客服Bot、矩阵账号自动化</td><td>极低，可视化拖拽</td><td><span class="tag">首选</span></td></tr>
+          <tr><td><strong>Dify</strong></td><td>私有化部署、企业内部知识库</td><td>中等，需技术</td><td><span class="tag jade">辅助</span></td></tr>
+          <tr><td><strong>n8n</strong></td><td>跨平台自动化发布、数据流</td><td>中等</td><td><span class="tag jade">辅助</span></td></tr>
+          <tr><td><strong>Claude API</strong></td><td>最高质量文案生产（本工具）</td><td>需API接入</td><td><span class="tag">内容核心</span></td></tr>
+          <tr><td><strong>即梦AI/豆包</strong></td><td>封面图、图文生成</td><td>极低</td><td><span class="tag jade">视觉</span></td></tr>
+          <tr><td><strong>剪映+数字人</strong></td><td>辅助账号视频生产（非主账号）</td><td>低</td><td><span class="tag gray">谨慎使用</span></td></tr>
+        </table>
+      </div>
+      <div class="callout vermillion">
+        <div class="callout-title">⚑ 关于数字人视频的使用原则</div>
+        核心主账号（赵无尘·紫尘阁主）<strong>绝对不能用数字人替代真人出镜</strong>——师父真实形象是最强信任背书。数字人可用于辅助账号（三衡日课等知识科普号），但需明确标注AI辅助创作，规避平台风险。
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">二、6个AI Agent岗位配置</div>
+      <div class="card-grid">
+        <div class="card">
+          <span class="card-badge">AGENT 01</span>
+          <div class="card-name">选题参谋</div>
+          <div class="card-role">输入：今日方向关键词<br>输出：8-10个选题（含反常识角度+对应账号+发布平台）</div>
+          <ul>
+            <li>调用：热点数据 + 紫尘阁品牌知识库</li>
+            <li>工具：Coze工作流 + 热搜插件</li>
+            <li>触发：每日08:00自动运行</li>
+          </ul>
+        </div>
+        <div class="card jade-card">
+          <span class="card-badge">AGENT 02</span>
+          <div class="card-name">内容生产官</div>
+          <div class="card-role">输入：确认的选题<br>输出：核心论点+生活化案例+金句+三衡对应</div>
+          <ul>
+            <li>调用：Claude API（最高质量文案）</li>
+            <li>内置：师父金句库+禁忌词过滤</li>
+            <li>合规：自动检测医疗违禁词</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">AGENT 03</span>
+          <div class="card-name">多平台文案官</div>
+          <div class="card-role">输入：内容框架<br>输出：小红书版+抖音脚本版+公众号版三套文案</div>
+          <ul>
+            <li>小红书：800字，多换行，情绪共鸣</li>
+            <li>抖音脚本：200字，短句，前3秒悬念</li>
+            <li>公众号：2000字，系统性，长文</li>
+          </ul>
+        </div>
+        <div class="card jade-card">
+          <span class="card-badge">AGENT 04</span>
+          <div class="card-name">视觉设计官</div>
+          <div class="card-role">输入：文案内容+平台<br>输出：封面标题文案+即梦/MJ生图提示词+配色方案</div>
+          <ul>
+            <li>封面：A/B两版标题，供测试</li>
+            <li>生图：道家美学风格提示词</li>
+            <li>模板：小红书、抖音封面规格</li>
+          </ul>
+        </div>
+        <div class="card">
+          <span class="card-badge">AGENT 05</span>
+          <div class="card-name">发布运营官</div>
+          <div class="card-role">输入：全部当日内容<br>输出：发布时间表+话题标签+引流话术+评论区首评</div>
+          <ul>
+            <li>小红书：12:00 / 21:00</li>
+            <li>抖音：07:00 / 12:00 / 20:00</li>
+            <li>公众号：20:00-22:00</li>
+          </ul>
+        </div>
+        <div class="card jade-card">
+          <span class="card-badge">AGENT 06</span>
+          <div class="card-name">私域客服Bot</div>
+          <div class="card-role">部署：企微 + 微信群<br>功能：自动答疑+体质初测+课程引导</div>
+          <ul>
+            <li>知识库：三衡理论FAQ、产品Q&A</li>
+            <li>触发词：体质/睡眠/湿气→自动回复</li>
+            <li>转人工：复杂咨询/购课意向自动转接</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三、每日自动化工作流</div>
+      <div class="callout jade">
+        <div class="callout-title">◈ 每日内容产出目标（1人审核即可支撑）</div>
+        小红书：2条图文（主号+三衡日课） · 抖音/视频号：1条脚本（师父录制）+1条AI图文 · 公众号：隔日1篇 · 企微：持续自动运营
+      </div>
+      <div class="flow">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-title">08:00<br>自动触发</div>
+          <div class="flow-step-sub">选题参谋生成当日选题列表</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-title">09:00<br>人工选题</div>
+          <div class="flow-step-sub">内容导演从8个中选3个，输入Coze</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-title">09:30<br>内容生产</div>
+          <div class="flow-step-sub">Agent 02+03自动生成3平台文案</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">4</div>
+          <div class="flow-step-title">10:00<br>视觉生成</div>
+          <div class="flow-step-sub">Agent 04输出封面方案+生图提示</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">5</div>
+          <div class="flow-step-title">10:30<br>人工审核</div>
+          <div class="flow-step-sub">对照禁忌清单，合规检查，最终确认</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">6</div>
+          <div class="flow-step-title">定时发布</div>
+          <div class="flow-step-sub">按Agent 05时间表，分平台定时发布</div>
+        </div>
+      </div>
+      <p style="margin-top:16px">整套流程<strong>人工介入仅2个时间点</strong>：选题确认（10分钟）+ 内容审核（20分钟），其余全部自动化完成。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">四、Coze搭建路线图（分三期）</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>阶段</th><th>时间</th><th>搭建内容</th><th>预期产出</th></tr>
+          <tr>
+            <td><strong>第一期</strong><br><small>跑通基础</small></td>
+            <td>第1-2周</td>
+            <td>
+              1. 建立紫尘阁知识库（品牌手册+金句库+禁忌词库）<br>
+              2. 搭建选题参谋Agent<br>
+              3. 搭建多平台文案生产工作流
+            </td>
+            <td>每天能稳定产出3平台文案，人工审核后发布</td>
+          </tr>
+          <tr>
+            <td><strong>第二期</strong><br><small>矩阵扩展</small></td>
+            <td>第3-4周</td>
+            <td>
+              1. 增加视觉官（生图提示词自动化）<br>
+              2. 搭建私域客服Bot（企微接入）<br>
+              3. 设立各账号专属提示词（人设差异化）
+            </td>
+            <td>7个账号同步运营，私域自动承接流量</td>
+          </tr>
+          <tr>
+            <td><strong>第三期</strong><br><small>数据驱动</small></td>
+            <td>第5-8周</td>
+            <td>
+              1. 接入数据监控（飞瓜/新榜）<br>
+              2. 爆款内容自动复制分发<br>
+              3. 根据数据反馈自动优化提示词
+            </td>
+            <td>内容爆款率稳定提升，ROI可量化</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="break"><div class="break-icon">◆ 合规红线 ◆</div></div>
+
+  <!-- CHAPTER 4: 合规 -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-num">第四章</div>
+      <div>
+        <div class="chapter-title">
+          合规框架（最重要的章节）
+          <span>内容红线 · AI审核机制 · 平台规避策略</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">一、内容合规双红线</div>
+      <div class="compliance-grid">
+        <div class="compliance-item danger">
+          <div class="compliance-label">✗ 绝对禁止（封号风险）</div>
+          <ul>
+            <li>任何"治愈/根治/有效率"表述</li>
+            <li>具体症状+具体用药/方子</li>
+            <li>疾病诊断类内容（即使隐晦）</li>
+            <li>承诺健康效果的产品功效描述</li>
+            <li>"独家秘方/祖传配方"等表述</li>
+            <li>批评西医或其他医学流派</li>
+            <li>神化师父（妙手回春/天下第一）</li>
+          </ul>
+        </div>
+        <div class="compliance-item safe">
+          <div class="compliance-label">✓ 安全表达方式</div>
+          <ul>
+            <li>讲道理、讲方向，不承诺结果</li>
+            <li>生活方式建议（作息/饮食/情绪）</li>
+            <li>历史文化、道家哲学、传承故事</li>
+            <li>个人生活经验分享（主观感受）</li>
+            <li>三衡理论科普（思维层面）</li>
+            <li>产品=生活化实践载体（不是药）</li>
+            <li>学员自述改变（非疗效承诺）</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">二、AI自动合规审核机制</div>
+      <p>在Coze工作流中设置<strong>独立的合规审核节点</strong>，每条内容在进入发布环节前，必须通过以下两道关卡：</p>
+      <div class="callout jade">
+        <div class="callout-title">◈ 合规审核提示词（内置到工作流）</div>
+        你是紫尘阁的合规审核官。请检查以下内容是否包含：①医疗功效承诺词（治愈/根治/有效/治好）②疾病诊断词③具体药方剂量④攻击其他医学体系的表述⑤神化夸大IP的描述。如果发现，直接标记[不通过]并说明原因；如果通过，标记[通过]。
+      </div>
+      <p>人工审核是<strong>最后一道防线</strong>，AI合规检测通过后，内容导演用5分钟做最终人工核对，确认无误后发布。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">三、平台规避策略</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>平台</th><th>核心风险</th><th>规避策略</th></tr>
+          <tr><td><strong>抖音</strong></td><td>医疗广告认定严格，评论区引导敏感</td><td>纯分享语气，评论区引导用"感兴趣可以聊聊"代替"私信咨询"</td></tr>
+          <tr><td><strong>小红书</strong></td><td>功效词触发系统降权</td><td>产品笔记聚焦生活方式体验，不写功效；投笔记用"日常分享"而非商业推广</td></tr>
+          <tr><td><strong>微信/公众号</strong></td><td>违规内容被举报风险</td><td>深度内容为主，产品仅作为延伸推荐，不作为主推内容</td></tr>
+          <tr><td><strong>企微私域</strong></td><td>群发骚扰、诱导销售</td><td>以服务为主（节气提醒/三衡日课），购课引导比例控制在15%以内</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="break"><div class="break-icon">◆ 执行路线图 ◆</div></div>
+
+  <!-- CHAPTER 5: 执行 -->
+  <div class="chapter">
+    <div class="chapter-header">
+      <div class="chapter-num">第五章</div>
+      <div>
+        <div class="chapter-title">
+          90天执行路线图
+          <span>从0到稳定内容产线</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">第一个月：立标准，跑通流水线</div>
+      <div class="table-wrap">
+        <table>
+          <tr><th>周次</th><th>核心任务</th><th>人工工作量</th></tr>
+          <tr><td><strong>第1周</strong></td><td>完成Coze知识库搭建（导入品牌手册、金句库、禁忌词库）；选题参谋Agent上线；文案官工作流测试</td><td>每天1小时调试</td></tr>
+          <tr><td><strong>第2周</strong></td><td>主账号开始日更（抖音+小红书）；AI生产文案→人工审核→发布；建立内容数据记录表</td><td>每天30分钟审核+发布</td></tr>
+          <tr><td><strong>第3周</strong></td><td>三衡日课账号开始运营；视觉官Agent上线；私域Bot接入企微</td><td>每天30分钟</td></tr>
+          <tr><td><strong>第4周</strong></td><td>复盘数据，找出前5条高互动内容，分析爆款模型；优化提示词</td><td>2小时复盘</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">第二个月：扩矩阵，找爆款规律</div>
+      <p>全部7个账号上线运营，重点测试哪类选题在哪个账号爆款率最高。建立"爆款内容复制机制"——同一个高互动选题，在不同账号用不同角度复用，一个选题产出6-8条内容。</p>
+    </div>
+
+    <div class="section">
+      <div class="section-title">第三个月：数据驱动，规模化提效</div>
+      <p>根据前60天数据，确定主力内容方向。将高转化选题模板固化进提示词，每天AI产出质量趋于稳定。此时日常运营<strong>人工介入降至每天30分钟</strong>，内容团队精力转向爆款视频制作和私域深度运营。</p>
+    </div>
+
+    <div class="callout jade">
+      <div class="callout-title">◈ 3个月预期目标（合理预期）</div>
+      · 日均内容产出：6-8条（跨平台）<br>
+      · 账号矩阵粉丝：累计5-10万（保守估计）<br>
+      · 私域用户：企微积累500-2000人<br>
+      · 人工时间：每天总计1-1.5小时（团队2人可运营）
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div style="text-align:center; padding: 60px 0 40px; border-top: 1px solid var(--divider); margin-top: 60px;">
+    <div style="font-family:'Noto Serif SC',serif; font-size:13px; color:var(--gold); letter-spacing:4px; margin-bottom:8px;">大医精诚 · 济世救民</div>
+    <div style="font-size:11px; color:var(--mist); letter-spacing:3px;">大医派紫尘阁 · 品牌战略手册 · 内部保密</div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大医派紫尘阁 · 品牌手册 2.0</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+:root{
+  --p:#3B2F8C;--pm:#5B4FC4;--pl:#EEEBFA;--p2:#26215C;
+  --g:#0A4A38;--gm:#127A5E;--gl:#E4F5EF;
+  --a:#5C3600;--am:#C07D1A;--al:#FDF0D8;
+  --r:#7A1A1A;--rm:#C43030;--rl:#FDEAEA;
+  --k:#1A1A18;--k2:#3A3A37;--k3:#7A7A76;
+  --bd:#DDDBD5;--bg:#F8F7F3;--w:#FFFFFF;
+  --serif:'Noto Serif SC',serif;
+  --sans:'Noto Sans SC',sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--k2);font-size:14px;line-height:1.8}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;background:var(--w);border-bottom:1px solid var(--bd);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 40px}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex-shrink:0;padding:13px 16px;font-size:12px;color:var(--k3);text-decoration:none;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;font-weight:500}
+.nav a:hover,.nav a.on{color:var(--p);border-bottom-color:var(--p)}
+
+/* COVER */
+.cover{background:var(--p2);padding:56px 56px 48px;position:relative;overflow:hidden;min-height:280px}
+.cover::before,.cover::after{content:'';position:absolute;border-radius:50%;opacity:.05;background:#fff}
+.cover::before{width:400px;height:400px;top:-100px;right:-80px}
+.cover::after{width:200px;height:200px;bottom:-60px;left:80px}
+.cover-tag{font-size:10px;letter-spacing:.2em;color:#AFA9EC;text-transform:uppercase;margin-bottom:14px;font-weight:600}
+.cover-brand{font-family:var(--serif);font-size:42px;font-weight:700;color:#fff;line-height:1.1;margin-bottom:6px}
+.cover-ver{font-size:14px;color:#AFA9EC;margin-bottom:28px}
+.cover-quote{max-width:620px;border-left:4px solid #7F77DD;padding:16px 22px;background:rgba(255,255,255,.07);border-radius:0 8px 8px 0;font-family:var(--serif);font-size:15px;color:#CECBF6;font-style:italic;line-height:1.85}
+.cover-meta{margin-top:20px;font-size:11px;color:#534AB7;letter-spacing:.06em}
+
+/* LAYOUT */
+.body{max-width:980px;margin:0 auto;padding:48px 40px 100px}
+
+/* SECTION HEADERS */
+.ch-eye{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--pm);margin:0 0 8px;padding-bottom:8px;border-bottom:1px solid var(--bd)}
+.ch-title{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--p);margin-bottom:6px;line-height:1.25}
+.ch-desc{font-size:13px;color:var(--k3);margin-bottom:24px;line-height:1.7}
+.section{margin-bottom:64px}
+
+h2{font-size:16px;font-weight:700;color:var(--p);margin:36px 0 12px;padding-bottom:6px;border-bottom:1.5px solid var(--pl)}
+h3{font-size:14px;font-weight:700;color:var(--k);margin:24px 0 10px}
+p{margin-bottom:10px;color:var(--k2)}
+ul,ol{padding-left:20px;margin-bottom:10px}
+li{margin-bottom:5px}
+li::marker{color:var(--pm)}
+strong{color:var(--k);font-weight:700}
+code{font-family:monospace;background:var(--bg);border:1px solid var(--bd);padding:1px 6px;border-radius:4px;font-size:12px;color:var(--p)}
+
+/* GRID HELPERS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+
+/* CARD */
+.card{background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:20px 22px}
+.card-t{font-size:13px;font-weight:700;color:var(--k);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dp{background:var(--pm)}.dg{background:var(--gm)}.da{background:var(--am)}.dr{background:var(--rm)}
+
+/* KPI */
+.kpi{background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:18px 20px;position:relative;overflow:hidden}
+.kpi::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:10px 10px 0 0}
+.kp::before{background:var(--pm)}.kg::before{background:var(--gm)}.ka::before{background:var(--am)}.kr::before{background:var(--rm)}
+.kpi-v{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--k);line-height:1}
+.kpi-l{font-size:11px;color:var(--k3);margin-top:4px}
+.kpi-s{font-size:11px;font-weight:700;margin-top:5px}
+.kp .kpi-s{color:var(--pm)}.kg .kpi-s{color:var(--gm)}.ka .kpi-s{color:var(--am)}.kr .kpi-s{color:var(--rm)}
+
+/* BLOCKQUOTE */
+blockquote{border-left:4px solid var(--pm);background:var(--pl);padding:14px 20px;border-radius:0 8px 8px 0;margin:16px 0}
+blockquote p{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--p);margin:0;font-size:14.5px}
+
+/* CALLOUT */
+.note{padding:14px 18px;border-radius:0 8px 8px 0;margin:14px 0;font-size:13px;line-height:1.75}
+.note p{margin:0 0 4px;}.note p:last-child{margin:0}
+.np{background:var(--pl);border-left:4px solid var(--pm);color:var(--p)}
+.ng{background:var(--gl);border-left:4px solid var(--gm);color:var(--g)}
+.na{background:var(--al);border-left:4px solid var(--am);color:var(--a)}
+.nr{background:var(--rl);border-left:4px solid var(--rm);color:var(--r)}
+
+/* TABLE */
+.tw{overflow-x:auto;margin:14px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--p);color:#fff;padding:10px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase}
+td{padding:10px 14px;border-bottom:1px solid var(--bd);color:var(--k2);vertical-align:top;line-height:1.65}
+tr:last-child td{border-bottom:none}
+tr:nth-child(odd) td{background:var(--w)}
+tr:nth-child(even) td{background:var(--bg)}
+tr:hover td{background:var(--pl);transition:.15s}
+
+/* BADGE */
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:10px;font-weight:700;line-height:1.6}
+.bp{background:var(--p);color:#fff}.bg{background:var(--g);color:#fff}.ba{background:var(--a);color:#fff}.br{background:var(--rm);color:#fff}
+.bpo{background:var(--pl);color:var(--p);border:1px solid #C5BFF5}
+
+/* TIMELINE */
+.tl{position:relative;padding-left:28px}
+.tl::before{content:'';position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:var(--bd)}
+.tl-i{position:relative;margin-bottom:24px}
+.tl-dot{position:absolute;left:-23px;top:4px;width:14px;height:14px;border-radius:50%;border:2.5px solid var(--w)}
+.tl-dot.p{background:var(--pm);box-shadow:0 0 0 2px var(--pm)}
+.tl-dot.g{background:var(--gm);box-shadow:0 0 0 2px var(--gm)}
+.tl-dot.a{background:var(--am);box-shadow:0 0 0 2px var(--am)}
+.tl-eye{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px}
+.tl-dot.p~.tl-eye{color:var(--pm)}.tl-dot.g~.tl-eye{color:var(--gm)}.tl-dot.a~.tl-eye{color:var(--am)}
+.tl-title{font-size:14px;font-weight:700;color:var(--k);margin-bottom:5px}
+.tl-body{font-size:13px;color:var(--k2);line-height:1.7}
+
+/* PHASE */
+.phase{border-radius:10px;overflow:hidden;margin-bottom:12px;border:1px solid var(--bd)}
+.ph{padding:13px 18px;display:flex;justify-content:space-between;align-items:center}
+.ph.p{background:var(--pl)}.ph.g{background:var(--gl)}.ph.a{background:var(--al)}.ph.r{background:var(--rl)}
+.ph-t{font-size:14px;font-weight:700}
+.ph.p .ph-t{color:var(--p)}.ph.g .ph-t{color:var(--g)}.ph.a .ph-t{color:var(--a)}.ph.r .ph-t{color:var(--r)}
+.ph-tag{font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;color:#fff}
+.ph.p .ph-tag{background:var(--p)}.ph.g .ph-tag{background:var(--g)}.ph.a .ph-tag{background:var(--a)}.ph.r .ph-tag{background:var(--rm)}
+.pb{padding:16px 18px;background:var(--w);font-size:13px;color:var(--k2);line-height:1.75}
+
+/* AGENT BOXES */
+.agent-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:16px 0}
+.agent{border-radius:10px;border:1px solid var(--bd);background:var(--w);padding:18px;transition:.2s}
+.agent:hover{border-color:var(--pm);box-shadow:0 4px 16px rgba(91,79,196,.1)}
+.agent-icon{font-size:24px;margin-bottom:8px}
+.agent-name{font-size:13px;font-weight:700;color:var(--p);margin-bottom:4px}
+.agent-role{font-size:11px;color:var(--k3);margin-bottom:10px}
+.agent-tool{display:inline-block;font-size:10px;padding:2px 7px;border-radius:10px;background:var(--pl);color:var(--pm);border:1px solid #C5BFF5;margin:2px}
+.agent-body{font-size:12px;color:var(--k2);line-height:1.65;margin-top:8px;padding-top:8px;border-top:1px solid var(--bd)}
+
+/* FLOW */
+.flow{display:flex;align-items:center;gap:0;margin:16px 0;overflow-x:auto;padding:4px 0}
+.flow-step{flex-shrink:0;background:var(--w);border:1px solid var(--bd);border-radius:8px;padding:12px 16px;text-align:center;min-width:130px}
+.flow-step-t{font-size:12px;font-weight:700;color:var(--p);margin-bottom:3px}
+.flow-step-s{font-size:11px;color:var(--k3)}
+.flow-arrow{flex-shrink:0;color:var(--pm);font-size:18px;padding:0 6px;opacity:.6}
+.flow-step.highlight{background:var(--pl);border-color:var(--pm)}
+
+/* CODE BLOCK */
+.code-block{background:#1E1A2E;border-radius:8px;padding:16px 20px;margin:14px 0;overflow-x:auto}
+.code-block pre{font-family:monospace;font-size:12px;line-height:1.75;color:#C8C0FF;margin:0;white-space:pre-wrap}
+.code-block .cm{color:#6B5FFF}.code-block .ck{color:#A8FFD8}.code-block .cv{color:#FFD8A8}.code-block .cs{color:#FF9999}
+
+/* PILL */
+.pills{display:flex;flex-wrap:wrap;gap:7px;margin:10px 0}
+.pill{font-size:12px;padding:4px 12px;border-radius:20px;font-weight:500;border:1px solid}
+.pill.p{background:var(--pl);border-color:#C5BFF5;color:var(--p)}
+.pill.g{background:var(--gl);border-color:#B3DDD3;color:var(--g)}
+.pill.a{background:var(--al);border-color:#EDD59A;color:var(--a)}
+.pill.r{background:var(--rl);border-color:#F4BDBD;color:var(--r)}
+
+/* SEPARATOR */
+hr{border:none;border-top:1px solid var(--bd);margin:48px 0}
+
+/* SLOGAN BOX */
+.slogan-box{background:var(--p);color:#fff;border-radius:12px;padding:28px 32px;margin:20px 0;text-align:center}
+.slogan-main{font-family:var(--serif);font-size:24px;font-weight:700;color:#fff;margin-bottom:8px}
+.slogan-sub{font-size:14px;color:#AFA9EC}
+
+/* CHECK LIST */
+.checks{display:grid;gap:8px;margin:12px 0}
+.check{display:flex;gap:10px;align-items:flex-start;padding:10px 14px;background:var(--w);border:1px solid var(--bd);border-radius:8px}
+.cb{width:18px;height:18px;border:2px solid var(--bd);border-radius:4px;flex-shrink:0;margin-top:1px}
+.ct{font-size:13px;color:var(--k2);line-height:1.6}
+.ct strong{display:block;color:var(--k)}
+.ct span{font-size:12px;color:var(--k3)}
+
+/* FOOTER */
+.footer{background:var(--p2);padding:32px 40px;text-align:center}
+.footer-m{font-family:var(--serif);font-size:18px;color:#CECBF6;font-style:italic;margin-bottom:8px}
+.footer-s{font-size:11px;color:#534AB7;letter-spacing:.06em}
+
+@media(max-width:700px){
+  .cover{padding:36px 20px 32px}.cover-brand{font-size:28px}
+  .body{padding:32px 16px 60px}
+  .nav{padding:0 12px}
+  .g2,.g3,.g4,.agent-grid{grid-template-columns:1fr}
+  .flow{flex-direction:column}.flow-arrow{transform:rotate(90deg)}
+}
+</style>
+</head>
+<body>
+<div style="background:#FDFCF9;border-bottom:1px solid rgba(14,13,11,.08);padding:10px 24px;font-family:'Noto Serif SC',serif;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <a href="../index.html" style="color:#2B2A27;text-decoration:none;letter-spacing:.05em">← 紫尘阁 · 三衡生活 · 文献库</a>
+  <span style="color:#6A6965;font-size:11px;letter-spacing:.1em">品牌手册 2.0</span>
+</div>
+
+
+<nav class="nav">
+  <a href="#s0" class="on">品牌总纲</a>
+  <a href="#s1">IP架构</a>
+  <a href="#s2">内容战略</a>
+  <a href="#s3">平台矩阵</a>
+  <a href="#s4">产品体系</a>
+  <a href="#s5">Agent团队</a>
+  <a href="#s6">工具方案</a>
+  <a href="#s7">三月计划</a>
+  <a href="#s8">义工战略</a>
+  <a href="#s9">执行清单</a>
+</nav>
+
+<div class="cover">
+  <div class="cover-tag">道家大医派 · 唐永淳元年（公元682年）创立 · 1300年传承 · 第22代</div>
+  <div class="cover-brand">大医派紫尘阁</div>
+  <div class="cover-ver">品牌手册 2.0 · 一人公司起盘版</div>
+  <div class="cover-quote">「 现代人不是生病了，是活法错了。三衡，是让人重新学会在天地之间活着。」</div>
+  <div class="cover-meta">内部保密文件 · 仅供团队使用 · 2025</div>
+</div>
+
+<div class="body">
+
+<!-- ══ S0 品牌总纲 ══ -->
+<div id="s0" class="section">
+  <div class="ch-eye">品牌总纲</div>
+  <div class="ch-title">紫尘阁是什么</div>
+  <div class="ch-desc">从所有材料提炼的最终定义——这句话是一切的根，不能被任何执行动作替换。</div>
+
+  <div class="slogan-box">
+    <div class="slogan-main">现代人不是生病了，是活法错了</div>
+    <div class="slogan-sub">三衡，是让人重新学会在天地之间活着</div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot dp"></div>品牌母定义</div>
+      <p>紫尘阁是一个<strong>有独立世界观的文化品牌</strong>，不是中医机构，不是养生号，也不是传统文化讲堂。</p>
+      <p>以<strong>道家大医派1300年传承</strong>为根，以<strong>三衡理论</strong>为骨，以<strong>起居·饮食·情志·福德</strong>为实践路径，帮助现代人重新建立与身体、节律和天地的真实连接。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dg"></div>核心主张（两句话）</div>
+      <p><strong>主 slogan：</strong>把人带回身体</p>
+      <p><strong>副 slogan：</strong>先安身，再安神</p>
+      <p><strong>对外一句话：</strong>1300年道家大医传承，帮助现代人重新学会在天地之间活着。</p>
+      <p><strong>前台账号名：</strong>归身 / 安身（小红书·知乎）｜ 紫尘阁书院（公众号）</p>
+    </div>
+  </div>
+
+  <h2>品牌不是什么</h2>
+  <div class="note nr"><p>❌ 不是"卖一个治病方法"——不解决单一症状，教人重建活法</p><p>❌ 不是"玄学修行号"——要落到体感、日常、可实践的生活</p><p>❌ 不是"普通中医科普号"——有完整世界观和知识母体（三衡论），不是碎片化知识</p><p>❌ 不是"揉腹账号"——揉腹只是动作入口，不是品牌定位</p></div>
+
+  <h2>五层护城河</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>层级</th><th>护城河</th><th>为什么别人复制不了</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge bp">01</span> 知识母体</td><td>三衡理论——完整的天人合一医学哲学体系</td><td>有1300年积累+师父40万次临证提炼，不是东拼西凑</td></tr>
+        <tr><td><span class="badge bg">02</span> 翻译能力</td><td>把大道理翻译成生活经验：烤馒头=外热内寒，洗狗=湿气</td><td>这种翻译能力来自多年师徒传承，不是读几本书能学到的</td></tr>
+        <tr><td><span class="badge ba">03</span> 实践路径</td><td>起居有常·饮食有节·情志调达·福德深厚</td><td>四条轴让内容永远有落点，不漂浮，内容系统性极高</td></tr>
+        <tr><td><span class="badge bp">04</span> 师者身份</td><td>2017年从医者转为师者，不卷疗效，卷"教人活好"</td><td>这个转变是真实历史，不可伪造</td></tr>
+        <tr><td><span class="badge bg">05</span> 线下场域</td><td>杭州大兜路书院·义诊·课程·体验</td><td>真实空间，真实服务，内容平台复制不了</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S1 IP架构 ══ -->
+<div id="s1" class="section">
+  <div class="ch-eye">第一章</div>
+  <div class="ch-title">双IP架构</div>
+  <div class="ch-desc">紫尘阁有两套IP，必须协同运作。师父是根，主理人是桥。二者不能混用，也不能只用其中一个。</div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot dp"></div>师父IP：赵无尘阁主</div>
+      <blockquote><p>「把中医活成一种人生的人」</p></blockquote>
+      <div class="tw" style="margin-top:12px">
+        <table>
+          <tbody>
+            <tr><td style="width:30%"><strong>核心定位</strong></td><td>道家大医派第21代传人·三衡理论创立者·从医者到师者</td></tr>
+            <tr><td><strong>最强标签</strong></td><td>11岁入终南山·40万次接诊·2017年转折·病永远看不完</td></tr>
+            <tr><td><strong>传播功能</strong></td><td>信任根基——让人产生追随，是品牌的人格化载体</td></tr>
+            <tr><td><strong>内容风格</strong></td><td>故事化·生活化·有判断力·不说教</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>三个最强传播故事</h3>
+      <p><strong>① 关诊室的转折（2017）</strong>——癌症患者越来越多，治好一个来十个，病永远看不完。顿悟：与其治好一千人，不如教会一万人怎么不生病。</p>
+      <p><strong>② 烤馒头讲口腔溃疡</strong>——外焦里生=外热内寒，越喝凉茶越重。这种把医理翻成生活经验的能力，是最难被复制的传播资产。</p>
+      <p><strong>③ 洗狗讲湿气</strong>——没吹干的皮毛=湿气，排湿靠阳气。普通人一听就懂，记得住，能复述。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dg"></div>主理人IP：王舰平（致溟）</div>
+      <blockquote><p>「一个在商业世界修行过的人，在紫尘阁找到了另一套活法」</p></blockquote>
+      <div class="tw" style="margin-top:12px">
+        <table>
+          <tbody>
+            <tr><td style="width:30%"><strong>身份</strong></td><td>紫尘阁弟子·外堂主事·品牌主理人</td></tr>
+            <tr><td><strong>核心价值</strong></td><td>商业世界的赢家选择走进传统文化——这个反差是最强人设</td></tr>
+            <tr><td><strong>传播功能</strong></td><td>现代接口——让不懂道家的人进入紫尘阁</td></tr>
+            <tr><td><strong>内容风格</strong></td><td>有商业判断力的文化传播者，不是单纯中医科普者</td></tr>
+            <tr><td><strong>背景资产</strong></td><td>15年电商·品牌·社群经验·亿邦·马蹄社·产业连接</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <h3>王舰平最强的内容原料</h3>
+      <p>他从商业世界走进紫尘阁的故事<strong>本身就是最强内容</strong>——一个懂增长、懂品牌、懂社群的人，为什么选择这条路？这个问题的答案，会让最难说服的用户停下来。</p>
+      <div class="note np" style="margin-top:10px"><p>⚠️ 这个故事还没有被写出来。这是目前最大的内容缺口，优先补上。</p></div>
+    </div>
+  </div>
+
+  <h2>双IP配合关系</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>维度</th><th>师父（赵无尘）</th><th>主理人（王舰平）</th></tr></thead>
+      <tbody>
+        <tr><td>核心作用</td><td>信任根基·道统权威</td><td>现代入口·接地气翻译</td></tr>
+        <tr><td>内容风格</td><td>故事化·情感化·生活化</td><td>判断型·反常识·商业视角</td></tr>
+        <tr><td>主战平台</td><td>公众号·视频号·课程</td><td>小红书·知乎·知识付费</td></tr>
+        <tr><td>关系比喻</td><td>"道"——有分量，值得信赖</td><td>"桥"——有温度，可以追随</td></tr>
+        <tr><td>内容量</td><td>深度少量（周1-2篇）</td><td>高频日更（每天1-2条）</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S2 内容战略 ══ -->
+<div id="s2" class="section">
+  <div class="ch-eye">第二章</div>
+  <div class="ch-title">内容战略</div>
+  <div class="ch-desc">内容不是为了展示知识，而是为了让用户经历四步：被说中 → 被解释清 → 被重新组织认知 → 被引入实践。</div>
+
+  <h2>选题公式（唯一的核心公式）</h2>
+  <div class="slogan-box" style="padding:20px 28px;text-align:left">
+    <div style="font-size:13px;color:#AFA9EC;margin-bottom:4px">所有内容的底层逻辑</div>
+    <div class="slogan-main" style="font-size:20px">商业世界教你赢，三衡教你活</div>
+    <div class="slogan-sub">从商业人群的真实处境切入 → 落到三衡的世界观 → 收在可感知的体验上</div>
+  </div>
+
+  <h2>三类内容，循环出击</h2>
+  <div class="g3">
+    <div class="phase"><div class="ph p"><span class="ph-t">A类：反常识型</span><span class="ph-tag">日常主力</span></div><div class="pb"><p><strong>结构：</strong>你以为是X的问题，其实是Y出了问题</p><ul><li>你花了20年学赢，没人教你赢了怎么活</li><li>越努力越累，不是不够强，是活法在耗本钱</li><li>失眠不是压力大，是节律和天时脱钩了</li><li>越补越累，身体根本接不住</li></ul></div></div>
+    <div class="phase"><div class="ph g"><span class="ph-t">B类：世界观型</span><span class="ph-tag">建立信任</span></div><div class="pb"><p><strong>结构：</strong>我们看这件事的方式不一样</p><ul><li>三衡不是养生，是重新和天地对齐的方式</li><li>病是果，活法是根。40万次接诊只教一件事</li><li>为什么从医者转为师者：病永远看不完</li><li>一个人怎么活，会写在身体上</li></ul></div></div>
+    <div class="phase"><div class="ph a"><span class="ph-t">C类：场景体感型</span><span class="ph-tag">促进转化</span></div><div class="pb"><p><strong>结构：</strong>这件事在书院里是什么感觉</p><ul><li>初一十五义诊，来的人都带着同一个问题</li><li>第一次揉腹之后，有人哭了</li><li>杭州大兜路，有个地方教你重新认识身体</li><li>阁主说，你不是累，你是乱了</li></ul></div></div>
+  </div>
+
+  <h2>四大内容支柱（永久选题库）</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>支柱</th><th>核心关注点</th><th>高频体感词</th><th>对应产品</th></tr></thead>
+      <tbody>
+        <tr><td><strong>起居有常</strong></td><td>睡眠·节律·作息·无效休息·昼夜节律</td><td>睡不实·休不透·越休息越累·白天撑着晚上兴奋</td><td>浴足包·双花恬梦饮·固齿粉</td></tr>
+        <tr><td><strong>饮食有节</strong></td><td>寒热感受·吃与身体相合·饮食节律·补的误区</td><td>吃不香·越补越累·吃完堵·总觉得凉</td><td>小米·七正香·蜂蜜·核桃油</td></tr>
+        <tr><td><strong>情志调达</strong></td><td>情绪落点·腹部紧张·情志七情·情绪与身体的关系</td><td>肚子紧·情绪堵·一焦虑就·心烦·烦躁</td><td>玫瑰盛春饮·老陈皮·健味饮</td></tr>
+        <tr><td><strong>福德深厚</strong></td><td>心性·生活选择·长期活法·人与世界的关系</td><td>越努力越空·感觉不到活着·赢了但空了</td><td>艾条·百络通·三才饮</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>内容禁区（每条内容发布前必查）</h2>
+  <div class="note na">
+    <p>❌ <strong>绝对禁止：</strong>治愈·根治·疗效·包好·对某病有效·替代诊疗·夸张病例·虚构案例·临床验证</p>
+    <p>✅ <strong>安全替代：</strong>生活调养·日常养护·身体感受·作息整理·传统文化视角·自我照护动作·体感记录</p>
+    <p>📌 <strong>结尾必加：</strong>「仅作生活方式与传统文化交流，不替代医疗建议或诊疗方案。」</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S3 平台矩阵 ══ -->
+<div id="s3" class="section">
+  <div class="ch-eye">第三章</div>
+  <div class="ch-title">平台矩阵</div>
+  <div class="ch-desc">三主两辅+GEO战略。不是五个平台平均用力，是同一个母体在不同平台用不同语言说话。</div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>平台</th><th>战略角色</th><th>内容重点</th><th>发布频率</th><th>GEO价值</th></tr></thead>
+      <tbody>
+        <tr><td><strong>小红书</strong></td><td><span class="badge bp">主攻·流量入口</span></td><td>A类反常识·体感命名·本地化·图文</td><td>每天1条</td><td>中——用户搜索类AI引用</td></tr>
+        <tr><td><strong>知乎</strong></td><td><span class="badge bp">主攻·认知沉淀</span></td><td>B类世界观·深度解释·问答</td><td>每天1答或隔天</td><td>🔥高——AI引用最多的中文平台</td></tr>
+        <tr><td><strong>公众号（紫尘阁书院）</strong></td><td><span class="badge bg">主攻·品牌承接</span></td><td>深文·体系·师者视角·线下承接</td><td>每周2-3篇</td><td>中——微信生态AI开始爬取</td></tr>
+        <tr><td><strong>百家号</strong></td><td><span class="badge ba">辅助·百度占位</span></td><td>改写知乎/公众号成熟内容</td><td>每周3-5篇</td><td>🔥高——文心一言优先爬取</td></tr>
+        <tr><td><strong>头条号</strong></td><td><span class="badge ba">辅助·泛流量</span></td><td>反常识短文·测试题目</td><td>每天1篇或隔天</td><td>中——豆包AI爬取来源</td></tr>
+        <tr><td><strong>视频号</strong></td><td><span class="badge" style="background:var(--k3);color:#fff">后期·视频补充</span></td><td>图文口播化·师父讲课片段</td><td>每周1-2条</td><td>低（现阶段）</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>GEO战略：让AI搜到紫尘阁</h2>
+  <div class="note np">
+    <p><strong>GEO（Generative Engine Optimization）不是SEO的升级版，逻辑完全不同。</strong></p>
+    <p>AI引用内容的标准是：① 结构清晰可提取 ② 多平台重复出现同一观点（权威信号）③ 品牌词高频关联 ④ 原创性强（非搬运）。三个月内要做到300篇覆盖不同关键词，才能让各大AI开始稳定收录。</p>
+  </div>
+  <div class="g3">
+    <div class="card"><div class="card-t"><div class="dot dp"></div>核心关键词矩阵</div><div class="pills"><span class="pill p">三衡理论</span><span class="pill p">道家养生</span><span class="pill p">揉腹</span><span class="pill p">赵无尘</span><span class="pill p">紫尘阁</span><span class="pill g">睡不实怎么办</span><span class="pill g">肚子总紧</span><span class="pill g">越休息越累</span><span class="pill g">情绪影响身体</span><span class="pill a">杭州养生</span><span class="pill a">杭州中医书院</span><span class="pill a">起居有常</span></div></div>
+    <div class="card"><div class="card-t"><div class="dot dg"></div>让AI引用的内容格式</div><ul style="font-size:13px;color:var(--k2)"><li>每篇必须有"问题—解释—结论"结构</li><li>每篇至少出现1次"三衡理论"或"紫尘阁"</li><li>同一核心观点在5个平台都有版本</li><li>知乎深度回答是AI引用最高价值来源</li></ul></div>
+    <div class="card"><div class="card-t"><div class="dot da"></div>3个月内容量目标</div><ul style="font-size:13px;color:var(--k2)"><li>知乎：50篇深度回答</li><li>小红书：90条图文</li><li>公众号：30篇长文</li><li>百家/头条：130篇分发改写</li><li><strong>总计：300篇+</strong></li></ul></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S4 产品体系 ══ -->
+<div id="s4" class="section">
+  <div class="ch-eye">第四章</div>
+  <div class="ch-title">产品体系与收入结构</div>
+  <div class="ch-desc">三层漏斗：低门槛获客 → 中价位转化 → 高价值利润。前30天只推获客层，不要急着卖高客单。</div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>层级</th><th>产品</th><th>定价</th><th>战略目的</th><th>启动时间</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge bg">获客层</span></td><td>免费义诊（初一十五）· 书院体感体验</td><td>0—99元</td><td>产生真实体感，建立第一次信任</td><td><strong>立即启动</strong></td></tr>
+        <tr><td><span class="badge ba">转化层</span></td><td>艾灸体验 · 揉腹调理 · 单次养生服务</td><td>399—699元</td><td>验证付费意愿，建立服务信任</td><td><strong>第1个月</strong></td></tr>
+        <tr><td><span class="badge bp">课程层</span></td><td>三衡理论系列课 · 揉腹训练营 · 辟谷实修营</td><td>198—8800元</td><td>主要利润来源，知识付费高毛利</td><td><strong>第2个月</strong></td></tr>
+        <tr><td><span class="badge" style="background:var(--p2);color:#fff">会员层</span></td><td>紫薯会员 · 荣誉紫薯 · 城市合伙人</td><td>580—2980元/年</td><td>长期现金流，社群飞轮</td><td><strong>第3个月</strong></td></tr>
+        <tr><td><span class="badge" style="background:var(--k);color:#fff">体验层</span></td><td>终南山溯源游学 · 道场体验营</td><td>4980—19800元</td><td>最高客单，稀缺性变现</td><td><strong>第4-6个月</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note ng"><p>📍 <strong>线下书院：</strong>杭州拱墅区大兜路160号 · 中医门诊 · 艾灸/无极灸/揉腹/泡浴/按摩/刮痧/针灸 · 每月初一十五免费义诊</p></div>
+
+  <h2>转化漏斗路径</h2>
+  <div class="flow">
+    <div class="flow-step highlight"><div class="flow-step-t">公域内容</div><div class="flow-step-s">说中处境</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-step-t">关注/私信</div><div class="flow-step-s">公众号·微信</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-step-t">义诊/体验</div><div class="flow-step-s">0-99元</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-step-t">单次服务</div><div class="flow-step-s">399-699元</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step highlight"><div class="flow-step-t">课程/会员</div><div class="flow-step-s">198-8800元</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step"><div class="flow-step-t">游学/合伙人</div><div class="flow-step-s">高客单</div></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S5 Agent团队 ══ -->
+<div id="s5" class="section">
+  <div class="ch-eye">第五章 · 核心</div>
+  <div class="ch-title">一人公司的Agent团队</div>
+  <div class="ch-desc">你不是一个人在做这件事，你是一人 + 一套Agent系统。这套系统负责70%的日常执行，你负责方向、判断和审核。</div>
+
+  <div class="note np"><p><strong>核心原则：</strong>Agent不是替你思考，是替你执行。品牌母体、世界观、最终判断永远是你的。Agent负责选题、起稿、改写、分发建议、数据复盘。你负责：审核、手改第一段和最后一段、发布、决策。</p></div>
+
+  <h2>六个Agent角色定义</h2>
+  <div class="agent-grid">
+    <div class="agent">
+      <div class="agent-icon">🎯</div>
+      <div class="agent-name">内容总控官</div>
+      <div class="agent-role">品牌守门人</div>
+      <div><span class="agent-tool">Gemini Gem</span><span class="agent-tool">常驻</span></div>
+      <div class="agent-body">守住品牌母体不跑偏。每天给出今日选题方向，判断内容是否符合紫尘阁语气和世界观，校验是否有合规风险。所有Agent输出都经过它校验。</div>
+    </div>
+    <div class="agent">
+      <div class="agent-icon">🔍</div>
+      <div class="agent-name">选题官</div>
+      <div class="agent-role">每日选题生成</div>
+      <div><span class="agent-tool">Gemini</span><span class="agent-tool">定时任务</span></div>
+      <div class="agent-body">每天08:30自动产出10个候选选题，每个标注：所属支柱（起居/饮食/情志/福德）、内容类型（A/B/C类）、适合平台、预期人群。你从中选1-2个主推。</div>
+    </div>
+    <div class="agent">
+      <div class="agent-icon">✍️</div>
+      <div class="agent-name">文案官</div>
+      <div class="agent-role">多平台内容生成</div>
+      <div><span class="agent-tool">Gemini</span><span class="agent-tool">GPT-4o</span></div>
+      <div class="agent-body">拿到今日主题后，同时生成：小红书版、知乎版、公众号版、百家号改写版、头条号改写版。每个版本附：建议标题 + 你要手改的第一段。</div>
+    </div>
+    <div class="agent">
+      <div class="agent-icon">📚</div>
+      <div class="agent-name">体系翻译官</div>
+      <div class="agent-role">三衡知识库校准</div>
+      <div><span class="agent-tool">NotebookLM</span><span class="agent-tool">OpenClaw</span></div>
+      <div class="agent-body">内容生成前从三衡化中医+师父讲课素材里提取相关原话和观点，确保内容从紫尘阁知识母体里长出来，不是凭空编造。</div>
+    </div>
+    <div class="agent">
+      <div class="agent-icon">📊</div>
+      <div class="agent-name">复盘分析官</div>
+      <div class="agent-role">数据→选题优化</div>
+      <div><span class="agent-tool">GPT-4o</span><span class="agent-tool">本地模型</span></div>
+      <div class="agent-body">每天次日早上自动分析昨日数据：哪条标题点击率最高、哪个体感词最有共鸣、哪个平台转化最好。输出次日选题优化建议。</div>
+    </div>
+    <div class="agent">
+      <div class="agent-icon">🌐</div>
+      <div class="agent-name">GEO监控官</div>
+      <div class="agent-role">AI搜索收录监控</div>
+      <div><span class="agent-tool">Claude</span><span class="agent-tool">每周</span></div>
+      <div class="agent-body">每周询问Claude/ChatGPT/Gemini："关于中医养生/道家生活/三衡理论，你知道什么？"监控是否开始引用紫尘阁内容，追踪GEO进度。</div>
+    </div>
+  </div>
+
+  <h2>Agent协作流程图</h2>
+  <div class="flow" style="flex-wrap:wrap;gap:8px;padding:16px;background:var(--w);border:1px solid var(--bd);border-radius:10px">
+    <div class="flow-step" style="background:var(--pl);border-color:var(--pm);min-width:110px"><div class="flow-step-t" style="color:var(--p)">体系翻译官</div><div class="flow-step-s">提取知识库原话</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="min-width:100px"><div class="flow-step-t">选题官</div><div class="flow-step-s">生成10个选题</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:var(--al);border-color:var(--am);min-width:100px"><div class="flow-step-t" style="color:var(--a)">你</div><div class="flow-step-s">选1-2个主题</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="min-width:100px"><div class="flow-step-t">文案官</div><div class="flow-step-s">生成5平台稿</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="min-width:100px"><div class="flow-step-t">总控官</div><div class="flow-step-s">合规+风格校验</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="background:var(--al);border-color:var(--am);min-width:100px"><div class="flow-step-t" style="color:var(--a)">你</div><div class="flow-step-s">改3处→发布</div></div>
+    <div class="flow-arrow">→</div>
+    <div class="flow-step" style="min-width:100px"><div class="flow-step-t">复盘分析官</div><div class="flow-step-s">次日数据复盘</div></div>
+  </div>
+
+  <h2>你每天只需要做的事（45分钟）</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>时间</th><th>你做什么</th><th>Agent做什么</th></tr></thead>
+      <tbody>
+        <tr><td>08:30 自动</td><td>——</td><td>选题官产出10个选题 + 文案官生成5平台初稿</td></tr>
+        <tr><td>09:00（15分钟）</td><td>看初稿，改标题/改第一段/改最后一段</td><td>总控官校验合规和风格</td></tr>
+        <tr><td>09:15（15分钟）</td><td>手动发布：小红书+知乎（必发）、公众号按周计划</td><td>百家号/头条号AI改写分发</td></tr>
+        <tr><td>09:30（15分钟）</td><td>回复重要评论，记录1个用户反馈</td><td>——</td></tr>
+        <tr><td>次日08:20自动</td><td>——</td><td>复盘分析官产出昨日数据报告+次日选题建议</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S6 工具方案 ══ -->
+<div id="s6" class="section">
+  <div class="ch-eye">第六章 · 核心</div>
+  <div class="ch-title">工具分工方案</div>
+  <div class="ch-desc">你已经有：OpenClaw+本地大模型、Gemini Pro、GPT Plus、Claude Code+本地模型。这是一套完整的工具矩阵，问题不是缺工具，而是分工不清。下面给你明确的角色分配。</div>
+
+  <h2>各工具的最优角色分配</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>工具</th><th>最擅长</th><th>在紫尘阁Agent系统里的角色</th><th>不适合用来做</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Gemini Pro</strong></td><td>长文理解·多轮对话·定时任务·中文生成</td><td>✅ <strong>内容总控官+选题官+文案官主力</strong><br>每日定时选题和初稿生成的核心引擎，建自定义Gem存提示词</td><td>复杂代码·精确数据分析</td></tr>
+        <tr><td><strong>GPT Plus（4o）</strong></td><td>创意变体·风格模仿·反常识角度·数据分析</td><td>✅ <strong>文案变体官+复盘分析官</strong><br>当Gemini出稿后，用GPT做风格变体和A/B测试；数据分析和复盘报告</td><td>长期记忆·中文文化理解</td></tr>
+        <tr><td><strong>Claude（Code）</strong></td><td>长文档处理·精准指令·代码·深度分析</td><td>✅ <strong>体系翻译官+GEO监控官+复杂任务</strong><br>处理三衡化中医长文档提取；写自动化脚本；每周GEO监控</td><td>高频日常内容生成（成本高）</td></tr>
+        <tr><td><strong>OpenClaw+本地模型</strong></td><td>无API费用·隐私安全·批量处理·自定义</td><td>✅ <strong>批量改写官+隐私处理</strong><br>义工信息处理；内容批量改写（百家/头条）；不适合对外的内部文档处理</td><td>高质量创意生成·复杂推理</td></tr>
+        <tr><td><strong>NotebookLM</strong></td><td>知识库问答·原文提取·不跑偏</td><td>✅ <strong>知识库守门人</strong><br>上传所有三衡素材，每次生成内容前先问它：这个观点在阁主讲课里是怎么说的</td><td>内容创作·风格生成</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>Gemini Gem：内容总控官核心提示词</h2>
+  <div class="code-block"><pre><span class="cm"># 紫尘阁内容总控官 · Gemini Gem</span>
+
+<span class="ck">身份：</span>
+你是大医派紫尘阁外堂主事王舰平的AI内容总编。
+紫尘阁品牌母体：现代人不是生病了，是活法错了。
+三衡，是让人重新学会在天地之间活着。
+
+<span class="ck">师父：</span>赵无尘，道家大医派第21代传人，40万次接诊，
+2017年从医者转为师者。金句："与其治好一千人，不如
+教会一万人怎么不生病。"
+
+<span class="ck">主理人：</span>王舰平，紫尘阁弟子·外堂主事，
+商业背景（亿邦·马蹄社·15年电商品牌经验）。
+
+<span class="ck">今日主题：</span>【填入】
+
+<span class="ck">请输出：</span>
+① 小红书版（300字内，反常识开头，一个体感词结尾）
+② 知乎版（600字，问题→解释→世界观结构）  
+③ 公众号版（800字，可引用阁主原话或三衡理论）
+④ 百家号改写版（SEO标题+正文）
+⑤ 每个版本附：[手改建议：你需要改的第一句话]
+
+<span class="cs">禁止：</span>疗效·治愈·根治·替代诊疗·首先其次再次总之
+<span class="cv">必须：</span>像真实的人在说话·先体感后概念·不说教
+结尾统一加：「杭州大兜路紫尘阁书院，
+每月初一十五免费义诊，欢迎来。」</pre></div>
+
+  <h2>OpenClaw本地部署：批量改写流水线</h2>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot dp"></div>OpenClaw适合的工作流</div>
+      <div class="tl">
+        <div class="tl-i">
+          <div class="tl-dot p"></div>
+          <div class="tl-eye" style="color:var(--pm)">任务1：批量改写</div>
+          <div class="tl-body">把公众号/知乎的成熟内容批量改写成百家号SEO版和头条号短版。一次性跑50篇，无API费用，本地处理。</div>
+        </div>
+        <div class="tl-i">
+          <div class="tl-dot p"></div>
+          <div class="tl-eye" style="color:var(--pm)">任务2：义工内容处理</div>
+          <div class="tl-body">义工提交的体感文章（非结构化文本），用OpenClaw批量标准化，提取核心体感词，改写成平台发布格式。</div>
+        </div>
+        <div class="tl-i">
+          <div class="tl-dot p"></div>
+          <div class="tl-eye" style="color:var(--pm)">任务3：隐私数据处理</div>
+          <div class="tl-body">义工名单、地址、联系信息等涉及隐私的数据分析，全部走本地模型，不上传任何API。</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dg"></div>Claude Code适合的工作流</div>
+      <div class="tl">
+        <div class="tl-i">
+          <div class="tl-dot g"></div>
+          <div class="tl-eye" style="color:var(--gm)">任务1：自动化脚本</div>
+          <div class="tl-body">写Python脚本自动抓取各平台数据（点赞/收藏/评论），汇总成每日数据报告CSV，供复盘分析官使用。</div>
+        </div>
+        <div class="tl-i">
+          <div class="tl-dot g"></div>
+          <div class="tl-eye" style="color:var(--gm)">任务2：知识库提取</div>
+          <div class="tl-body">把三衡化中医全文结构化提取：按"起居/饮食/情志/福德"四个支柱分类，建成可检索的JSON知识库。</div>
+        </div>
+        <div class="tl-i">
+          <div class="tl-dot g"></div>
+          <div class="tl-eye" style="color:var(--gm)">任务3：GEO监控</div>
+          <div class="tl-body">每周调用Claude API，测试关键词在AI里的引用情况，生成GEO进度报告：哪些词开始被AI引用，哪些还没有。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>工具协作SOP（每日标准流程）</h2>
+  <div class="code-block"><pre><span class="cm"># 每日内容生产SOP · 45分钟版</span>
+
+<span class="cv">08:30</span> [<span class="ck">自动·Gemini定时</span>]
+  → 体系翻译官(NotebookLM): 今日主题相关原话提取
+  → 选题官(Gemini Gem): 生成10个候选选题
+  → 文案官(Gemini Gem): 主选题→5平台初稿
+  
+<span class="cv">09:00</span> [<span class="ck">你·15分钟</span>]
+  → 看初稿，判断：这像紫尘阁说的话吗？
+  → 改3处：标题 / 第一段 / 最后一段
+  → 如不满意，发给GPT-4o做风格变体
+  
+<span class="cv">09:15</span> [<span class="ck">你·15分钟</span>]
+  → 手动发布：小红书 + 知乎（每天必发）
+  → 公众号：按周计划发布
+
+<span class="cv">09:30</span> [<span class="ck">自动·OpenClaw</span>]
+  → 百家号改写版 + 头条号短版 → 自动排期
+
+<span class="cv">次日08:20</span> [<span class="ck">自动·GPT-4o</span>]
+  → 拉取昨日数据 → 生成复盘报告
+  → 输出：最高互动内容 / 最有效标题结构 / 次日建议选题
+
+<span class="cm"># 每周额外任务（周五·30分钟）</span>
+  → Claude: GEO监控报告
+  → NotebookLM: 知识库更新（新素材录入）
+  → OpenClaw: 批量处理义工投稿（第3个月开始）</pre></div>
+
+  <h2>成本控制建议</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>任务类型</th><th>推荐工具</th><th>原因</th></tr></thead>
+      <tbody>
+        <tr><td>高频日常内容生成（每天）</td><td>Gemini Pro</td><td>每月固定费，不计量，适合高频调用</td></tr>
+        <tr><td>风格变体+复盘（每天少量）</td><td>GPT Plus</td><td>固定月费，ChatGPT界面操作方便</td></tr>
+        <tr><td>复杂分析+脚本（每周）</td><td>Claude Code</td><td>按量计费，控制调用频率</td></tr>
+        <tr><td>批量改写+隐私数据（每天）</td><td>OpenClaw+本地模型</td><td>0 API成本，本地处理</td></tr>
+        <tr><td>知识库校准（每次生成前）</td><td>NotebookLM</td><td>免费/低价，专门做文档问答</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S7 三月计划 ══ -->
+<div id="s7" class="section">
+  <div class="ch-eye">第七章</div>
+  <div class="ch-title">三个月落地计划</div>
+  <div class="ch-desc">从一人公司到3人小组+义工网络。每个阶段目标清晰，有明确的验证指标，不达标不进下一阶段。</div>
+
+  <div class="phase">
+    <div class="ph p"><span class="ph-t">第一个月（1-30天）· 你一个人把模型跑通</span><span class="ph-tag">1人</span></div>
+    <div class="pb">
+      <div class="g2">
+        <div>
+          <h3>核心任务</h3>
+          <ul><li>注册账号（归身/安身+紫尘阁书院），统一头像简介</li><li>建立Gemini Gem + NotebookLM知识库，跑通Agent流程</li><li>每天45分钟，AI出稿你改发，3平台日更</li><li>找出Top 3爆款母题结构，建"选题模板库"</li><li>开始测试"内容→公众号关注→义诊预约"转化路径</li></ul>
+        </div>
+        <div>
+          <h3>月底验证指标</h3>
+          <ul><li>小红书涨粉 &gt;300，知乎 &gt;3篇500+赞回答</li><li>公众号新增关注 &gt;100</li><li>找到2-3个稳定有效的选题结构</li><li>Agent流程能每天稳定跑通，你只改3处</li><li>至少1次义诊有陌生人通过内容预约到场</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="ph g"><span class="ph-t">第二个月（31-60天）· 搭3人小组，5平台全开</span><span class="ph-tag">1+3人</span></div>
+    <div class="pb">
+      <div class="g2">
+        <div>
+          <h3>核心任务</h3>
+          <ul><li>从公众号组义工（65人）找第1人：内容执行，实操测试上岗</li><li>从视觉传播组义工（30人）找第2人：视觉+发布</li><li>从书院线下义工（57人）找第3人：社群+义工对接</li><li>百家号+头条号开始OpenClaw自动分发</li><li>视频号试水：图文口播化，师父讲课片段</li><li>开始轻推课程层（三衡理论入门课198元）</li></ul>
+        </div>
+        <div>
+          <h3>月底验证指标</h3>
+          <ul><li>小红书粉丝 &gt;1000，知乎关注 &gt;500</li><li>公众号关注 &gt;500</li><li>3人小组SOP跑通，你每天&lt;30分钟投入</li><li>5平台同步运转，内容总量 &gt;100篇</li><li>课程成交 &gt;10单，验证付费路径</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="ph a"><span class="ph-t">第三个月（61-90天）· 发动义工，全国城市节点落地</span><span class="ph-tag">1+3+义工网络</span></div>
+    <div class="pb">
+      <div class="g2">
+        <div>
+          <h3>核心任务</h3>
+          <ul><li>发布"紫尘阁城市内容官"计划，向全国义工征集体感文章</li><li>杭州·郑州·上海各找1个城市联络人</li><li>义工内容+AI改写+多平台发布，规模化GEO覆盖</li><li>推出会员体系（紫薯会员580元/年）</li><li>开始筹备"终南山溯源游学"产品</li></ul>
+        </div>
+        <div>
+          <h3>月底验证指标</h3>
+          <ul><li>全平台内容总量 &gt;300篇</li><li>3个城市有线下活动记录</li><li>义工内容贡献者 &gt;20人</li><li>百度/知乎/小红书能搜到"三衡理论"</li><li>各大AI被问到"道家养生"时出现紫尘阁内容</li></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S8 义工战略 ══ -->
+<div id="s8" class="section">
+  <div class="ch-eye">第八章</div>
+  <div class="ch-title">义工战略：428人网络如何变成传播飞轮</div>
+  <div class="ch-desc">你有428位义工，分布在25个省份，这是绝大多数品牌花钱都买不到的资产。但发动方式决定了他们是飞轮还是负担。</div>
+
+  <div class="note np"><p><strong>核心原则：</strong>义工不是员工，用任务驱动没有持续性。真正让人持续付出的是：<strong>身份感 + 成长感 + 被看见 + 有实际好处</strong>。让义工觉得"我是这件事的一部分"，不只是"我在帮别人做事"。</p></div>
+
+  <h2>义工分层与激励</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>层级</th><th>来源群体</th><th>核心驱动力</th><th>给他们的</th><th>你要求他们做什么</th></tr></thead>
+      <tbody>
+        <tr><td><span class="badge bp">城市内容官</span></td><td>公众号组+视觉组中有内容能力的人</td><td>被看见·有署名·有品牌背书</td><td>紫尘阁官号转载署名 + 「城市内容官」证书 + 课程优惠 + 优先参加密训</td><td>每月1篇自己城市的体感文章，用统一模板</td></tr>
+        <tr><td><span class="badge bg">城市联络人</span></td><td>书院线下义工·多年活跃·能组局</td><td>身份感·组织感·被信任</td><td>正式身份授权 + 物料支持 + 季度与阁主/主理人连线 + 书院体验名额</td><td>每月组织1次本地分享会，数据回传</td></tr>
+        <tr><td><span class="badge ba">传播官</span></td><td>所有义工（无内容能力）</td><td>归属感·参与感·顺手</td><td>每周2条现成内容直接转发 + 积分换课程/体验 + 「第XXX位传播官」身份牌</td><td>每周转发2-3条内容到朋友圈，不需要加说明</td></tr>
+        <tr><td><span class="badge" style="background:var(--p2);color:#fff">核心团队</span></td><td>从义工中选出的3人小组</td><td>成长·收入·参与品牌建设</td><td>薪资/分成 + 优先晋升「城市合伙人」 + 直接参与品牌决策</td><td>全职/兼职投入，执行日常SOP</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>先发城市（按义工密度排序）</h2>
+  <div class="g4">
+    <div class="kpi kg"><div class="kpi-v">57</div><div class="kpi-l">杭州（本部）</div><div class="kpi-s">书院所在地，先跑通模型</div></div>
+    <div class="kpi kp"><div class="kpi-v">15</div><div class="kpi-l">郑州（河南核心）</div><div class="kpi-s">河南总义工60人，郑州最密</div></div>
+    <div class="kpi ka"><div class="kpi-v">33</div><div class="kpi-l">上海</div><div class="kpi-s">长三角辐射，高净值用户集中</div></div>
+    <div class="kpi kr"><div class="kpi-v">20</div><div class="kpi-l">哈尔滨</div><div class="kpi-s">黑龙江最密，东北据点</div></div>
+  </div>
+
+  <h2>发动义工的话术（直接用）</h2>
+  <div class="code-block"><pre><span class="cm"># 城市联络人邀请话术（私聊，不要群发）</span>
+
+「XX，我在做一件你早就认同的事，只是现在开始在互联网上说出来了。
+
+我们不需要你花时间，只需要你：
+第一个月，先看我们发什么，如果觉得好就转发到朋友圈。
+第二个月，如果你愿意，帮我们在XX城市组织一次小聚，
+十来个人，喝茶聊聊三衡，就够了。
+
+紫尘阁会给你提供所有内容物料，你不需要自己想说什么。
+活动有没有效果，数据我们一起看。
+
+你是我想到的第一个人。」
+
+<span class="cm"># 关键原则：</span>
+<span class="cs">不是任务，是邀请。</span>
+<span class="cv">不是招募，是信任。</span>
+说清楚"你只需要做这一件简单的事"，不画大饼。</pre></div>
+</div>
+
+<hr>
+
+<!-- ══ S9 执行清单 ══ -->
+<div id="s9" class="section">
+  <div class="ch-eye">第九章</div>
+  <div class="ch-title">执行清单：你现在就该做的事</div>
+  <div class="ch-desc">按顺序来，不要跳。在内容模型跑通之前，不要动义工；在团队SOP建好之前，不要发动全国。</div>
+
+  <h2>本周必做（第1-7天）</h2>
+  <div class="checks">
+    <div class="check"><div class="cb"></div><div class="ct"><strong>账号名查重+注册</strong><span>「归身」和「安身」在中国商标局41类/44类查重，同时在小红书/知乎查账号名是否被占用，选可用的那个注册</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>注册3个核心账号</strong><span>小红书（归身/安身）+ 知乎（同名）+ 公众号订阅号（紫尘阁书院）</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>建Gemini Gem</strong><span>把S6章节的提示词填入，测试出第一篇内容，确认风格符合紫尘阁</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>建NotebookLM知识库</strong><span>上传三衡化中医全文+师父讲课文字素材，建成「紫尘阁三衡知识库」</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>发第一条内容</strong><span>用「你花了20年学赢，没人教你赢了怎么活」这个选题，在小红书和知乎同时发布</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>建内容数据表</strong><span>一个飞书/腾讯文档即可：日期·平台·标题·点赞·收藏·评论·粉丝变化。每天填1分钟</span></div></div>
+  </div>
+
+  <h2>第一个月内完成</h2>
+  <div class="checks">
+    <div class="check"><div class="cb"></div><div class="ct"><strong>写出「你走进紫尘阁的故事」</strong><span>这是目前最大的内容缺口。从商业世界走进紫尘阁，这个故事会让最难说服的用户停下来</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>设置OpenClaw批量改写流水线</strong><span>把公众号/知乎内容批量改写为百家号SEO版，确认质量后设置定时发布</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>确定19-99元体验项目正式名称和承接话术</strong><span>这是转化链路的第一个关口，要有明确的"来了之后做什么"的描述</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>整理义工名单分层</strong><span>把428人按「公众号组/视觉组/课程组助教」分层，找出参与≥2年的活跃者，列出第2个月招募候选名单（约20人）</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>公众号菜单+自动回复设置</strong><span>菜单：了解三衡/免费义诊/书院体验。自动回复：触发词"义诊/体验/预约"时自动回复联系方式</span></div></div>
+  </div>
+
+  <h2>第二个月内完成</h2>
+  <div class="checks">
+    <div class="check"><div class="cb"></div><div class="ct"><strong>完成3人团队组建</strong><span>内容执行+视觉发布+社群对接，全部从义工中实操测试选出，不靠简历靠结果</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>建立义工积分共享文档</strong><span>腾讯文档即可，能登记+查询就够，不要搞复杂系统</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>向义工发出第一条预热信息</strong><span>「我在做一件你早就认同的事，现在开始在网上说了。先看我们发什么，觉得好就转发。」</span></div></div>
+    <div class="check"><div class="cb"></div><div class="ct"><strong>Claude Code：建三衡知识JSON库</strong><span>把三衡化中医按四大支柱结构化，建成可检索的知识数据库，供AI生成内容时精准提取</span></div></div>
+  </div>
+
+  <h2>每次发布内容前的5问</h2>
+  <div class="note na">
+    <p>□ 有没有越界到医疗表达？（治愈/疗效/替代诊疗）</p>
+    <p>□ 标题够不够像人说的话？（不像AI写的）</p>
+    <p>□ 第一段有没有体感？（不是理论开头）</p>
+    <p>□ 内容有没有太空、太玄？（能不能落到生活里）</p>
+    <p>□ 结尾有没有轻轻带到书院承接？（义诊/体验/关注）</p>
+  </div>
+
+  <h2>仍需补充的关键信息（你来填）</h2>
+  <div class="note nr">
+    <p>① <strong>阁主说过的最让你记住的一句原话</strong>——这是所有内容的灵魂句，目前缺失</p>
+    <p>② <strong>你走进紫尘阁的故事</strong>——从商业世界到传统文化的转折，最强内容原料</p>
+    <p>③ <strong>19-99元体验项目的正式名称</strong>——确定后才能统一对外表达</p>
+    <p>④ <strong>账号视觉锤定稿</strong>——归身/安身的头像、主色、字体，统一后不要随意改</p>
+  </div>
+</div>
+
+</div><!-- /body -->
+
+<div class="footer">
+  <div class="footer-m">大医精诚，济世救民</div>
+  <div class="footer-s">大医派紫尘阁 · 品牌手册 2.0 · 一人公司起盘版 · 内部保密文件</div>
+</div>
+
+<script>
+const secs=document.querySelectorAll('[id]');
+const links=document.querySelectorAll('.nav a');
+new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.remove('on'));
+      const l=document.querySelector(`.nav a[href="#${e.target.id}"]`);
+      if(l)l.classList.add('on');
+    }
+  });
+},{rootMargin:'-15% 0px -70% 0px'}).observe(...Array.from(secs));
+// also handle click
+secs.forEach(s=>{
+  new IntersectionObserver(es=>es.forEach(e=>{
+    if(e.isIntersecting){
+      links.forEach(a=>a.classList.remove('on'));
+      const l=document.querySelector(`.nav a[href="#${e.target.id}"]`);
+      if(l)l.classList.add('on');
+    }
+  }),{rootMargin:'-15% 0px -70% 0px'}).observe(s);
+});
+</script>
+</body>
+</html>

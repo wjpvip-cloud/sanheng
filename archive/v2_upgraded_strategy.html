@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫尘阁 · 升级战略（已验证阶段）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background: #F5F2EE;
+  color: #1A1814;
+}
+.fragment-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+</style>
+</head>
+<body>
+<div style="background:#FBF0D8;border-bottom:1px solid #E8D8B0;padding:14px 24px;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;font-size:13px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+    <a href="../index.html" style="color:#5C3200;text-decoration:none;letter-spacing:.05em;font-weight:600">← 返回文献库首页</a>
+    <span style="color:#A06820;font-size:11px;letter-spacing:.15em;font-weight:600">ARCHIVE · 历史归档</span>
+  </div>
+  <div style="color:#5C3200;font-size:12.5px;line-height:1.6">
+    <strong>⚠ 此文档为历史版本</strong>（v2 · 已验证阶段诊断版），核心内容已整合进 <a href="../docs/strategy-v3.html" style="color:#A06820;font-weight:600">《战略主干 v3.0》</a>。保留此文档仅用于历史追溯，不作为当前执行依据。
+  </div>
+</div>
+
+<div class="fragment-wrapper">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.root { padding: 20px 0; font-family: var(--font-sans, sans-serif); }
+.nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.nb { padding: 7px 14px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-secondary); font-family: inherit; transition: all .15s; }
+.nb.on { background: #085041; color: #E1F5EE; border-color: #085041; font-weight: 500; }
+.pn { display: none; }
+.pn.on { display: block; }
+.sec { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .1em; margin: 28px 0 12px; padding-bottom: 7px; border-bottom: 1px solid var(--color-border-tertiary); }
+.sec:first-child { margin-top: 0; }
+.hl { padding: 13px 16px; font-size: 13px; line-height: 1.85; margin-bottom: 12px; border-radius: 0 8px 8px 0; }
+.g { background: #E1F5EE; border-left: 3px solid #1D9E75; color: #04342C; }
+.r { background: #FCEBEB; border-left: 3px solid #E24B4A; color: #501313; }
+.a { background: #FAEEDA; border-left: 3px solid #BA7517; color: #412402; }
+.p { background: #EEEDFE; border-left: 3px solid #534AB7; color: #26215C; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-bottom: 12px; }
+.card { border-radius: 12px; padding: 16px; border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); margin-bottom: 0; }
+.ct { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.cd { font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; }
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+table.t th { padding: 8px 12px; font-size: 11px; font-weight: 600; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border-tertiary); text-align: left; letter-spacing:.04em; }
+table.t td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); vertical-align: top; line-height: 1.65; }
+table.t tr:last-child td { border-bottom: none; }
+.ok { color: #0F6E56; font-weight: 500; }
+.no { color: #A32D2D; }
+.warn { color: #BA7517; font-weight: 500; }
+.tag { display: inline-block; padding: 2px 9px; border-radius: 12px; font-size: 11px; font-weight: 500; margin: 2px; }
+.tg { background: #E1F5EE; color: #085041; }
+.tp { background: #EEEDFE; color: #26215C; }
+.ta { background: #FAEEDA; color: #633806; }
+.tr { background: #FCEBEB; color: #791F1F; }
+.num-row { display: flex; gap: 10px; margin-bottom: 16px; }
+.num-card { flex: 1; background: var(--color-background-secondary); border-radius: 10px; padding: 14px; text-align: center; border: 0.5px solid var(--color-border-tertiary); }
+.num-big { font-size: 24px; font-weight: 500; line-height: 1; margin-bottom: 4px; }
+.num-label { font-size: 11px; color: var(--color-text-secondary); line-height: 1.5; }
+.nc-green { color: #0F6E56; }
+.nc-purple { color: #534AB7; }
+.nc-amber { color: #BA7517; }
+.nc-coral { color: #993C1D; }
+.step { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.sn { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 600; flex-shrink: 0; }
+.sng { background: #E1F5EE; color: #085041; }
+.snp { background: #EEEDFE; color: #26215C; }
+.sna { background: #FAEEDA; color: #633806; }
+.sb { flex: 1; }
+.st { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+.sd { font-size: 13px; color: var(--color-text-secondary); line-height: 1.75; }
+.arr { text-align: left; color: var(--color-text-secondary); margin: 0 0 14px 40px; font-size: 13px; }
+.stream-row { display: flex; align-items: stretch; gap: 0; margin-bottom: 6px; border-radius: 8px; overflow: hidden; border: 0.5px solid var(--color-border-tertiary); }
+.stream-label { width: 130px; min-width: 130px; padding: 12px 14px; font-size: 12px; color: var(--color-text-secondary); display: flex; align-items: center; background: var(--color-background-secondary); border-right: 0.5px solid var(--color-border-tertiary); line-height: 1.4; }
+.stream-body { flex: 1; padding: 11px 14px; font-size: 13px; color: var(--color-text-primary); line-height: 1.7; background: var(--color-background-primary); }
+.stream-num { font-size: 16px; font-weight: 500; margin-left: auto; padding: 12px 14px; display: flex; align-items: center; white-space: nowrap; }
+.phase { border-radius: 10px; overflow: hidden; margin-bottom: 12px; border: 0.5px solid var(--color-border-tertiary); }
+.phase-h { padding: 11px 16px; font-size: 13px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+.ph1 { background: #E1F5EE; color: #085041; }
+.ph2 { background: #EEEDFE; color: #26215C; }
+.ph3 { background: #FAEEDA; color: #633806; }
+.phase-b { padding: 13px 16px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.85; background: var(--color-background-primary); }
+.phase-b strong { color: var(--color-text-primary); }
+.divider { height: 1px; background: var(--color-border-tertiary); margin: 20px 0; }
+</style>
+
+<div class="root">
+<div class="nav">
+  <button class="nb on" onclick="sw(0)">真实诊断</button>
+  <button class="nb" onclick="sw(1)">突破口</button>
+  <button class="nb" onclick="sw(2)">收入升级</button>
+  <button class="nb" onclick="sw(3)">线上体系</button>
+  <button class="nb" onclick="sw(4)">海外路径</button>
+  <button class="nb" onclick="sw(5)">三月行动</button>
+</div>
+
+<!-- 真实诊断 -->
+<div class="pn on" id="p0">
+  <div class="sec">重新认识你们的真实现状</div>
+
+  <div class="num-row">
+    <div class="num-card"><div class="num-big nc-green">200万</div><div class="num-label">2025年总收入<br>产品+课程各100万</div></div>
+    <div class="num-card"><div class="num-big nc-purple">10万</div><div class="num-label">存量粉丝<br>1000人每日活跃</div></div>
+    <div class="num-card"><div class="num-big nc-amber">700㎡</div><div class="num-label">杭州书院<br>大运河历史街区</div></div>
+    <div class="num-card"><div class="num-big nc-coral">3体系</div><div class="num-label">门诊+养生+道院<br>你负责道院文化</div></div>
+  </div>
+
+  <div class="hl g" style="font-size:14px"><strong>根本判断：你们不是创业期，你们是"已验证阶段"。</strong><br>
+  年收入200万、有场地、有粉丝、有产品——这是绝大多数中医文化机构梦寐以求的起点。真正的问题只有一个：<strong>流量池封闭，增长停滞。</strong></div>
+
+  <div class="sec">核心问题的精准诊断</div>
+
+  <div class="r"><strong>问题1：10万粉丝是"存量池"，没有持续的新鲜血液注入</strong><br>
+  1000人每日活跃，这是一个稳定但不增长的社群。每年9月店庆是峰值，其余时间靠老粉自然消耗。<br>
+  没有突破现有人群 = 没有系统性的公域引流机制，现有的内容没有触达圈外人。</div>
+
+  <div class="r"><strong>问题2：线下场地的势能没有被互联网放大</strong><br>
+  大运河历史街区、700㎡书院、三体系同址——这是极强的内容素材和体验场景，但现在只服务到店客人。<br>
+  场地对线上用户来说是"隐形的"，没有被系统性地拍成内容、做成体验产品、向全国传播。</div>
+
+  <div class="r"><strong>问题3：三个体系之间缺乏"转化漏斗"连接</strong><br>
+  门诊、养生保健、道院文化三个体系各自运作，用户进入一个体系后没有被系统引导进入另外两个。<br>
+  一个来看病的人，本可以成为养生课学员，再成为道院文化的信仰用户——但这条路径没有被设计出来。</div>
+
+  <div class="sec">你真正被低估的资产（重新排序）</div>
+  <table class="t">
+    <tr><th>资产</th><th>现在的使用程度</th><th>潜力上限</th></tr>
+    <tr><td><strong>大运河街区的700㎡书院</strong></td><td class="warn">30%——只服务线下到店</td><td class="ok">内容拍摄基地 + 国内外游学目的地 + 文化IP载体</td></tr>
+    <tr><td><strong>1000个每日活跃紫薯</strong></td><td class="warn">40%——日常消费，未被激活成传播者</td><td class="ok">城市合伙人候选人 + 自发传播网络 + 付费升级池</td></tr>
+    <tr><td><strong>师父的讲课内容积累</strong></td><td class="no">10%——线下讲过，未数字化</td><td class="ok">课程产品库 + 内容素材库 + 海外传播素材</td></tr>
+    <tr><td><strong>三体系联动空间</strong></td><td class="no">20%——各自独立，未联通</td><td class="ok">从"看病"到"养生"到"信仰"的完整用户旅程</td></tr>
+    <tr><td><strong>9月店庆的势能</strong></td><td class="warn">单次爆发，没有延续</td><td class="ok">每年最大的新客获取节点，应提前3个月布局</td></tr>
+  </table>
+</div>
+
+<!-- 突破口 -->
+<div class="pn" id="p1">
+  <div class="sec">突破现有人群的三个入口</div>
+
+  <div class="hl p" style="font-size:14px"><strong>核心逻辑：新人群不会主动找你，你要去他们在的地方出现。</strong><br>大运河街区本身就是杭州最重要的文旅流量场，每天有大量陌生访客经过你的门口，但他们不知道里面是什么。</div>
+
+  <div class="card" style="margin-bottom:12px;border-top:3px solid #1D9E75">
+    <div class="ct">入口1：大运河文旅流量（最快见效，几乎零成本）</div>
+    <div class="cd">
+      大运河历史街区本身就是杭州热门打卡地，大量本地人和外地游客经过大兜路。<br><br>
+      <strong>做法：</strong>在书院门口设计一个"可以被拍照"的视觉锚点——一句师父的金句、一个道家符号、一个古朴的场景布置。<br>
+      游客拍了发小红书，标注大兜路，你们的书院自然出现在"杭州大运河探店"的内容流里。<br><br>
+      <span class="tag tg">零广告费</span><span class="tag tg">持续产出UGC内容</span><span class="tag tg">精准触达文化爱好者</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;border-top:3px solid #534AB7">
+    <div class="ct">入口2：把书院做成"内容拍摄基地"（让线上用户看见实体空间）</div>
+    <div class="cd">
+      现在线上用户看不到大运河边的书院、看不到三个体系同址的真实场景。<br><br>
+      <strong>做法：</strong>每周固定拍一组"书院日常"——大运河晨雾、师父在古朴空间讲课的背影、道院的香炉与典籍。<br>
+      这类内容在小红书和抖音的"文化空间"赛道有极强传播力，且完全不涉及功效宣称。<br><br>
+      <span class="tag tp">建立线上空间感</span><span class="tag tp">让外地用户产生"想去"的冲动</span><span class="tag tp">直接驱动线下游学转化</span>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:12px;border-top:3px solid #BA7517">
+    <div class="ct">入口3：三体系联动漏斗（把现有客户变成更高价值用户）</div>
+    <div class="cd">
+      现在门诊来看病的人，不知道旁边有养生课；养生课学员，不知道道院文化板块。<br><br>
+      <strong>做法：</strong>设计一张"紫尘阁全景地图"——实体版放在书院每个角落，数字版发给每个到店客人。<br>
+      门诊患者结束后收到一张"道家养生七日指南"（免费）→ 引导体验养生课 → 发现道院文化。<br><br>
+      <span class="tag ta">不需要获取新客</span><span class="tag ta">提升现有客户的价值深度</span><span class="tag ta">增加复购与升级</span>
+    </div>
+  </div>
+</div>
+
+<!-- 收入升级 -->
+<div class="pn" id="p2">
+  <div class="sec">现有200万的基础上，如何升级到500万+</div>
+
+  <div class="hl g"><strong>不是要推翻现有模式，而是在现有基础上加三层：线上复制、高端提价、海外溢价。</strong></div>
+
+  <div class="sec">收入结构对比</div>
+  <table class="t">
+    <tr><th>收入来源</th><th>2025年现状</th><th>升级后目标</th><th>关键动作</th></tr>
+    <tr>
+      <td>产品销售</td>
+      <td>100万</td>
+      <td class="ok">150万</td>
+      <td>线上私域复购 + 合伙人分销 + 不提高单价，提高复购率</td>
+    </tr>
+    <tr>
+      <td>线下课程（杭州）</td>
+      <td>100万</td>
+      <td class="ok">120万</td>
+      <td>三体系联动提升客单价，9月店庆做成年度最大招募节点</td>
+    </tr>
+    <tr>
+      <td>线上课程（全国）</td>
+      <td>基本为零</td>
+      <td class="ok">80-120万</td>
+      <td>把线下课程数字化，向全国1万+紫薯销售，详见"线上体系"</td>
+    </tr>
+    <tr>
+      <td>游学/研习营</td>
+      <td>少量</td>
+      <td class="ok">100-150万</td>
+      <td>杭州大运河书院营 + 终南山道场营，全年4-6期，每期15-20人</td>
+    </tr>
+    <tr>
+      <td>海外学员</td>
+      <td>零</td>
+      <td class="ok">50-80万</td>
+      <td>YouTube/X引流，外籍学员来华游学，详见"海外路径"</td>
+    </tr>
+    <tr>
+      <td>会员/合伙人</td>
+      <td>零</td>
+      <td class="ok">50-80万</td>
+      <td>会员年费 + 城市合伙人授权费，详见下方</td>
+    </tr>
+    <tr style="background:var(--color-background-secondary)">
+      <td><strong>合计</strong></td>
+      <td><strong>200万</strong></td>
+      <td style="color:#0F6E56;font-weight:500;font-size:15px"><strong>550-620万</strong></td>
+      <td>以上六条同时推进，12-18个月实现</td>
+    </tr>
+  </table>
+
+  <div class="sec">会员体系（现有200万基础上的增量）</div>
+  <table class="t">
+    <tr><th>层级</th><th>年费</th><th>核心权益</th><th>保守估算</th></tr>
+    <tr><td>紫薯会员</td><td>580元/年</td><td>线上全部课程 + 优先线下报名 + 会员专属内容</td><td>500人×580 = <span class="ok">29万</span></td></tr>
+    <tr><td>荣誉紫薯</td><td>1980元/年</td><td>师父月度直播 + 专属小群 + 游学折扣</td><td>100人×1980 = <span class="ok">19.8万</span></td></tr>
+    <tr><td>城市合伙人</td><td>2980元/年</td><td>品牌授权+培训+课程分销30%佣金</td><td>30人×2980 = <span class="ok">8.9万</span></td></tr>
+    <tr><td colspan="3" style="color:var(--color-text-secondary)">会员体系年收入小计</td><td class="ok"><strong>约57.7万</strong></td></tr>
+  </table>
+</div>
+
+<!-- 线上体系 -->
+<div class="pn" id="p3">
+  <div class="sec">线上体系——把杭州书院的能量传递给全国用户</div>
+
+  <div class="a"><strong>核心逻辑：</strong>线下已有200万收入，说明内容有价值。线上课程是把同样的内容卖给更多人——边际成本接近零，但需要系统性建设。</div>
+
+  <div class="step">
+    <div class="sn sng">1</div>
+    <div class="sb">
+      <div class="st">把已有的线下课程"数字化"（最快的线上收入来源）</div>
+      <div class="sd">
+        你们已经开了83期线下课程，内容早就有了。第一步不是做新课，是把已有的精华课程录制成视频课程上架。<br>
+        用AI辅助把师父的讲课文字稿整理成结构化课程大纲 → 补录关键段落 → 配上大运河书院的实景画面<br>
+        <span class="tag tg">第一个月可以上线</span><span class="tag tg">无需大量新内容创作</span>
+      </div>
+    </div>
+  </div>
+  <div class="arr">↓</div>
+
+  <div class="step">
+    <div class="sn snp">2</div>
+    <div class="sb">
+      <div class="st">线上课程定价体系</div>
+      <div class="sd">
+        入门体验课：9.9-49元（7天，引流用）<br>
+        单科课程：198-398元（起居/饮食/情志/福德各一门）<br>
+        全科系统课：798-980元（四门打包 + 书院实景版）<br>
+        年度陪伴课：1280元/年（每月新内容 + 师父答疑直播）<br>
+        <span class="tag tp">面向全国10万紫薯，哪怕1%购买全科课 = 100人×798 = 8万</span>
+      </div>
+    </div>
+  </div>
+  <div class="arr">↓</div>
+
+  <div class="step">
+    <div class="sn sna">3</div>
+    <div class="sb">
+      <div class="st">AI加持的内容生产体系（你一个人管道院文化板块）</div>
+      <div class="sd">
+        每天：AI根据品牌手册生成3条内容，你15分钟审核后发布<br>
+        每周：用书院实景拍一组"道院日常"短视频，AI生成字幕和说明文案<br>
+        每月：师父讲一次课，AI整理成课程模块，同时剪成10条短视频内容<br>
+        <span class="tag ta">一个人管道院文化板块的全部线上内容，AI承担80%的生产工作</span>
+      </div>
+    </div>
+  </div>
+  <div class="arr">↓</div>
+
+  <div class="step">
+    <div class="sn sng">4</div>
+    <div class="sb">
+      <div class="st">账号矩阵（合规的内容-销售分离架构）</div>
+      <div class="sd">
+        文化内容号（小红书/抖音/视频号）：纯文化内容，引导加微信<br>
+        课程销售号（公众号/小鹅通）：课程介绍和报名，不含功效宣称<br>
+        书院体验号（小红书）：书院实景、打卡、探店内容，吸引文旅流量<br>
+        海外内容号（YouTube/X）：中文内容英文版，面向海外华人和外籍用户
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 海外路径 -->
+<div class="pn" id="p4">
+  <div class="sec">海外路径——杭州书院 + 大运河是独特的出海叙事</div>
+
+  <div class="hl g"><strong>你比终南山多了一个海外优势：杭州大运河是UNESCO世界文化遗产，国际知名度远高于终南山。大运河边的中医书院，对老外来说是极具吸引力的叙事场景。</strong></div>
+
+  <div class="sec">海外内容的三层叙事</div>
+  <div class="grid3" style="margin-bottom:16px">
+    <div class="card">
+      <div class="ct" style="color:#085041">第一层：场景吸引</div>
+      <div class="cd" style="font-size:12px">大运河边的古建筑书院 + 道家香炉典籍 + 晨雾实景<br><br>面向：全球文化旅游爱好者<br>平台：YouTube Shorts / X / Instagram</div>
+    </div>
+    <div class="card">
+      <div class="ct" style="color:#26215C">第二层：知识吸引</div>
+      <div class="cd" style="font-size:12px">三衡理论英文版讲解 + 道家生活哲学 + 中医思维方式<br><br>面向：海外wellness/东方哲学爱好者<br>平台：YouTube长视频 / Podcast</div>
+    </div>
+    <div class="card">
+      <div class="ct" style="color:#633806">第三层：体验转化</div>
+      <div class="cd" style="font-size:12px">来杭州/终南山亲身体验 + 外籍学员游学课程<br><br>面向：愿意来华的深度用户<br>产品：杭州书院营5天 / 终南山道场营7天</div>
+    </div>
+  </div>
+
+  <div class="sec">零成本启动海外的具体做法</div>
+
+  <div class="phase">
+    <div class="phase-h ph1"><span>现在立即做（零额外成本）</span><span class="tag tg">AI自动完成</span></div>
+    <div class="phase-b">
+      把每周已发布的中文视频，用AI生成英文字幕 + 英文标题/描述，直接上传YouTube和X<br>
+      重点：书院实景内容 + 师父讲道家哲学的片段，这两类最受海外用户欢迎<br>
+      目标：每周1条，3个月积累12条内容，建立频道存在感
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h ph2"><span>第二个月（有了内容执行同事后）</span><span class="tag tp">少量额外投入</span></div>
+    <div class="phase-b">
+      专门针对海外拍一组"大运河边的中医书院"系列：5分钟左右，英文旁白，介绍书院空间和三衡理论<br>
+      这类内容在YouTube的"China + Traditional Medicine + Heritage"赛道几乎是空白<br>
+      同时在X上用英文发师父金句，标注 #TCM #Taoism #GrandCanal #Hangzhou
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h ph3"><span>第三个月起（海外游学产品）</span><span class="tag ta">高价值变现</span></div>
+    <div class="phase-b">
+      设计"Hangzhou Grand Canal TCM Immersion"（杭州大运河中医沉浸体验）：5天，英文授课，包含书院课程+运河游览+道家体验<br>
+      定价：$1500-2500美元/人（约1-1.8万人民币），面向海外华人和对中医感兴趣的外籍人士<br>
+      <strong>关键优势：UNESCO世界遗产旁的中医书院，这个组合在全球独一无二</strong>
+    </div>
+  </div>
+
+  <div class="hl a"><strong>海外一年内的现实目标：</strong>YouTube积累100-500订阅者，吸引到5-10个外籍学员来杭游学（收入约10-18万），建立海外数字资产基础。不要在第一年期待大规模变现，海外是3-5年的布局。</div>
+</div>
+
+<!-- 三月行动 -->
+<div class="pn" id="p5">
+  <div class="sec">基于真实现状的三个月优先行动</div>
+
+  <div class="hl p"><strong>你不是从零开始，所以三个月的目标不是"验证"，而是"破局"——打通一条新人群进入的通道，同时激活存量紫薯的付费升级。</strong></div>
+
+  <div class="phase">
+    <div class="phase-h ph1"><span>第一个月：激活存量 + 开通线上课程</span><span class="tag tg">你一个人做</span></div>
+    <div class="phase-b">
+      <strong>周1-2：盘点资产</strong><br>
+      · 整理历史讲课录音/文字稿，筛选出最精华的3-5讲作为线上课程原材料<br>
+      · 在现有1000个活跃紫薯里找10-20个最有传播力的，建"紫薯种子群"<br>
+      · 梳理书院三体系的现有客户，找出"只用了一个体系"的用户，设计交叉引导路径<br><br>
+      <strong>周3-4：发布第一个线上产品</strong><br>
+      · 把一讲精华课整理成"七天道家生活体验营"（9.9元），上架小鹅通<br>
+      · 向全体紫薯发一次推送：这是我们第一次把课程搬到线上，欢迎来体验<br>
+      · 书院门口设置"网红打卡点"，开始吸引大运河自然流量<br>
+      <strong>目标：体验营报名200人以上，线上课程收入2000元以上，验证线上逻辑</strong>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h ph2"><span>第二个月：招内容执行，上线完整课程体系</span><span class="tag tp">1+1人</span></div>
+    <div class="phase-b">
+      <strong>招到第一个远程伙伴（内容执行）后：</strong><br>
+      · 完成四门单科线上课程录制上架（每门198元）<br>
+      · AI内容体系全速运转：每天8-10条内容，书院实景系列每周一组<br>
+      · 向体验营学员推销全科课，目标成交50单 = 9900元<br>
+      · 启动海外账号：每周1条双语视频上传YouTube/X<br>
+      · 开始筹备第一期"杭州书院文化游学营"（9月店庆前推出）<br>
+      <strong>目标：月课程收入突破3万元，新增500名线上关注</strong>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h ph3"><span>第三个月：启动会员体系 + 筹备游学营</span><span class="tag ta">1+2人</span></div>
+    <div class="phase-b">
+      <strong>招到第二个伙伴（社群运营）后：</strong><br>
+      · 正式发布"紫薯会员"体系，向1000个活跃紫薯定向邀请（目标100人 = 5.8万）<br>
+      · 招募首批5个城市合伙人（从种子群里产生），每人缴纳2980元年费 = 1.49万<br>
+      · 策划9月店庆：以"两周年 × 紫薯家族大会"为主题，做成年度最大引流事件<br>
+      · 确认第一期杭州书院游学营名单（15人 × 4980元 = 7.47万）<br>
+      <strong>目标：月总收入突破15万元，9月店庆前完成所有体系搭建</strong>
+    </div>
+  </div>
+
+  <div class="sec">三月结束后的真实状态</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ct">商业层面</div>
+      <div class="cd">
+        · 线上课程收入：月稳定3-5万<br>
+        · 会员年费：一次性收入约7-10万<br>
+        · 游学营：一期7.5万（9月）<br>
+        · 月总收入较现在提升50-80%
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct">系统层面</div>
+      <div class="cd">
+        · AI内容体系独立运转<br>
+        · 线上课程平台搭建完成<br>
+        · 海外账号有12+条内容积累<br>
+        · 城市合伙人网络雏形形成
+      </div>
+    </div>
+  </div>
+
+  <div class="hl g" style="margin-top:4px"><strong>最重要的一件事：</strong>9月店庆是今年最重要的节点。从现在起就要为9月布局——线上课程、会员体系、游学营、城市合伙人都可以在9月店庆时集中发布，形成爆发效应。这比任何单独的推广都更有力量。</div>
+</div>
+
+</div>
+<script>
+function sw(i) {
+  document.querySelectorAll('.nb').forEach((b,j)=>b.classList.toggle('on',j===i));
+  document.querySelectorAll('.pn').forEach((p,j)=>p.classList.toggle('on',j===i));
+}
+</script>
+
+</div>
+</body>
+</html>

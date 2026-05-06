@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫尘阁 · 战略规划（早期版）</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background: #F5F2EE;
+  color: #1A1814;
+}
+.fragment-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+</style>
+</head>
+<body>
+<div style="background:#FBF0D8;border-bottom:1px solid #E8D8B0;padding:14px 24px;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;font-size:13px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+    <a href="../index.html" style="color:#5C3200;text-decoration:none;letter-spacing:.05em;font-weight:600">← 返回文献库首页</a>
+    <span style="color:#A06820;font-size:11px;letter-spacing:.15em;font-weight:600">ARCHIVE · 历史归档</span>
+  </div>
+  <div style="color:#5C3200;font-size:12.5px;line-height:1.6">
+    <strong>⚠ 此文档为历史版本</strong>（v1 · 早期英文版），核心内容已整合进 <a href="../docs/strategy-v3.html" style="color:#A06820;font-weight:600">《战略主干 v3.0》</a>。保留此文档仅用于历史追溯，不作为当前执行依据。
+  </div>
+</div>
+
+<div class="fragment-wrapper">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.root { padding: 20px 0; font-family: var(--font-sans, sans-serif); }
+.nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.nb { padding: 7px 14px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-secondary); font-family: inherit; transition: all .15s; }
+.nb.on { background: #26215C; color: #EEEDFE; border-color: #26215C; font-weight: 500; }
+.pn { display: none; }
+.pn.on { display: block; }
+.sec { font-size: 12px; font-weight: 500; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .08em; margin-bottom: 12px; padding-bottom: 6px; border-bottom: 1px solid var(--color-border-tertiary); margin-top: 4px; }
+.card { border-radius: 12px; padding: 16px; border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); margin-bottom: 12px; }
+.ct { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.cd { font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; }
+.hl { padding: 13px 16px; font-size: 13px; line-height: 1.8; margin-bottom: 12px; border-radius: 0 8px 8px 0; }
+.g { background: #E1F5EE; border-left: 3px solid #1D9E75; color: #04342C; }
+.r { background: #FCEBEB; border-left: 3px solid #E24B4A; color: #501313; }
+.a { background: #FAEEDA; border-left: 3px solid #BA7517; color: #412402; }
+.p { background: #EEEDFE; border-left: 3px solid #534AB7; color: #26215C; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.step { display: flex; gap: 12px; margin-bottom: 14px; align-items: flex-start; }
+.sn { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; margin-top: 1px; }
+.sng { background: #E1F5EE; color: #085041; }
+.snp { background: #EEEDFE; color: #26215C; }
+.sna { background: #FAEEDA; color: #633806; }
+.snr { background: #FCEBEB; color: #791F1F; }
+.sb { flex: 1; }
+.st { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+.sd { font-size: 13px; color: var(--color-text-secondary); line-height: 1.7; }
+.arr { text-align: center; color: var(--color-text-secondary); margin: 0 0 14px 40px; font-size: 14px; }
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; }
+table.t th { padding: 8px 12px; font-size: 12px; font-weight: 500; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border-tertiary); text-align: left; }
+table.t td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); vertical-align: top; line-height: 1.6; }
+table.t tr:last-child td { border-bottom: none; }
+.ok { color: #0F6E56; font-weight: 500; }
+.no { color: #A32D2D; }
+.warn { color: #BA7517; font-weight: 500; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 500; margin: 2px; }
+.tg { background: #E1F5EE; color: #085041; }
+.tp { background: #EEEDFE; color: #26215C; }
+.ta { background: #FAEEDA; color: #633806; }
+.tr { background: #FCEBEB; color: #791F1F; }
+.phase { border-radius: 10px; overflow: hidden; margin-bottom: 14px; border: 0.5px solid var(--color-border-tertiary); }
+.phase-h { padding: 10px 16px; font-size: 13px; font-weight: 500; display: flex; justify-content: space-between; align-items: center; }
+.ph1 { background: #E1F5EE; color: #085041; }
+.ph2 { background: #EEEDFE; color: #26215C; }
+.ph3 { background: #FAEEDA; color: #633806; }
+.phase-b { padding: 12px 16px; font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; background: var(--color-background-primary); }
+.rev-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.rev-label { width: 120px; font-size: 12px; color: var(--color-text-secondary); flex-shrink: 0; }
+.rev-bar { height: 32px; border-radius: 6px; display: flex; align-items: center; padding: 0 12px; font-size: 12px; font-weight: 500; }
+.rb1 { background: #E1F5EE; color: #085041; }
+.rb2 { background: #EEEDFE; color: #26215C; }
+.rb3 { background: #FAEEDA; color: #633806; }
+.rb4 { background: #E1F5EE; color: #085041; }
+.rb5 { background: #26215C; color: #9FE1CB; }
+</style>
+
+<div class="root">
+<div class="nav">
+  <button class="nb on" onclick="sw(0)">战略定位</button>
+  <button class="nb" onclick="sw(1)">三月路线图</button>
+  <button class="nb" onclick="sw(2)">盈利模型</button>
+  <button class="nb" onclick="sw(3)">海外传播</button>
+  <button class="nb" onclick="sw(4)">紫薯网络</button>
+  <button class="nb" onclick="sw(5)">AI工作台</button>
+</div>
+
+<!-- 战略定位 -->
+<div class="pn on" id="p0">
+  <div class="p" style="font-size:15px;font-weight:500;margin-bottom:16px">
+    你现在的核心矛盾：资源极丰富，但一个人，必须极度聚焦<br>
+    <span style="font-size:13px;font-weight:400">把所有想法全做=什么都做不成。三个月内只做一件事：让盈利模型跑通。</span>
+  </div>
+
+  <div class="sec">你真正拥有的差异化资产（市场上无可替代的）</div>
+  <div class="grid2">
+    <div class="card" style="border-left:3px solid #534AB7">
+      <div class="ct">极深的传承壁垒</div>
+      <div class="cd">1300年大医派+终南山道场+22代道统——任何竞品无法复制，是全球唯一</div>
+    </div>
+    <div class="card" style="border-left:3px solid #0F6E56">
+      <div class="ct">已有的10万紫薯</div>
+      <div class="cd">不是冷启动，是暖启动——这些人已经信任紫尘阁，是最容易激活的资产</div>
+    </div>
+    <div class="card" style="border-left:3px solid #BA7517">
+      <div class="ct">道场+洞天福地</div>
+      <div class="cd">终南山实体空间是稀缺资源——线下体验没有法规限制，且客单价极高</div>
+    </div>
+    <div class="card" style="border-left:3px solid #D85A30">
+      <div class="ct">师父的文化底蕴</div>
+      <div class="cd">不只是中医，是道家修行功法+溯源文化——这在内容出海赛道是独特的叙事素材</div>
+    </div>
+  </div>
+
+  <div class="sec">和你提到的几个模式的本质差异</div>
+  <table class="t">
+    <tr><th>模式</th><th>本质</th><th>你的差异</th></tr>
+    <tr><td>远方好物</td><td>产品溯源+电商销售</td><td class="ok">你有传承叙事，不是溯源，是"活的道统"</td></tr>
+    <tr><td>云集</td><td>社交分销+微商裂变</td><td class="ok">你不卖货，你卖信仰体系和生活方式</td></tr>
+    <tr><td>彩虹星球</td><td>情绪社群+轻量付费</td><td class="ok">你有实体道场+有形的传承空间，不是线上虚拟社区</td></tr>
+    <tr><td><strong>紫尘阁</strong></td><td colspan="2" class="ok"><strong>道家文化×中医传承×终南山体验×全球华人精神社群</strong>——四者同时具备的，只有你</td></tr>
+  </table>
+
+  <div class="sec">一句话战略定位</div>
+  <div class="g" style="font-size:15px;font-weight:500">
+    "道家大医派的全球传承共同体"<br>
+    <span style="font-size:13px;font-weight:400">内容让人相信，课程让人学习，道场让人体验，紫薯让人传播——四个飞轮，彼此驱动</span>
+  </div>
+</div>
+
+<!-- 三月路线图 -->
+<div class="pn" id="p1">
+  <div class="a"><strong>原则：一个人，三个月，只做"最小可行盈利模型"。</strong>不要同时做海外、做紫薯网络、做所有产品——先把国内的一条线跑通，有了现金流再扩张。</div>
+
+  <div class="phase">
+    <div class="phase-h ph1"><span>第一个月（月1-4周）：激活存量，跑通变现链路</span><span class="tag tg">一个人能做</span></div>
+    <div class="phase-b">
+      <strong>核心任务：把10万紫薯里最活跃的那批人激活，做出第一笔收入</strong><br><br>
+      周1-2：整理现有私域，找到最活跃的500-1000个紫薯，建一个"紫薯精英群"<br>
+      周2-3：用AI每天产出3条合规内容（纯文化故事），引导私信加微信<br>
+      周3-4：发布第一期"7天道家生活体验营"——免费或9.9元，每天一个师父金句+三衡知识点<br>
+      <strong>目标：体验营结束时，推出第一个付费产品——"三衡理论入门课"，定价198元</strong><br>
+      月底验证指标：课程成交20单=3960元，验证路径可行性
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h ph2"><span>第二个月（招到第一个远程协作者）：扩大内容产出，优化转化</span><span class="tag tp">1+1人</span></div>
+    <div class="phase-b">
+      <strong>第一个人招什么：内容执行（会用AI、能写文案、理解中医文化优先）</strong><br><br>
+      · 用AI提示词体系把每日内容产出从3条扩展到8-10条<br>
+      · 开始做第一个"产品溯源"内容系列：终南山实拍+师父故事，每周一个完整系列<br>
+      · 把7天体验营做成标准化SOP，可以每月滚动开营<br>
+      · 体验营学员推送升级课程（全科四门，定价598元）<br>
+      <strong>目标：月收入突破2万元，验证课程复购逻辑</strong>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-h ph3"><span>第三个月（招到第二个远程协作者）：开启高价值产品</span><span class="tag ta">1+2人</span></div>
+    <div class="phase-b">
+      <strong>第二个人招什么：社群运营+活动策划（负责紫薯社群激活和线下营前期筹备）</strong><br><br>
+      · 启动第一期"终南山道场体验营"（线下，3天2夜，定价4980元，限15人）<br>
+      · 同时开始海外内容尝试：把已有的中文内容让AI翻译+改写为英文，发YouTube/X（零额外成本）<br>
+      · 推出"紫薯城市合伙人"内测——先招5个城市的种子合伙人，测试分销逻辑<br>
+      · 启动会员体系内测（详见盈利模型标签页）<br>
+      <strong>目标：单月收入10万元以上，其中线下营贡献5万+</strong>
+    </div>
+  </div>
+
+  <div class="sec">三月结束时你应该拥有的</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ct">已跑通的链路</div>
+      <div class="cd">公域内容→私域加微→体验营→付费课程→线下营的完整转化路径，每个环节有数据</div>
+    </div>
+    <div class="card">
+      <div class="ct">可复制的系统</div>
+      <div class="cd">AI内容生产SOP、体验营标准流程、私信话术库——2个远程同事能独立运转</div>
+    </div>
+  </div>
+</div>
+
+<!-- 盈利模型 -->
+<div class="pn" id="p2">
+  <div class="sec">三条收入主线（按合规安全性排序）</div>
+
+  <div class="step">
+    <div class="sn sng">线1</div>
+    <div class="sb">
+      <div class="st">知识付费（合规最安全，毛利最高）</div>
+      <div class="sd">
+        三衡理论系列课程——卖"道家文化与生活智慧"，不是健康课程<br>
+        体验营9.9元→入门课198元→全科课598元→年度会员1280元/年<br>
+        <span class="tag tg">合规风险：极低</span><span class="tag tg">毛利：90%+</span><span class="tag tg">可规模化</span>
+      </div>
+    </div>
+  </div>
+  <div class="arr">↓ 课程学员天然转化为</div>
+  <div class="step">
+    <div class="sn snp">线2</div>
+    <div class="sb">
+      <div class="st">终南山线下体验（最高客单价，无互联网广告法约束）</div>
+      <div class="sd">
+        道场文化体验营（3天）4980元/人，限15人=7.5万/期<br>
+        修行功法研习班（7天）12800元/人，限10人=12.8万/期<br>
+        溯源游学（大医派传承地+洞天福地+师父讲学）19800元/人<br>
+        <span class="tag tp">合规风险：极低</span><span class="tag tp">毛利：70%+</span><span class="tag ta">一季度做2-3期</span>
+      </div>
+    </div>
+  </div>
+  <div class="arr">↓ 深度体验者成为</div>
+  <div class="step">
+    <div class="sn sna">线3</div>
+    <div class="sb">
+      <div class="st">紫薯会员体系（长期现金流）</div>
+      <div class="sd">
+        普通会员：580元/年——每月精选课+社群+优先报名线下活动<br>
+        荣誉紫薯：1980元/年——师父月度直播答疑+专属社群+线下营优先<br>
+        城市合伙人：参见紫薯网络标签页<br>
+        <span class="tag tg">合规风险：低</span><span class="tag tp">高复购</span><span class="tag ta">飞轮效应</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">三个月收入预测（保守）</div>
+  <div class="rev-row"><div class="rev-label">月1：课程验证</div><div class="rev-bar rb1" style="width:30%">~4000-8000元</div></div>
+  <div class="rev-row"><div class="rev-label">月2：规模化课程</div><div class="rev-bar rb2" style="width:55%">~1.5万-3万元</div></div>
+  <div class="rev-row"><div class="rev-label">月3：课程+线下营</div><div class="rev-bar rb3" style="width:90%">~8万-15万元</div></div>
+
+  <div class="a" style="margin-top:4px"><strong>关键认知：</strong>线下营是最快达到月收入10万的路径，且完全合规。一期15人×4980=7.47万，加上课程收入，月3破10万是现实目标而非愿景。</div>
+</div>
+
+<!-- 海外传播 -->
+<div class="pn" id="p3">
+  <div class="sec">你的问题：YouTube和X值得做吗？</div>
+  <div class="g"><strong>值得做，但不是现在全力做。正确的方式是"零边际成本的顺带输出"。</strong></div>
+
+  <div class="card">
+    <div class="ct">为什么现在不适合全力做海外</div>
+    <div class="cd">
+      你是一个人。海外内容需要英文表达、不同的叙事逻辑、独立的账号运营——这是第二套系统，不是国内系统的延伸。<br>
+      <span style="color:#A32D2D">在国内盈利模型没跑通之前，分精力做海外=两条线都做不好。</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">正确的海外策略：让AI做翻译+二次创作，几乎零成本</div>
+    <div class="cd">
+      把已有的中文内容（师父故事、终南山视频、道家传承故事）用AI翻译成英文字幕版，直接上传YouTube和X。<br>
+      不需要专门拍摄，不需要额外投入，国内内容就是海外内容的素材库。<br>
+      <span style="color:#0F6E56">这样做的意义：建立海外数字资产，等时机成熟时有基础，而不是从零开始。</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">海外最有潜力的内容方向（数据支撑）</div>
+    <div class="cd">
+      · <strong>终南山道场实景</strong>——隐士文化、山林修行，在YouTube是空白蓝海，海外人极度好奇<br>
+      · <strong>大医派传承故事</strong>——1300年历史+孙思邈道统，比针灸科普更有叙事深度<br>
+      · <strong>道家修行功法</strong>——冥想、内丹、身体修炼，全球wellness市场规模超1.3万亿美元<br>
+      · <strong>洞天福地文化</strong>——道家圣地的神秘感，类似日本神社文化的传播潜力<br>
+      <span style="color:#0F6E56">这几个方向在国内受合规限制相对少，在海外完全没有限制，是真正的差异化</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">"出口转内销"的具体路径</div>
+    <div class="cd">
+      海外内容（YouTube/X）→ 老外被吸引 → 来华旅游/求学/体验 → 终南山溯源游学（19800元/人，外籍学员付外汇）<br><br>
+      这不是幻想——<strong>李倩蕾针灸师在TikTok有160万粉丝，大量海外用户想来中国体验中医</strong>。紫尘阁的终南山道场比普通针灸诊所有更强的吸引力。<br><br>
+      但这是<strong>第三个月之后</strong>才需要认真投入的事，现在只需要每周上传一条双语视频保持存在感。
+    </div>
+  </div>
+</div>
+
+<!-- 紫薯网络 -->
+<div class="pn" id="p4">
+  <div class="sec">10万紫薯是你最被低估的资产</div>
+  <div class="p"><strong>正确的打法：不是让紫薯帮你卖产品，而是让紫薯成为"道家生活方式传播者"——他们传播的是理念，不是商品。理念传播不受广告法约束。</strong></div>
+
+  <div class="sec">紫薯城市合伙人体系（差异化核心）</div>
+  <div class="step">
+    <div class="sn snp">定义</div>
+    <div class="sb">
+      <div class="st">不是微商代理，是"城市道场"</div>
+      <div class="sd">每个城市合伙人相当于在当地建立一个"紫尘阁的文化落地点"，组织线下读书会、三衡理论分享会、道家文化体验活动。不销售产品，传播理念，从课程报名中获得分成。</div>
+    </div>
+  </div>
+  <div class="arr">↓</div>
+  <div class="step">
+    <div class="sn sng">收入</div>
+    <div class="sb">
+      <div class="st">合伙人如何赚钱（合规的分销方式）</div>
+      <div class="sd">
+        推荐学员购买课程：获得20-30%佣金（这是正规知识付费分销，合法）<br>
+        组织当地体验营：获得场次收益分成（主办方身份，不是销售产品）<br>
+        未来开城市工作室：使用紫尘阁品牌授权，教授三衡理论，向紫尘阁缴纳品牌授权费
+      </div>
+    </div>
+  </div>
+  <div class="arr">↓</div>
+  <div class="step">
+    <div class="sn sna">条件</div>
+    <div class="sb">
+      <div class="st">成为城市合伙人的门槛</div>
+      <div class="sd">
+        完成三衡理论全科课程（598元）→ 缴纳城市合伙人年费（2980元，含培训+品牌授权）→ 在当地开展3场以上免费分享会<br>
+        <span style="color:#BA7517">前三个月先招5个城市的种子合伙人（从现有紫薯里找），验证模式后再大规模推广</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">会员体系设计</div>
+  <table class="t">
+    <tr><th>层级</th><th>价格</th><th>权益</th><th>目的</th></tr>
+    <tr><td><strong>紫薯学员</strong></td><td>198-598元/课</td><td>课程内容+学员群</td><td>入门转化</td></tr>
+    <tr><td><strong>紫薯会员</strong></td><td>580元/年</td><td>所有课程+月度内容+线下优先</td><td class="ok">核心留存</td></tr>
+    <tr><td><strong>荣誉紫薯</strong></td><td>1980元/年</td><td>师父直播+专属群+溯源营优惠</td><td class="ok">深度绑定</td></tr>
+    <tr><td><strong>城市合伙人</strong></td><td>2980元/年</td><td>品牌授权+培训+分销资格</td><td class="ok">裂变引擎</td></tr>
+    <tr><td><strong>入室弟子</strong></td><td>面谈</td><td>师父直接指导+终南山研习</td><td>最高端变现</td></tr>
+  </table>
+</div>
+
+<!-- AI工作台 -->
+<div class="pn" id="p5">
+  <div class="sec">一个人用AI做三个人的工作——具体工作分配</div>
+
+  <div class="card">
+    <div class="ct">你（战略+审核+师父连接）</div>
+    <div class="cd">
+      每天核心工作：审核AI生成的3-5条内容（15分钟）、回复重要私信、与师父沟通素材、做重大决策<br>
+      <span style="color:#0F6E56">你的时间只用在AI无法替代的事上：判断、关系、决策</span>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">AI角色1：内容生产官（每天最重要的工作）</div>
+    <div class="cd">
+      输入：今日方向+师父素材片段<br>
+      输出：3条国内合规内容（小红书/抖音/视频号各一）+ 1条英文海外版本<br>
+      工具：Claude/GPT-4o + 品牌手册提示词（已完成）<br>
+      时间成本：你15分钟审核，AI生产全程自动
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">AI角色2：课程制作助手（月度重要工作）</div>
+    <div class="cd">
+      输入：师父的讲课录音/文字稿（已有大量原始素材）<br>
+      输出：结构化课程大纲→课程文案→配套图文→视频脚本<br>
+      工具：Claude + 语音转文字工具（如讯飞）<br>
+      核心价值：把师父40年积累快速转化成可销售的课程产品
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">AI角色3：海外翻译官（每周顺带）</div>
+    <div class="cd">
+      输入：已发布的中文内容<br>
+      输出：英文字幕文件 + 英文版说明文字 + YouTube标题/描述<br>
+      工具：Claude翻译 + CapCut/剪映自动字幕<br>
+      时间成本：每条内容10分钟，每周1条
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="ct">AI角色4：私域运营助手（日常）</div>
+    <div class="cd">
+      输入：用户私信截图/文字<br>
+      输出：标准话术建议 + 用户标签分类建议 + 跟进提醒<br>
+      工具：Claude + 微信CRM工具（如企微SCRM）<br>
+      核心价值：一个人管理数百人的私域，不漏跟进
+    </div>
+  </div>
+
+  <div class="sec">第二个人（内容执行）的AI工作套件</div>
+  <div class="cd">
+    入职第一天就给他/她：完整的品牌手册 + AI提示词体系 + 每日SOP流程 + 合规禁词清单<br>
+    他/她的工作：执行AI内容生产流程，管理账号发布，处理评论互动，整理数据复盘<br>
+    <span style="color:#0F6E56">这套系统确保：即使是没有中医背景的普通人，也能产出符合紫尘阁风格的内容</span>
+  </div>
+
+  <div class="sec">第三个人（社群运营）的AI工作套件</div>
+  <div class="cd">
+    负责：紫薯群管理 + 城市合伙人对接 + 线下营筹备<br>
+    AI加持：用AI生成每日群内容推送、合伙人培训材料、活动策划方案<br>
+    核心要求：有活动组织经验，热爱中医文化，最好本身就是紫薯
+  </div>
+</div>
+
+</div>
+<script>
+function sw(i) {
+  document.querySelectorAll('.nb').forEach((b,j)=>b.classList.toggle('on',j===i));
+  document.querySelectorAll('.pn').forEach((p,j)=>p.classList.toggle('on',j===i));
+}
+</script>
+
+</div>
+</body>
+</html>

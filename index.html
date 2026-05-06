@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>三衡生活 · 文献库</title>
-<meta name="description" content="大医派紫尘阁 · 三衡生活项目战略文献库">
+<title>紫尘阁 · 三衡生活 · 文献库</title>
+<meta name="description" content="紫尘阁 · 三衡生活 · 项目战略文献库">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -14,11 +14,13 @@
     --ink2:   #3A3833;
     --ink3:   #807C73;
     --ink4:   #B8B4AB;
+    --ink5:   #DEDAD0;
     --bg:     #F5F2EA;
     --paper:  #FDFCF7;
     --line:   rgba(26,24,20,.10);
     --line2:  rgba(26,24,20,.06);
     --accent: #5C4628;
+    --jade:   #2E6B4E;
     --serif:  'Noto Serif SC', serif;
     --sans:   'Noto Sans SC', sans-serif;
   }
@@ -35,7 +37,6 @@
   }
   a { color: inherit; text-decoration: none; }
 
-  /* 顶栏 —— 极淡 */
   .topbar {
     padding: 28px 48px;
     display: flex;
@@ -58,11 +59,10 @@
     text-transform: uppercase;
   }
 
-  /* HERO */
   .hero {
     max-width: 880px;
     margin: 0 auto;
-    padding: 140px 48px 100px;
+    padding: 120px 48px 80px;
     text-align: center;
   }
   .hero-eyebrow {
@@ -80,7 +80,15 @@
     color: var(--ink);
     line-height: 1.25;
     letter-spacing: .04em;
-    margin-bottom: 28px;
+    margin-bottom: 18px;
+  }
+  .hero-subtitle {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--ink3);
+    margin-bottom: 36px;
+    letter-spacing: .15em;
   }
   .hero-quote {
     font-family: var(--serif);
@@ -103,27 +111,35 @@
     font-family: var(--serif);
     font-size: 16px;
     color: var(--ink2);
-    max-width: 560px;
+    max-width: 620px;
     margin: 0 auto;
     line-height: 2.1;
     font-weight: 300;
   }
+  .hero-desc strong {
+    font-weight: 500;
+    color: var(--ink);
+  }
 
-  /* 分隔符 */
   .divider {
     text-align: center;
-    margin: 0 0 100px;
+    margin: 0 0 80px;
     font-family: var(--serif);
     color: var(--ink4);
     font-size: 18px;
     letter-spacing: .8em;
   }
 
-  /* 文献区 */
   .docs-section {
     max-width: 880px;
     margin: 0 auto;
-    padding: 0 48px 120px;
+    padding: 0 48px;
+  }
+  .docs-section + .docs-section {
+    margin-top: 80px;
+  }
+  .docs-section:last-of-type {
+    padding-bottom: 100px;
   }
   .section-label {
     font-family: var(--sans);
@@ -132,7 +148,7 @@
     color: var(--ink3);
     text-transform: uppercase;
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
   .section-title {
     font-family: var(--serif);
@@ -140,32 +156,60 @@
     font-weight: 500;
     color: var(--ink);
     text-align: center;
-    margin-bottom: 80px;
+    margin-bottom: 14px;
     letter-spacing: .08em;
+  }
+  .section-desc {
+    font-family: var(--serif);
+    font-size: 14.5px;
+    color: var(--ink3);
+    text-align: center;
+    margin-bottom: 64px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.95;
+    font-weight: 300;
   }
 
   .doc {
     border-top: 1px solid var(--line);
-    padding: 48px 0;
+    padding: 40px 0;
     display: grid;
-    grid-template-columns: 80px 1fr auto;
-    gap: 40px;
+    grid-template-columns: 70px 1fr auto;
+    gap: 36px;
     align-items: start;
     transition: padding .3s ease;
     cursor: pointer;
+    position: relative;
   }
-  .doc:last-child { border-bottom: 1px solid var(--line); }
+  .doc.featured {
+    background: linear-gradient(to right, transparent, rgba(46,107,78,.04), transparent);
+  }
+  .doc.featured::before {
+    content: '★';
+    position: absolute;
+    left: 50px;
+    top: 36px;
+    color: var(--jade);
+    font-size: 14px;
+  }
+  .docs-section .doc:last-child { border-bottom: 1px solid var(--line); }
   .doc:hover { padding-left: 12px; padding-right: 12px; }
   .doc:hover .doc-arrow { transform: translateX(8px); color: var(--ink); }
   .doc:hover .doc-title { color: var(--accent); }
 
   .doc-num {
     font-family: var(--serif);
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 300;
     color: var(--ink4);
     line-height: 1;
     padding-top: 4px;
+  }
+  .doc.featured .doc-num {
+    color: var(--jade);
+    font-weight: 500;
   }
   .doc-body {
     min-width: 0;
@@ -176,23 +220,26 @@
     letter-spacing: .3em;
     color: var(--ink3);
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
+  }
+  .doc.featured .doc-cat {
+    color: var(--jade);
   }
   .doc-title {
     font-family: var(--serif);
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 500;
     color: var(--ink);
     letter-spacing: .04em;
     line-height: 1.4;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     transition: color .3s;
   }
   .doc-desc {
     font-family: var(--serif);
-    font-size: 14.5px;
+    font-size: 14px;
     color: var(--ink2);
-    line-height: 1.95;
+    line-height: 1.85;
     font-weight: 300;
     max-width: 540px;
   }
@@ -205,7 +252,13 @@
     user-select: none;
   }
 
-  /* 页脚 */
+  .section-spacer {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--line), transparent);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
   .footer {
     border-top: 1px solid var(--line2);
     padding: 60px 48px 80px;
@@ -216,7 +269,7 @@
     font-size: 14px;
     font-style: italic;
     color: var(--ink3);
-    margin-bottom: 32px;
+    margin-bottom: 24px;
     letter-spacing: .1em;
   }
   .footer-meta {
@@ -226,22 +279,41 @@
     letter-spacing: .15em;
     line-height: 2;
   }
-  .footer-meta a:hover { color: var(--accent); }
+  .footer-archive {
+    margin-top: 18px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    color: var(--ink4);
+    letter-spacing: .12em;
+  }
+  .footer-archive a {
+    color: var(--ink3);
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 1px;
+    transition: color .2s, border-color .2s;
+  }
+  .footer-archive a:hover {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
 
-  /* 移动端 */
   @media (max-width: 720px) {
     .topbar { padding: 22px 24px; }
     .topbar .brand-en { display: none; }
-    .hero { padding: 80px 28px 70px; }
-    .hero h1 { font-size: 36px; line-height: 1.3; }
+    .hero { padding: 70px 28px 60px; }
+    .hero h1 { font-size: 34px; line-height: 1.3; }
+    .hero-subtitle { font-size: 14.5px; }
     .hero-quote { font-size: 15px; }
     .hero-desc { font-size: 14.5px; }
-    .docs-section { padding: 0 28px 80px; }
-    .section-title { font-size: 22px; margin-bottom: 50px; }
-    .doc { grid-template-columns: 1fr; gap: 12px; padding: 36px 0; }
+    .docs-section { padding: 0 24px; }
+    .docs-section + .docs-section { margin-top: 60px; }
+    .section-title { font-size: 22px; margin-bottom: 12px; }
+    .section-desc { margin-bottom: 44px; font-size: 13.5px; }
+    .doc { grid-template-columns: 1fr; gap: 10px; padding: 30px 0; }
     .doc:hover { padding-left: 0; padding-right: 0; }
-    .doc-num { font-size: 24px; }
-    .doc-title { font-size: 20px; }
+    .doc.featured::before { left: 0; top: 26px; }
+    .doc-num { font-size: 22px; }
+    .doc-title { font-size: 19px; }
     .doc-arrow { display: none; }
     .footer { padding: 40px 24px 60px; }
   }
@@ -250,32 +322,45 @@
 <body>
 
 <header class="topbar">
-  <div class="brand">三衡生活</div>
-  <div class="brand-en">SAN HENG · ARCHIVE</div>
+  <div class="brand">紫尘阁 · 三衡生活</div>
+  <div class="brand-en">ZICHEN · SAN HENG · ARCHIVE</div>
 </header>
 
 <section class="hero">
   <div class="hero-eyebrow">大医派紫尘阁 · 项目文献库</div>
-  <h1>三衡生活</h1>
+  <h1>紫尘阁</h1>
+  <p class="hero-subtitle">倡导三衡生活</p>
   <p class="hero-quote">「你若真心想学，我必倾囊相授。」</p>
   <p class="hero-quote-attr">—— 赵无尘 · 阁主</p>
   <p class="hero-desc">
-    一千三百年道家大医智慧，<br>
-    在当下，帮助现代人重新学会在天地之间活着。
+    紫尘阁是品牌运营方，<strong>三衡生活</strong>是它倡导的生活方式。<br>
+    一千三百年道家大医智慧，在当下，<br>
+    帮助现代人重新学会在天地之间活着。
   </p>
 </section>
 
 <div class="divider">· · ·</div>
 
 <section class="docs-section">
-  <div class="section-label">Strategy Documents</div>
-  <h2 class="section-title">战略文献</h2>
+  <div class="section-label">PART I · STRATEGY</div>
+  <h2 class="section-title">战略主干</h2>
+  <p class="section-desc">决定方向。回答"我们是谁、做什么、不做什么"。</p>
+
+  <a class="doc featured" href="docs/strategy-v3.html">
+    <div class="doc-num">v3</div>
+    <div class="doc-body">
+      <div class="doc-cat">FLAGSHIP · 当前主干</div>
+      <div class="doc-title">战略主干 v3.0</div>
+      <div class="doc-desc">已验证阶段诊断 · 里斯品类创新 · 双IP架构 · 7账号矩阵 · 收入结构升级 · 三月盈利路线图 · 海外路径 · 紫薯网络。整合自 4 份战略迭代版本。</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
 
   <a class="doc" href="docs/community.html">
     <div class="doc-num">01</div>
     <div class="doc-body">
-      <div class="doc-cat">VISION · 共同体战略</div>
-      <div class="doc-title">三衡生活共同体 · 完整战略</div>
+      <div class="doc-cat">VISION · 共同体</div>
+      <div class="doc-title">三衡生活共同体战略</div>
       <div class="doc-desc">底层模型 · 三衡翻译 · 内容形态 · 社区圈层 · 活动体系 · 师父定位 · 公益商业 · 落地路径</div>
     </div>
     <div class="doc-arrow">→</div>
@@ -284,8 +369,8 @@
   <a class="doc" href="docs/structure.html">
     <div class="doc-num">02</div>
     <div class="doc-body">
-      <div class="doc-cat">STRUCTURE · 双主体整合</div>
-      <div class="doc-title">紫尘阁 · 双主体整合战略</div>
+      <div class="doc-cat">STRUCTURE · 双主体</div>
+      <div class="doc-title">紫尘阁双主体整合战略</div>
       <div class="doc-desc">养生科技 + 道院文化双主体协同 · 地理资产 · 业务归属 · 用户旅程 · 收入模型 · 外国访客路径</div>
     </div>
     <div class="doc-arrow">→</div>
@@ -294,9 +379,67 @@
   <a class="doc" href="docs/roadmap.html">
     <div class="doc-num">03</div>
     <div class="doc-body">
-      <div class="doc-cat">EXECUTION · 落地计划</div>
-      <div class="doc-title">三衡生活 · 完整落地计划</div>
+      <div class="doc-cat">EXECUTION · 落地</div>
+      <div class="doc-title">三衡生活完整落地计划</div>
       <div class="doc-desc">团队搭建 · 品牌定位 · 关键任务 · 时间里程碑 · AI 工作流 · 全球传播 · 备选方案</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+</section>
+
+<div class="section-spacer"></div>
+
+<section class="docs-section">
+  <div class="section-label">PART II · EXECUTION</div>
+  <h2 class="section-title">执行手册</h2>
+  <p class="section-desc">具体怎么干。每天打开就能用的工具与SOP。</p>
+
+  <a class="doc" href="docs/handbook.html">
+    <div class="doc-num">04</div>
+    <div class="doc-body">
+      <div class="doc-cat">HANDBOOK · 品牌手册</div>
+      <div class="doc-title">紫尘阁品牌手册 2.0</div>
+      <div class="doc-desc">品牌总纲 · IP 架构 · 内容战略 · 平台矩阵 · 产品体系 · Agent 团队 · 工具方案 · 三月计划 · 义工战略 · 执行清单。一人公司起盘版。</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+
+  <a class="doc" href="docs/scenes.html">
+    <div class="doc-num">05</div>
+    <div class="doc-body">
+      <div class="doc-cat">CONTENT · 内容场景</div>
+      <div class="doc-title">书院内容场景地图</div>
+      <div class="doc-desc">700㎡书院 + 大运河街区 = 15 个独立内容场景。每个场景对应不同内容方向、目标人群、平台分发。每日拍摄 SOP。</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+
+  <a class="doc" href="docs/tools.html">
+    <div class="doc-num">06</div>
+    <div class="doc-body">
+      <div class="doc-cat">AI WORKFLOW · 三工具</div>
+      <div class="doc-title">三工具分工方案</div>
+      <div class="doc-desc">NotebookLM 知识大脑 · Gemini 多语言生产 · OpenClaw Agent 执行分发。三者分工、不重复、不浪费。每日内容流水线。</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+
+  <a class="doc" href="docs/prompts.html">
+    <div class="doc-num">07</div>
+    <div class="doc-body">
+      <div class="doc-cat">AI AGENTS · 提示词系统</div>
+      <div class="doc-title">Gemini 9 个 AI 岗位提示词</div>
+      <div class="doc-desc">选题参谋 · 内容生产官 · 多平台文案官 · 视觉设计官 · 发布运营官 · 合规审核官 · 私域客服 Bot · 数据复盘官 · 爆款改写官。直接复制使用。</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+
+  <a class="doc" href="docs/volunteers.html">
+    <div class="doc-num">08</div>
+    <div class="doc-body">
+      <div class="doc-cat">COMMUNITY · 义工战略</div>
+      <div class="doc-title">紫尘阁义工战略仪表盘</div>
+      <div class="doc-desc">428 人义工网络 · 25 省市覆盖 · 6 年积累。义工画像 · 账号命名 · 3 个月落地计划 · GEO 战略 · 义工利益机制。</div>
     </div>
     <div class="doc-arrow">→</div>
   </a>
@@ -305,8 +448,16 @@
 <footer class="footer">
   <p class="footer-quote">大医精诚 · 济世救民</p>
   <p class="footer-meta">
-    内部战略文献 · 持续更新<br>
-    大医派紫尘阁 · 三衡生活
+    紫尘阁 · 三衡生活 · 项目文献库<br>
+    内部战略文献 · 持续更新 · 2026
+  </p>
+  <p class="footer-archive">
+    历史归档 ·
+    <a href="archive/v2_brand_ai_team.html">品类创新版</a> ·
+    <a href="archive/v2_upgraded_strategy.html">已验证阶段版</a> ·
+    <a href="archive/v2_brand_draft_2_0.html">底稿2.0</a> ·
+    <a href="archive/v1_strategic_plan_zh.html">战略规划</a> ·
+    <a href="archive/v1_master_strategy.html">早期版</a>
   </p>
 </footer>
 

@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大医派紫尘阁 · 品牌战略底稿 2.0</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
+
+:root {
+  --purple:      #3B2F8C;
+  --purple-mid:  #5B4FC4;
+  --purple-light:#EEEBFA;
+  --green:       #0A4A38;
+  --green-mid:   #127A5E;
+  --green-light: #E4F5EF;
+  --amber:       #5C3600;
+  --amber-mid:   #C07D1A;
+  --amber-light: #FDF0D8;
+  --ink:         #1A1A18;
+  --ink2:        #3A3A37;
+  --ink3:        #7A7A76;
+  --border:      #DDDBD5;
+  --bg:          #F8F7F3;
+  --white:       #FFFFFF;
+  --serif: 'Noto Serif SC', serif;
+  --sans: 'Noto Sans SC', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  background: var(--bg);
+  color: var(--ink2);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* ── Nav ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  display: flex; gap: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.nav::-webkit-scrollbar { display: none; }
+.nav a {
+  display: block; padding: 14px 18px;
+  font-size: 12px; color: var(--ink3);
+  text-decoration: none; white-space: nowrap;
+  border-bottom: 2px solid transparent;
+  transition: all .2s; font-weight: 500;
+}
+.nav a:hover { color: var(--purple); }
+.nav a.active { color: var(--purple); border-bottom-color: var(--purple); }
+
+/* ── Cover ── */
+.cover {
+  background: var(--purple);
+  padding: 64px 64px 56px;
+  position: relative; overflow: hidden;
+}
+.cover::before {
+  content: '';
+  position: absolute; top: -80px; right: -80px;
+  width: 320px; height: 320px; border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+}
+.cover::after {
+  content: '';
+  position: absolute; bottom: -40px; left: 120px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+}
+.cover-eye {
+  font-size: 11px; letter-spacing: .15em;
+  color: #AFA9EC; font-weight: 500; margin-bottom: 16px;
+}
+.cover-title {
+  font-family: var(--serif);
+  font-size: 40px; font-weight: 700;
+  color: var(--white); line-height: 1.15;
+  margin-bottom: 8px;
+}
+.cover-sub {
+  font-size: 16px; color: #AFA9EC;
+  margin-bottom: 32px;
+}
+.cover-quote {
+  background: rgba(255,255,255,0.08);
+  border-left: 4px solid #7F77DD;
+  padding: 18px 24px;
+  font-family: var(--serif);
+  font-size: 15px; color: #CECBF6;
+  font-style: italic; line-height: 1.8;
+  border-radius: 0 8px 8px 0;
+  max-width: 660px;
+}
+.cover-meta {
+  margin-top: 24px;
+  font-size: 11px; color: #7F77DD;
+  letter-spacing: .08em;
+}
+
+/* ── Layout ── */
+.wrap { max-width: 860px; margin: 0 auto; padding: 48px 48px 80px; }
+
+/* ── Section heading ── */
+.chapter-eye {
+  font-size: 10px; font-weight: 700; letter-spacing: .18em;
+  color: var(--purple-mid); text-transform: uppercase;
+  margin: 48px 0 10px; padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+h1 {
+  font-family: var(--serif);
+  font-size: 28px; font-weight: 700;
+  color: var(--purple); margin-bottom: 20px;
+  line-height: 1.3;
+}
+h2 {
+  font-size: 16px; font-weight: 700;
+  color: var(--purple); margin: 36px 0 12px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--purple-light);
+}
+h3 {
+  font-size: 14px; font-weight: 700;
+  color: var(--ink); margin: 28px 0 10px;
+}
+
+p { margin-bottom: 12px; color: var(--ink2); }
+p + p { margin-top: 4px; }
+
+ul, ol { padding-left: 20px; margin-bottom: 12px; }
+li { margin-bottom: 6px; }
+li::marker { color: var(--purple-mid); }
+
+strong { color: var(--ink); font-weight: 700; }
+
+/* ── Slogan grid ── */
+.slogan-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 0; margin: 24px 0;
+  border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden;
+}
+.slogan-left { background: var(--purple-light); padding: 24px 28px; }
+.slogan-right { background: var(--bg); padding: 24px 28px; border-left: 1px solid var(--border); }
+.slogan-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; color: var(--purple); text-transform: uppercase; margin-bottom: 6px; }
+.slogan-val {
+  font-family: var(--serif);
+  font-size: 18px; font-weight: 700; color: var(--purple);
+  margin-bottom: 18px; line-height: 1.4;
+}
+.slogan-val:last-child { margin-bottom: 0; }
+.meta-label { font-size: 10px; font-weight: 700; letter-spacing: .1em; color: var(--ink3); text-transform: uppercase; margin-bottom: 6px; }
+.meta-val { font-size: 14px; color: var(--ink2); margin-bottom: 18px; line-height: 1.6; }
+.meta-val:last-child { margin-bottom: 0; }
+
+/* ── Quote ── */
+blockquote {
+  border-left: 4px solid var(--purple-mid);
+  margin: 20px 0; padding: 14px 20px;
+  background: var(--purple-light);
+  border-radius: 0 8px 8px 0;
+}
+blockquote p {
+  font-family: var(--serif);
+  font-size: 15px; font-style: italic;
+  font-weight: 600; color: var(--purple);
+  margin: 0;
+}
+
+/* ── Callout ── */
+.callout {
+  padding: 16px 20px; margin: 16px 0;
+  border-radius: 0 8px 8px 0;
+  font-size: 13.5px; line-height: 1.8;
+}
+.callout p { margin: 0 0 6px; }
+.callout p:last-child { margin: 0; }
+.callout.purple { background: var(--purple-light); border-left: 4px solid var(--purple-mid); color: var(--purple); }
+.callout.green  { background: var(--green-light);  border-left: 4px solid var(--green-mid);  color: var(--green); }
+.callout.amber  { background: var(--amber-light);  border-left: 4px solid var(--amber-mid);  color: var(--amber); }
+.callout.mono   { background: var(--bg); border: 1px solid var(--border); border-left: 4px solid var(--border); color: var(--ink2); font-family: monospace; font-size: 13px; white-space: pre-wrap; border-radius: 0 6px 6px 0; }
+
+/* ── Table ── */
+.table-wrap { overflow-x: auto; margin: 16px 0; }
+table {
+  width: 100%; border-collapse: collapse;
+  font-size: 13.5px;
+}
+th {
+  background: var(--purple); color: var(--white);
+  padding: 10px 14px; text-align: left;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .06em; text-transform: uppercase;
+}
+td {
+  padding: 10px 14px; border-bottom: 1px solid var(--border);
+  color: var(--ink2); vertical-align: top; line-height: 1.7;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(odd)  td { background: var(--white); }
+tr:nth-child(even) td { background: var(--bg); }
+tr:hover td { background: var(--purple-light); transition: background .15s; }
+
+/* ── Divider ── */
+hr { border: none; border-top: 1px solid var(--border); margin: 40px 0; }
+
+/* ── Checklist ── */
+.check { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
+.check-box {
+  width: 18px; height: 18px; border: 2px solid var(--border);
+  border-radius: 4px; flex-shrink: 0; margin-top: 2px;
+}
+.check-text { font-size: 14px; color: var(--ink2); line-height: 1.6; }
+
+/* ── Sop block ── */
+.sop-item { display: flex; gap: 16px; margin-bottom: 16px; align-items: flex-start; }
+.sop-time {
+  font-size: 11px; font-weight: 700; color: var(--purple);
+  background: var(--purple-light); padding: 4px 10px;
+  border-radius: 20px; white-space: nowrap; flex-shrink: 0; margin-top: 2px;
+}
+.sop-body { font-size: 14px; color: var(--ink2); line-height: 1.7; }
+
+/* ── Layer cards ── */
+.layer-grid { display: grid; gap: 12px; margin: 16px 0; }
+.layer-card {
+  border-radius: 10px; padding: 18px 22px;
+  border: 1px solid var(--border);
+  display: grid; grid-template-columns: 80px 1fr;
+  gap: 16px; align-items: center;
+}
+.layer-card.purple { background: var(--purple-light); border-color: #C5BFF5; }
+.layer-card.green  { background: var(--green-light);  border-color: #B3DDD3; }
+.layer-card.amber  { background: var(--amber-light);  border-color: #EDD59A; }
+.layer-num { font-family: var(--serif); font-size: 28px; font-weight: 700; opacity: .3; line-height: 1; }
+.layer-card.purple .layer-num { color: var(--purple); }
+.layer-card.green  .layer-num { color: var(--green); }
+.layer-card.amber  .layer-num { color: var(--amber); }
+.layer-title { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
+.layer-card.purple .layer-title { color: var(--purple); }
+.layer-card.green  .layer-title { color: var(--green); }
+.layer-card.amber  .layer-title { color: var(--amber); }
+.layer-desc { font-size: 13px; color: var(--ink2); line-height: 1.65; }
+
+/* ── Phase steps ── */
+.phase { border-radius: 10px; overflow: hidden; margin-bottom: 12px; border: 1px solid var(--border); }
+.phase-h { padding: 12px 18px; font-size: 13px; font-weight: 700; display: flex; justify-content: space-between; align-items: center; }
+.phase-h.g { background: var(--green-light); color: var(--green); }
+.phase-h.p { background: var(--purple-light); color: var(--purple); }
+.phase-h.a { background: var(--amber-light); color: var(--amber); }
+.phase-b { padding: 14px 18px; font-size: 13.5px; color: var(--ink2); background: var(--white); line-height: 1.8; }
+.phase-tag { font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.phase-h.g .phase-tag { background: var(--green); color: var(--white); }
+.phase-h.p .phase-tag { background: var(--purple); color: var(--white); }
+.phase-h.a .phase-tag { background: var(--amber); color: var(--white); }
+
+/* ── Day list ── */
+.day-list { margin: 12px 0; }
+.day-item { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid var(--border); align-items: baseline; }
+.day-item:last-child { border-bottom: none; }
+.day-num { font-size: 11px; font-weight: 700; color: var(--purple); min-width: 48px; }
+.day-text { font-size: 14px; color: var(--ink2); }
+
+/* ── Footer ── */
+.footer {
+  background: var(--purple); padding: 32px 48px;
+  text-align: center;
+}
+.footer-main { font-family: var(--serif); font-size: 18px; color: #CECBF6; font-style: italic; margin-bottom: 8px; }
+.footer-sub { font-size: 12px; color: #534AB7; letter-spacing: .06em; }
+
+@media (max-width: 640px) {
+  .cover { padding: 40px 24px 36px; }
+  .cover-title { font-size: 28px; }
+  .wrap { padding: 32px 20px 60px; }
+  .nav { padding: 0 16px; }
+  .slogan-grid { grid-template-columns: 1fr; }
+  .slogan-right { border-left: none; border-top: 1px solid var(--border); }
+  .layer-card { grid-template-columns: 1fr; }
+  .footer { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+<div style="background:#FBF0D8;border-bottom:1px solid #E8D8B0;padding:14px 24px;font-family:'Noto Serif SC',serif;font-size:13px">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:6px">
+    <a href="../index.html" style="color:#5C3200;text-decoration:none;letter-spacing:.05em;font-weight:600">← 返回文献库首页</a>
+    <span style="color:#A06820;font-size:11px;letter-spacing:.15em;font-weight:600">ARCHIVE · 历史归档</span>
+  </div>
+  <div style="color:#5C3200;font-size:12.5px;line-height:1.6">
+    <strong>⚠ 此文档为历史版本</strong>（v2 · 品牌战略底稿），核心内容已整合进 <a href="../docs/strategy-v3.html" style="color:#A06820;font-weight:600">《战略主干 v3.0》</a>。保留此文档仅用于历史追溯，不作为当前执行依据。
+  </div>
+</div>
+
+
+<!-- Nav -->
+<nav class="nav">
+  <a href="#core">核心主张</a>
+  <a href="#ch1">品牌定位</a>
+  <a href="#ch2">双IP架构</a>
+  <a href="#ch3">目标用户</a>
+  <a href="#ch4">内容战略</a>
+  <a href="#ch5">平台矩阵</a>
+  <a href="#ch6">产品收入</a>
+  <a href="#ch7">AI工作流</a>
+  <a href="#ch8">30天计划</a>
+  <a href="#ch9">执行清单</a>
+</nav>
+
+<!-- Cover -->
+<div class="cover">
+  <div class="cover-eye">道家大医派 · 唐永淳元年（公元682年）创立 · 1300年传承 · 第22代</div>
+  <div class="cover-title">大医派紫尘阁</div>
+  <div class="cover-sub">品牌战略底稿 2.0</div>
+  <div class="cover-quote">「 现代人不是生病了，是活法错了。三衡，是让人重新学会在天地之间活着。」</div>
+  <div class="cover-meta">内部保密文件 · 仅供团队使用</div>
+</div>
+
+<div class="wrap">
+
+<!-- 核心主张 -->
+<div id="core">
+  <div class="chapter-eye">核心主张</div>
+  <h1>一句话定义紫尘阁</h1>
+
+  <blockquote><p>「 现代人不是生病了，是活法错了。三衡，是让人重新学会在天地之间活着。」</p></blockquote>
+
+  <p>这句话是紫尘阁所有内容、产品、传播的总根。任何平台，任何对外表达，都必须能被这句话统摄。</p>
+  <p>它回答了三个问题：</p>
+  <ul>
+    <li><strong>用户的根本问题是什么？</strong> ——不是症状，是活法。</li>
+    <li><strong>紫尘阁提供什么？</strong> ——一套重新活的方式，不是一个治病的方子。</li>
+    <li><strong>为什么是现在？</strong> ——AI时代信息过剩，真实体感、真实生活节律成了稀缺品。</li>
+  </ul>
+
+  <div class="slogan-grid">
+    <div class="slogan-left">
+      <div class="slogan-label">主 slogan</div>
+      <div class="slogan-val">把人带回身体</div>
+      <div class="slogan-label">副 slogan</div>
+      <div class="slogan-val" style="margin-bottom:0">先安身，再安神</div>
+    </div>
+    <div class="slogan-right">
+      <div class="meta-label">对外一句话</div>
+      <div class="meta-val">1300年道家大医传承，帮助现代人重新学会在天地之间活着。</div>
+      <div class="meta-label">前台账号名</div>
+      <div class="meta-val" style="margin-bottom:0">安身（小红书·知乎）｜ 紫尘阁书院（公众号）</div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- 第一章 -->
+<div id="ch1">
+  <div class="chapter-eye">第一章</div>
+  <h1>品牌定位</h1>
+
+  <h2>1.1 品牌母定义</h2>
+  <p><strong>紫尘阁不是中医机构，不是养生号，也不是传统文化讲堂。</strong></p>
+  <p>紫尘阁是一个有独立世界观的文化品牌——以道家大医派1300年传承为根，以三衡理论为骨，以起居、饮食、情志、福德为实践路径，帮助现代人重新建立与身体、节律和天地的真实连接。</p>
+
+  <h2>1.2 差异化定位</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>维度</th><th>普通养生/中医号</th><th>大医派紫尘阁</th></tr></thead>
+      <tbody>
+        <tr><td>来路</td><td>知识·技巧·方法</td><td>1300年道统，22代传承，唯一性无可复制</td></tr>
+        <tr><td>定位</td><td>解决某个症状</td><td>重建人与天地之间的活法——不治一病，教人不生病</td></tr>
+        <tr><td>身份</td><td>医者·讲师·博主</td><td>师者——从医者到师者（2017年转变）</td></tr>
+        <tr><td>关系</td><td>医患·学员（一次性）</td><td>师徒·同行者（长期追随）</td></tr>
+        <tr><td>内容</td><td>方子·功效·知识点</td><td>生活方式·世界观·修行路径</td></tr>
+        <tr><td>护城河</td><td>内容可被复制</td><td>传承不可复制，体系不可复制，线下场域不可复制</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>1.3 五层护城河</h2>
+  <div class="layer-grid">
+    <div class="layer-card purple">
+      <div class="layer-num">01</div>
+      <div><div class="layer-title">知识母体护城河</div><div class="layer-desc">三衡理论是一套完整的、从天人合一出发的医学与生活哲学体系。别人可以抄标题，抄不了母体。</div></div>
+    </div>
+    <div class="layer-card green">
+      <div class="layer-num">02</div>
+      <div><div class="layer-title">翻译能力护城河</div><div class="layer-desc">把"外热内寒"讲成烤馒头，把"湿性下注"讲成洗狗——把大道理翻译成生活经验的能力，是最难被模仿的传播资产。</div></div>
+    </div>
+    <div class="layer-card amber">
+      <div class="layer-num">03</div>
+      <div><div class="layer-title">实践路径护城河</div><div class="layer-desc">起居有常·饮食有节·情志调达·福德深厚——四条路径让内容有落点，不漂浮。</div></div>
+    </div>
+    <div class="layer-card purple">
+      <div class="layer-num">04</div>
+      <div><div class="layer-title">师者身份护城河</div><div class="layer-desc">"从医者到师者"使紫尘阁不卷疗效、不卷临床，而进入"教人活好"的更高维竞争。</div></div>
+    </div>
+    <div class="layer-card green">
+      <div class="layer-num">05</div>
+      <div><div class="layer-title">线下场域护城河</div><div class="layer-desc">杭州书院是真实的体验落点。线上内容唤醒认知，线下让人真正感受到"身体回来了"——这是内容平台无法替代的。</div></div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- 第二章 -->
+<div id="ch2">
+  <div class="chapter-eye">第二章</div>
+  <h1>双IP架构</h1>
+  <p>紫尘阁运行两套互相支撑的IP，必须协同，不能混淆。</p>
+
+  <h2>2.1 师父IP：赵无尘阁主</h2>
+  <blockquote><p>「把中医活成一种人生的人」</p></blockquote>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>维度</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>核心定位</td><td>道家大医派第21代传人，从医者到师者，三衡理论创立者</td></tr>
+        <tr><td>最强标签</td><td>11岁入终南山 · 40万次接诊 · 2017年转折 · 病永远看不完</td></tr>
+        <tr><td>传播功能</td><td>信任入口——让人产生追随，是品牌的人格化载体</td></tr>
+        <tr><td>内容风格</td><td>故事化、生活化、有判断力、不说教</td></tr>
+        <tr><td>转化路径</td><td>师父内容 → 认同 → 进入紫尘阁体系</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>师父最具传播力的三个故事节点</h3>
+
+  <p><strong>① 关诊室的转折（2017年）</strong></p>
+  <p style="color:var(--ink3)">诊室门外排长队，癌症患者日益增多。顿悟：治好一个来十个，病是永远看不完的。从此从医者转为师者，创立三衡理论。</p>
+  <div class="callout purple"><p>金句：「与其治好一千人，不如教会一万人怎么不生病。」</p></div>
+
+  <p><strong>② 烤馒头讲口腔溃疡</strong></p>
+  <p style="color:var(--ink3)">外面焦了里面还是生的——外热内寒。口腔溃疡表面看是上火，根子是寒。越喝凉茶越重。这是紫尘阁"把大道理翻成生活经验"最典型的案例。</p>
+
+  <p><strong>③ 洗狗讲湿气</strong></p>
+  <p style="color:var(--ink3)">给狗洗澡没彻底吹干，皮毛内层还是潮湿的。湿气不是喝水多了，是身体"没吹干"。排湿要靠阳气，阳气不足才是根本。</p>
+
+  <h2>2.2 主理人IP：王舰平（致溟）</h2>
+  <p><strong>核心价值：他在商业世界里赢过，然后选择走进紫尘阁——这个故事本身就是最强的内容原料。</strong></p>
+  <p>15年电商·品牌·社群经验，让他能把1300年的传承翻译成现代人听得懂的语言。</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>维度</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td>身份</td><td>紫尘阁弟子·外堂主事·品牌主理人</td></tr>
+        <tr><td>独特性</td><td>商业世界的赢家，选择走进传统文化——这个反差是最强的人设</td></tr>
+        <tr><td>传播功能</td><td>现代接口——让不懂道家的人也能进入紫尘阁</td></tr>
+        <tr><td>内容风格</td><td>有商业判断力的文化传播者，不是单纯的中医科普者</td></tr>
+        <tr><td>一句话定位</td><td>一个在商业世界修行过的人，在紫尘阁找到了另一套活法</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>2.3 双IP配合关系</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>维度</th><th>师父（赵无尘）</th><th>主理人（王舰平）</th></tr></thead>
+      <tbody>
+        <tr><td>核心作用</td><td>信任根基·道统权威</td><td>现代入口·接地气翻译</td></tr>
+        <tr><td>内容风格</td><td>故事化·情感化·生活化</td><td>判断型·反常识·商业视角</td></tr>
+        <tr><td>主战平台</td><td>公众号·视频号·课程</td><td>小红书·知乎·知识付费</td></tr>
+        <tr><td>关系比喻</td><td>"道"——有分量，值得信赖</td><td>"桥"——有温度，可以追随</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<hr>
+
+<!-- 第三章 -->
+<div id="ch3">
+  <div class="chapter-eye">第三章</div>
+  <h1>目标用户</h1>
+
+  <h2>3.1 核心用户画像</h2>
+  <p><strong>一句话：在商业世界里"赢了外面、输了身体"的人。</strong></p>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>维度</th><th>描述</th></tr></thead>
+      <tbody>
+        <tr><td>年龄</td><td>35—55岁</td></tr>
+        <tr><td>城市</td><td>一二线及新一线城市，杭州及周边为主</td></tr>
+        <tr><td>身份</td><td>企业主·高管·自由职业者·对传统文化有开放度的知识阶层</td></tr>
+        <tr><td>核心处境</td><td>有资源有钱，但睡不好、撑不住、感觉空——身体和节律都乱了</td></tr>
+        <tr><td>消费能力</td><td>愿意为真正有价值的东西付高价，不接受廉价感</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>3.2 用户最真实的内心独白</h2>
+  <blockquote><p>「我已经什么都有了，但我感觉不到自己在活着。我不是没有时间养生，是养来养去身体还是这样。我需要的不是一个新方法，是有人告诉我，我到底哪里出了问题。」</p></blockquote>
+
+  <h2>3.3 前台体感入口词</h2>
+  <p>这些是用户能立刻认出自己状态的词，是内容的第一钩子（只是门，不是品牌定位）：</p>
+  <p><strong>睡不实 · 休不透 · 肚子紧 · 起不来 · 吃不香 · 情绪堵 · 节律乱 · 越努力越空</strong></p>
+</div>
+
+<hr>
+
+<!-- 第四章 -->
+<div id="ch4">
+  <div class="chapter-eye">第四章</div>
+  <h1>内容战略</h1>
+
+  <h2>4.1 内容总目标</h2>
+  <blockquote><p>把现代人从"只会想、不会感"的状态，重新带回身体。</p></blockquote>
+  <p>内容不是为了展示你知道什么，而是让用户经历四步：<strong>被说中 → 被解释清 → 被重新组织认知 → 被引入实践。</strong></p>
+
+  <h2>4.2 内容三层漏斗</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>层级</th><th>目标</th><th>内容方向</th><th>对应平台</th></tr></thead>
+      <tbody>
+        <tr><td>第一层：入口层</td><td>让人停下来</td><td>反常识·体感命名·说中用户处境</td><td>小红书·头条·知乎问答</td></tr>
+        <tr><td>第二层：解释层</td><td>让人开始信</td><td>身体不是局部问题·三衡视角·整体失序</td><td>知乎深文·公众号</td></tr>
+        <tr><td>第三层：世界观层</td><td>让人愿意追随</td><td>为什么活好比治病更重要·师者转向·传承使命</td><td>公众号·课程·线下</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4.3 核心选题公式</h2>
+  <div class="callout amber">
+    <p><strong>「 商业世界教你赢，三衡教你活 」</strong></p>
+    <p>所有内容从商业人群的真实处境切入，落到三衡的世界观，收在可感知的体验上。</p>
+  </div>
+
+  <h3>A类：反常识型（日常主力，最容易爆）</h3>
+  <p>结构：你以为是X的问题，其实是Y出了问题</p>
+  <ul>
+    <li>你花了20年学怎么赢，但没人教你赢了之后怎么活</li>
+    <li>越努力越累，不是你不够强，是你的活法在耗尽本钱</li>
+    <li>失眠不是压力大，是整个节律和天时脱钩了</li>
+  </ul>
+
+  <h3>B类：世界观型（建立信任，中期主力）</h3>
+  <p>结构：我们看这件事的方式，和你以前接触的不一样</p>
+  <ul>
+    <li>三衡不是养生，是一个人重新和天地对齐的方式</li>
+    <li>病是果，活法是根。阁主40万次接诊，最后只教一件事</li>
+  </ul>
+
+  <h3>C类：场景体感型（后期加强，促进转化）</h3>
+  <p>结构：这件事在书院里是什么感觉</p>
+  <ul>
+    <li>初一十五义诊，来的人都带着同一个问题</li>
+    <li>第一次揉腹之后，有人哭了</li>
+  </ul>
+
+  <h2>4.4 四大内容支柱</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>支柱</th><th>核心关注</th><th>典型内容方向</th><th>对应产品</th></tr></thead>
+      <tbody>
+        <tr><td>起居有常</td><td>睡眠·节律·作息·无效休息</td><td>为什么你越休息越累·身体有自己的时钟</td><td>浴足包·双花恬梦饮·固齿粉</td></tr>
+        <tr><td>饮食有节</td><td>寒热感受·吃与身体相合·饮食节律</td><td>越补越累·身体接不住·吃得不多为何总堵</td><td>小米·七正香·蜂蜜·核桃油</td></tr>
+        <tr><td>情志调达</td><td>情绪落点·腹部紧张·情绪与身体</td><td>一焦虑肚子先紧·情绪不是想开就行</td><td>玫瑰盛春饮·老陈皮·健味饮</td></tr>
+        <tr><td>福德深厚</td><td>心性·生活选择·长期活法</td><td>一个人怎么活会写在身体上</td><td>艾条·百络通·三才饮</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>4.5 内容禁区与安全表达</h2>
+  <div class="callout amber">
+    <p>⚠️ <strong>绝对禁止：</strong>治愈·根治·疗效·包好·对某病有效·替代诊疗·夸张病例·虚构案例</p>
+    <p>✅ <strong>安全替代：</strong>生活调养·日常养护·身体感受·作息整理·饮食节律·传统文化视角·自我照护动作</p>
+    <p>📌 <strong>结尾必加：</strong>「仅作生活方式与传统文化交流，不替代医疗建议或诊疗方案。」</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- 第五章 -->
+<div id="ch5">
+  <div class="chapter-eye">第五章</div>
+  <h1>平台矩阵</h1>
+
+  <h2>5.1 三主两辅结构</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>平台</th><th>角色</th><th>内容重点</th><th>频率</th></tr></thead>
+      <tbody>
+        <tr><td>小红书</td><td>流量入口·种草</td><td>A类反常识·体感命名·本地化</td><td>每天1条</td></tr>
+        <tr><td>知乎</td><td>认知沉淀·搜索位</td><td>B类解释型·为什么·整体视角</td><td>每天1答或隔天</td></tr>
+        <tr><td>公众号（紫尘阁书院）</td><td>品牌主阵地·承接</td><td>深文·体系·师者视角·线下承接</td><td>每周2—3篇</td></tr>
+        <tr><td>百家号</td><td>百度搜索占位</td><td>改写知乎/公众号成熟内容，SEO标题</td><td>每周3—5篇</td></tr>
+        <tr><td>头条号</td><td>泛流量触达测试</td><td>反常识·短解释·测试题目</td><td>每天1篇或隔天</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>5.2 前30天优先级</h2>
+  <div class="callout green">
+    <p><strong>前30天只重点供养三个平台：小红书 + 知乎 + 公众号。</strong></p>
+    <p>百家号和头条号做成熟内容改写分发，不单独供养。先把内容模型跑通，再扩散。</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- 第六章 -->
+<div id="ch6">
+  <div class="chapter-eye">第六章</div>
+  <h1>产品体系与收入结构</h1>
+
+  <h2>6.1 三层收入模型</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>层级</th><th>产品</th><th>定价</th><th>战略目的</th></tr></thead>
+      <tbody>
+        <tr><td>获客层</td><td>免费义诊（初一十五）·19—99元体验</td><td>0—99元</td><td>降低第一步门槛，产生真实体感</td></tr>
+        <tr><td>转化层</td><td>艾灸体验·揉腹调理·单次养生服务</td><td>399—699元</td><td>验证用户意愿，建立服务信任</td></tr>
+        <tr><td>利润层</td><td>揉腹训练营·辟谷实修营·三衡课程体系</td><td>198—8800元</td><td>主要收入来源，高毛利</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>6.2 前30天转化策略</h2>
+  <div class="callout amber">
+    <p>❌ <strong>前30天不主推：</strong>5980元揉腹训练营 / 8800元辟谷实修营</p>
+    <p>✅ <strong>前30天轻推：</strong>免费义诊 · 低门槛体验 · 艾灸/揉腹体验 · 公众号沉淀</p>
+    <p>理由：高客单需要信任。前30天的任务是把信任的门打开，不是急着成交。</p>
+  </div>
+
+  <h2>6.3 转化漏斗路径</h2>
+  <p>公域内容（说中处境）→ 关注公众号/私信 → 免费义诊/体验 → 线下书院 → 深度课程/社群</p>
+</div>
+
+<hr>
+
+<!-- 第七章 -->
+<div id="ch7">
+  <div class="chapter-eye">第七章</div>
+  <h1>AI团队与自动化工作流</h1>
+
+  <h2>7.1 一人公司的AI角色分工</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>AI角色</th><th>负责什么</th><th>工具</th></tr></thead>
+      <tbody>
+        <tr><td>内容总控官</td><td>守住品牌母体，定今日主题，校验内容是否跑偏</td><td>Gemini Gem（自定义）</td></tr>
+        <tr><td>选题官</td><td>每日10个候选选题，标注层级/栏目/平台匹配度</td><td>Gemini + 定时任务</td></tr>
+        <tr><td>平台文案官</td><td>同一主题生成5平台版本，附手改建议</td><td>Gemini</td></tr>
+        <tr><td>体系翻译官</td><td>把三衡理论翻译成生活语言，防止内容跑偏</td><td>NotebookLM知识库</td></tr>
+        <tr><td>复盘分析官</td><td>次日分析前日数据，优化选题方向</td><td>Gemini</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>7.2 每日SOP（共45分钟）</h2>
+  <div style="margin:16px 0">
+    <div class="sop-item">
+      <div class="sop-time">08:30</div>
+      <div class="sop-body">AI自动产出：10个选题 + 1个主推 + 5平台初稿 + 发布建议</div>
+    </div>
+    <div class="sop-item">
+      <div class="sop-time">09:00</div>
+      <div class="sop-body">你只做3件事：<strong>改标题 / 改第一段 / 改最后一段</strong>（15分钟）</div>
+    </div>
+    <div class="sop-item">
+      <div class="sop-time">09:20</div>
+      <div class="sop-body">手动发布：小红书1条 + 知乎1条 + 公众号按周计划</div>
+    </div>
+    <div class="sop-item">
+      <div class="sop-time">次日</div>
+      <div class="sop-body">AI自动复盘：哪条数据最好 → 优化次日选题方向</div>
+    </div>
+  </div>
+
+  <h2>7.3 Gemini Gem核心提示词（直接复制使用）</h2>
+  <div class="callout mono">你是「安身」内容团队的总编，紫尘阁外堂主事王舰平的AI助理。
+
+核心主张：现代人不是生病了，是活法错了。
+三衡，是让人重新学会在天地之间活着。
+
+师父赵无尘阁主：大医派第21代传人，40万次接诊，
+2017年从医者转为师者。
+主理人王舰平：紫尘阁弟子，商业背景，外堂主事。
+
+今日主题：【填入】
+
+请生成：
+① 小红书版（300字内，反常识开头，体感词结尾）
+② 知乎版（600字，问题-解释-世界观结构）
+③ 公众号版（800字，可引用阁主原话或三衡理论）
+④ 每个版本附：建议标题 + 你要手改的第一段
+
+禁止：疗效承诺·医疗用语·AI排比句·首先其次再次
+必须：像真实的人在说话 · 先体感后概念
+结尾统一加：杭州大兜路紫尘阁书院，每月初一十五免费义诊。</div>
+</div>
+
+<hr>
+
+<!-- 第八章 -->
+<div id="ch8">
+  <div class="chapter-eye">第八章</div>
+  <h1>30天启动计划</h1>
+
+  <h2>8.1 总目标</h2>
+  <p>30天只追四个结果：</p>
+  <ol>
+    <li>立住"安身"前台心智</li>
+    <li>跑出第一批有效内容母题</li>
+    <li>建立3平台基础内容库</li>
+    <li>形成内容 → 公众号 → 到店的弱转化链路</li>
+  </ol>
+
+  <h2>8.2 四阶段推进</h2>
+  <div class="phase">
+    <div class="phase-h g"><span>第一阶段 · 第1—7天 · 只打体感入口</span><span class="phase-tag">启动</span></div>
+    <div class="phase-b">发小红书+知乎，只讲用户感受，不讲体系。让用户第一次看到就觉得"你在说我"。</div>
+  </div>
+  <div class="phase">
+    <div class="phase-h p"><span>第二阶段 · 第8—14天 · 把问题往节律带</span><span class="phase-tag">深化</span></div>
+    <div class="phase-b">开始引入起居有常的逻辑，发第1篇公众号深文。让用户感到：这不只是一个症状，是整套节律出了问题。</div>
+  </div>
+  <div class="phase">
+    <div class="phase-h a"><span>第三阶段 · 第15—21天 · 腹部·饮食·情绪一体化</span><span class="phase-tag">承接</span></div>
+    <div class="phase-b">轻带揉腹/艾灸入口，搭公众号菜单和承接话术。开始让用户知道"杭州有个地方可以去"。</div>
+  </div>
+  <div class="phase">
+    <div class="phase-h g"><span>第四阶段 · 第22—30天 · 建立"不是技巧号"认知</span><span class="phase-tag">升维</span></div>
+    <div class="phase-b">写出紫尘阁世界观内容，加入书院承接文案。让用户明白这是一套体系，而不是一堆招数。</div>
+  </div>
+
+  <h2>8.3 前10天选题清单（直接使用）</h2>
+  <div class="day-list">
+    <div class="day-item"><div class="day-num">Day 1</div><div class="day-text">你花了20年学赢，没人教你赢了怎么活</div></div>
+    <div class="day-item"><div class="day-num">Day 2</div><div class="day-text">睡不好不是压力大，是你和天地的节律断了</div></div>
+    <div class="day-item"><div class="day-num">Day 3</div><div class="day-text">越补越累，因为你的身体根本接不住</div></div>
+    <div class="day-item"><div class="day-num">Day 4</div><div class="day-text">为什么有些人病好了，有些人只是症状消失了</div></div>
+    <div class="day-item"><div class="day-num">Day 5</div><div class="day-text">阁主看了40万个病人，最后只说了一句话</div></div>
+    <div class="day-item"><div class="day-num">Day 6</div><div class="day-text">三衡不是养生术，是一种重新活着的方式</div></div>
+    <div class="day-item"><div class="day-num">Day 7</div><div class="day-text">肚子紧，不只是消化的问题</div></div>
+    <div class="day-item"><div class="day-num">Day 8</div><div class="day-text">现代人最大的病：感觉不到自己的身体了</div></div>
+    <div class="day-item"><div class="day-num">Day 9</div><div class="day-text">为什么医者要转成师者：病永远看不完</div></div>
+    <div class="day-item"><div class="day-num">Day 10</div><div class="day-text">杭州有个地方，不是来治病的，是来重新学活的</div></div>
+  </div>
+</div>
+
+<hr>
+
+<!-- 第九章 -->
+<div id="ch9">
+  <div class="chapter-eye">第九章</div>
+  <h1>执行检查清单</h1>
+
+  <h2>9.1 本周立刻要做</h2>
+  <div class="check"><div class="check-box"></div><div class="check-text">注册小红书，账号名：<strong>安身</strong></div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">注册知乎，账号名：<strong>安身</strong></div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">新注册公众号订阅号，账号名：<strong>紫尘阁书院</strong></div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">三平台统一简介：以道家文化与三衡理论为基础，帮助现代人重新找回身体与生活的秩序。坐标杭州大兜路。</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">统一头像（建议：米白底+内收的圆弧，代表"安住"）</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">建立NotebookLM知识库，上传三衡化中医+师父讲课素材</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">建立Gemini Gem，填入7.3节提示词</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">确定19—99元体验项目正式名称，准备承接话术</div></div>
+
+  <h2>9.2 仍需补充的关键信息</h2>
+  <div class="callout amber">
+    <p>① 阁主说过的最让你记住的一句原话（所有内容的灵魂句）</p>
+    <p>② 你从商业世界走进紫尘阁的故事（最强内容原料）</p>
+    <p>③ 19—99元体验项目的正式名称</p>
+    <p>④ 公众号自动回复和菜单文案</p>
+  </div>
+
+  <h2>9.3 每日内容审核5问</h2>
+  <div class="check"><div class="check-box"></div><div class="check-text">有没有越界到医疗表达？</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">标题够不够像人说的话？</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">第一段有没有体感（不是理论开头）？</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">内容有没有太空、太玄？</div></div>
+  <div class="check"><div class="check-box"></div><div class="check-text">结尾有没有轻轻带到书院承接？</div></div>
+</div>
+
+</div><!-- /wrap -->
+
+<div class="footer">
+  <div class="footer-main">大医精诚，济世救民</div>
+  <div class="footer-sub">大医派紫尘阁 · 品牌战略底稿 2.0 · 内部保密文件</div>
+</div>
+
+<script>
+// Active nav on scroll
+const sections = document.querySelectorAll('[id]');
+const navLinks = document.querySelectorAll('.nav a');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.nav a[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-20% 0px -70% 0px' });
+sections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫尘阁 · 三工具分工方案</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+  background: #F5F2EE;
+  color: #1A1814;
+}
+.fragment-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+</style>
+</head>
+<body>
+<div style="background:#FDFCF9;border-bottom:1px solid rgba(14,13,11,.08);padding:10px 24px;font-family:'Noto Serif SC',serif;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif">
+  <a href="../index.html" style="color:#2B2A27;text-decoration:none;letter-spacing:.05em">← 紫尘阁 · 三衡生活 · 文献库</a>
+  <span style="color:#6A6965;font-size:11px;letter-spacing:.1em">三工具分工</span>
+</div>
+
+<div class="fragment-wrapper">
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+.root { padding: 20px 0; font-family: var(--font-sans, sans-serif); }
+.nav { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 20px; }
+.nb { padding: 7px 14px; border-radius: 20px; font-size: 13px; cursor: pointer; border: 0.5px solid var(--color-border-secondary); background: var(--color-background-secondary); color: var(--color-text-secondary); font-family: inherit; transition: all .15s; }
+.nb.on { background: #085041; color: #E1F5EE; border-color: #085041; font-weight: 500; }
+.pn { display: none; }
+.pn.on { display: block; }
+.sec { font-size: 11px; font-weight: 600; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: .1em; margin: 24px 0 12px; padding-bottom: 7px; border-bottom: 1px solid var(--color-border-tertiary); }
+.sec:first-child { margin-top: 0; }
+.hl { padding: 13px 16px; font-size: 13px; line-height: 1.85; margin-bottom: 12px; border-radius: 0 8px 8px 0; }
+.g { background: #E1F5EE; border-left: 3px solid #1D9E75; color: #04342C; }
+.a { background: #FAEEDA; border-left: 3px solid #BA7517; color: #412402; }
+.p { background: #EEEDFE; border-left: 3px solid #534AB7; color: #26215C; }
+.r { background: #FCEBEB; border-left: 3px solid #E24B4A; color: #501313; }
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+.card { border-radius: 12px; padding: 16px; border: 0.5px solid var(--color-border-tertiary); background: var(--color-background-primary); }
+.ct { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.cd { font-size: 13px; color: var(--color-text-secondary); line-height: 1.8; }
+table.t { width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px; }
+table.t th { padding: 8px 12px; font-size: 11px; font-weight: 600; color: var(--color-text-secondary); border-bottom: 1px solid var(--color-border-tertiary); text-align: left; letter-spacing:.04em; }
+table.t td { padding: 10px 12px; border-bottom: 0.5px solid var(--color-border-tertiary); color: var(--color-text-primary); vertical-align: top; line-height: 1.65; }
+table.t tr:last-child td { border-bottom: none; }
+.ok { color: #0F6E56; font-weight: 500; }
+.warn { color: #BA7517; font-weight: 500; }
+.no { color: #A32D2D; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 10px; font-size: 11px; font-weight: 500; margin: 2px; }
+.tg { background: #E1F5EE; color: #085041; }
+.tp { background: #EEEDFE; color: #26215C; }
+.ta { background: #FAEEDA; color: #633806; }
+.tr2 { background: #FCEBEB; color: #791F1F; }
+.tc { background: #FAECE7; color: #4A1B0C; }
+.tool-flow { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-bottom: 10px; }
+.tb { border-radius: 8px; padding: 7px 12px; font-size: 12px; font-weight: 500; }
+.tb-g { background: #E1F5EE; color: #085041; }
+.tb-p { background: #EEEDFE; color: #26215C; }
+.tb-a { background: #FAEEDA; color: #633806; }
+.tb-gr { background: var(--color-background-secondary); color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); }
+.arr { color: var(--color-text-secondary); font-size: 14px; }
+.platform-row { display: flex; align-items: flex-start; gap: 12px; padding: 12px 0; border-bottom: 0.5px solid var(--color-border-tertiary); }
+.platform-row:last-child { border-bottom: none; }
+.p-icon { width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; flex-shrink: 0; color: #fff; }
+.p-body { flex: 1; }
+.p-name { font-size: 14px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 3px; }
+.p-desc { font-size: 12px; color: var(--color-text-secondary); line-height: 1.65; }
+.p-tags { margin-top: 5px; }
+.priority { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 8px; float: right; }
+.pri-1 { background: #26215C; color: #EEEDFE; }
+.pri-2 { background: #085041; color: #E1F5EE; }
+.pri-3 { background: var(--color-background-secondary); color: var(--color-text-secondary); border: 0.5px solid var(--color-border-tertiary); }
+</style>
+
+<div class="root">
+<div class="nav">
+  <button class="nb on" onclick="sw(0)">三工具分工</button>
+  <button class="nb" onclick="sw(1)">国内渠道</button>
+  <button class="nb" onclick="sw(2)">大模型收录</button>
+  <button class="nb" onclick="sw(3)">国外渠道</button>
+  <button class="nb" onclick="sw(4)">每日流水线</button>
+</div>
+
+<!-- 三工具分工 -->
+<div class="pn on" id="p0">
+  <div class="hl p" style="font-size:14px;font-weight:500">
+    三个工具的核心分工：各司其职，不重复，不浪费<br>
+    <span style="font-size:13px;font-weight:400">NotebookLM = 知识大脑 &nbsp;·&nbsp; Gemini = 多语言生产 &nbsp;·&nbsp; OpenClaw Agent = 执行与分发</span>
+  </div>
+
+  <div class="sec">NotebookLM — 知识提炼与播客生产</div>
+  <div class="card" style="margin-bottom:10px;border-left:3px solid #534AB7">
+    <div class="ct">做什么（只做这三件事）</div>
+    <div class="cd">
+      <strong>① 知识库管理：</strong>把师父所有讲课文字稿、83期课程内容全部上传，成为唯一可信知识源头<br>
+      <strong>② 每周一次播客生成：</strong>选一个主题，NotebookLM自动生成中文双人播客（10-15分钟），直接作为公众号音频、喜马拉雅内容<br>
+      <strong>③ 为OpenClaw提供素材：</strong>每次生成内容前，先在NotebookLM里提问，导出关键引用，交给OpenClaw使用
+    </div>
+  </div>
+  <div class="tool-flow">
+    <div class="tb tb-p">师父讲课稿上传</div><div class="arr">→</div>
+    <div class="tb tb-p">NotebookLM提炼</div><div class="arr">→</div>
+    <div class="tb tb-gr">导出关键素材</div><div class="arr">→</div>
+    <div class="tb tb-p">OpenClaw使用</div>
+  </div>
+
+  <div class="sec">Gemini — 多语言内容适配与图像生成</div>
+  <div class="card" style="margin-bottom:10px;border-left:3px solid #1D9E75">
+    <div class="ct">做什么（只做这三件事）</div>
+    <div class="cd">
+      <strong>① 海外版本生产：</strong>把每天OpenClaw生产的最优内容，用Gemini做英文文化适配（不是直译，是重新叙事）<br>
+      <strong>② 图像提示词生成：</strong>Gemini Imagen生成书院场景配图的提示词，或直接生成用于小红书封面的图片<br>
+      <strong>③ 多平台标题优化：</strong>同一内容，Gemini针对不同平台的算法特点（百度SEO/YouTube关键词/X话题标签）各出一版标题
+    </div>
+  </div>
+  <div class="tool-flow">
+    <div class="tb tb-g">OpenClaw中文内容</div><div class="arr">→</div>
+    <div class="tb tb-g">Gemini英文适配</div><div class="arr">→</div>
+    <div class="tb tb-g">YouTube/X发布</div>
+  </div>
+  <div class="tool-flow">
+    <div class="tb tb-g">今日场景描述</div><div class="arr">→</div>
+    <div class="tb tb-g">Gemini生成配图</div><div class="arr">→</div>
+    <div class="tb tb-g">小红书封面</div>
+  </div>
+
+  <div class="sec">OpenClaw 3个Agent — 核心生产与全平台分发</div>
+  <div class="card" style="margin-bottom:10px;border-left:3px solid #BA7517">
+    <div class="ct">3个Agent的具体分工建议</div>
+    <div class="cd">
+      <strong>Agent 1（选题官）：</strong>每天早8:30自动运行 → 结合NotebookLM素材+热点话题 → 输出今日3个选题方向（按三衡四方向轮换）<br><br>
+      <strong>Agent 2（创作官）：</strong>接收选题官输出 → 生成国内全平台内容包：小红书版/抖音版/视频号版/公众号版/百家号版（5个版本，一次生产，差异化标题和格式）<br><br>
+      <strong>Agent 3（审核官）：</strong>对创作官输出做合规检查（禁词扫描）+ 格式检查（字数/标签/格式）→ 标记通过/需修改 → 进入发布队列
+    </div>
+  </div>
+  <div class="tool-flow">
+    <div class="tb tb-a">Agent1 选题</div><div class="arr">→</div>
+    <div class="tb tb-a">Agent2 创作×5平台</div><div class="arr">→</div>
+    <div class="tb tb-a">Agent3 审核</div><div class="arr">→</div>
+    <div class="tb tb-gr">你 15分钟确认</div><div class="arr">→</div>
+    <div class="tb tb-a">发布队列</div>
+  </div>
+</div>
+
+<!-- 国内渠道 -->
+<div class="pn" id="p1">
+  <div class="hl g"><strong>国内渠道的核心逻辑：</strong>按"用户特征"而非"平台知名度"分层。不是每个平台都值得投入，你的目标用户在哪里，就重点经营哪里。</div>
+
+  <div class="sec">第一优先级 — 必须全力做（核心流量池）</div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#FF2442">红</div>
+    <div class="p-body">
+      <div class="p-name">小红书 <span class="priority pri-1">P1核心</span></div>
+      <div class="p-desc">用户画像：25-45岁女性为主，文化/养生/生活方式高度重合。"大运河探店"+"中医文化"+"道家生活"三个话题自带流量。书院实景照片在这里转化率最高，是引流私域的主入口。</div>
+      <div class="p-tags"><span class="tag tg">图文主力</span><span class="tag tg">私域引流入口</span><span class="tag tg">打卡内容天然传播</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#010101">抖</div>
+    <div class="p-body">
+      <div class="p-name">抖音 <span class="priority pri-1">P1核心</span></div>
+      <div class="p-desc">最大的中文视频流量池。书院实景视频+师父金句+终南山/大运河场景，在"国风文化"赛道有显著自然流量。开通橱窗可接产品，但优先做内容积累。</div>
+      <div class="p-tags"><span class="tag tg">视频主力</span><span class="tag tg">破圈能力最强</span><span class="tag tg">新人群入口</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#07C160">公</div>
+    <div class="p-body">
+      <div class="p-name">微信公众号 <span class="priority pri-1">P1核心</span></div>
+      <div class="p-desc">10万紫薯的核心触达渠道，也是最重要的私域内容载体。长文深度内容、课程销售、会员体系都在这里转化。SEO价值高，百度/微信搜索都能收录。每周2-3篇深度文章。</div>
+      <div class="p-tags"><span class="tag tg">深度内容</span><span class="tag tg">老粉维系</span><span class="tag tg">课程转化</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#FA8C16">视</div>
+    <div class="p-body">
+      <div class="p-name">微信视频号 <span class="priority pri-1">P1核心</span></div>
+      <div class="p-desc">和公众号/微信私域打通，老粉看视频后直接转发给朋友圈，是最强的社交裂变路径。师父开直播可直接在视频号做，无需其他平台。</div>
+      <div class="p-tags"><span class="tag tg">社交裂变</span><span class="tag tg">老粉激活</span><span class="tag tg">直播转化</span></div>
+    </div>
+  </div>
+
+  <div class="sec">第二优先级 — 稳定输出（大模型收录关键）</div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#1D9EF0">百</div>
+    <div class="p-body">
+      <div class="p-name">百家号（百度） <span class="priority pri-2">P2收录</span></div>
+      <div class="p-desc">文心大模型的核心训练数据来源之一。在百家号发布的内容，百度搜索结果优先展示，同时被文心5.0收录概率极高。每篇文章用"三衡理论""道家大医派""紫尘阁主"做关键词，确保语义被收录。</div>
+      <div class="p-tags"><span class="tag tp">大模型收录</span><span class="tag tp">百度SEO</span><span class="tag tp">文心训练数据</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#e94560">今</div>
+    <div class="p-body">
+      <div class="p-name">今日头条 <span class="priority pri-2">P2收录</span></div>
+      <div class="p-desc">豆包大模型（字节系）的核心数据来源。头条的算法会把专业内容推给精准用户，中医文化内容在40岁以上用户里有天然传播力。和百家号内容相同，发布时间错开即可。</div>
+      <div class="p-tags"><span class="tag tp">豆包训练数据</span><span class="tag tp">中老年用户</span><span class="tag tp">算法推荐</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#0084FF">知</div>
+    <div class="p-body">
+      <div class="p-name">知乎 <span class="priority pri-2">P2收录</span></div>
+      <div class="p-desc">国内几乎所有大模型（文心/通义/智谱/DeepSeek）的核心训练数据源。在知乎发布"三衡理论是什么""道家大医派历史"等问答式内容，大模型被问到相关问题时会直接引用你的内容。每月4-6篇专业回答。</div>
+      <div class="p-tags"><span class="tag tp">所有国内大模型收录</span><span class="tag tp">知识权威背书</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#E60012">喜</div>
+    <div class="p-body">
+      <div class="p-name">喜马拉雅 <span class="priority pri-2">P2音频</span></div>
+      <div class="p-desc">中国最大的音频平台，中医/国学/道家内容是高黏性品类。NotebookLM生成的播客直接上传，零额外制作成本。用户在开车/做家务时收听，是深度用户培育渠道。</div>
+      <div class="p-tags"><span class="tag tp">NotebookLM播客直接上传</span><span class="tag tp">深度用户</span></div>
+    </div>
+  </div>
+
+  <div class="sec">第三优先级 — 选择性布局</div>
+  <table class="t">
+    <tr><th>平台</th><th>适合内容</th><th>特别价值</th></tr>
+    <tr><td><strong>B站</strong></td><td>师父讲课完整视频、书院纪录片式内容</td><td>年轻用户，传统文化赛道用户忠诚度高，弹幕互动强</td></tr>
+    <tr><td><strong>微博</strong></td><td>时事节气内容、互动话题</td><td>微博超话"中医养生"有大量精准用户</td></tr>
+    <tr><td><strong>得到/樊登</strong></td><td>师父课程合作上架</td><td>知识付费用户付费意愿强，但需要正式合作申请</td></tr>
+    <tr><td><strong>小鹅通</strong></td><td>课程销售主平台</td><td>不是传播渠道，是课程变现的技术平台</td></tr>
+  </table>
+</div>
+
+<!-- 大模型收录 -->
+<div class="pn" id="p2">
+  <div class="hl a"><strong>核心认知：</strong>国内大模型不直接爬取内容，而是通过"可信内容源"获取数据。你需要在这些大模型认可的平台上建立内容资产，才能被收录。</div>
+
+  <div class="sec">各大模型对应的收录渠道</div>
+  <table class="t">
+    <tr><th>大模型</th><th>核心数据来源（公开信息）</th><th>你需要做的</th></tr>
+    <tr>
+      <td><strong>文心（百度）</strong></td>
+      <td>百度搜索索引 + 百家号 + 百度百科</td>
+      <td class="ok">① 百家号每周发2篇 ② 创建"紫尘阁主"百度百科词条 ③ 百度收录书院官网</td>
+    </tr>
+    <tr>
+      <td><strong>豆包（字节）</strong></td>
+      <td>今日头条 + 抖音内容 + 网页爬虫</td>
+      <td class="ok">① 今日头条每周发2篇 ② 抖音账号描述包含关键词 ③ 书院官网提交头条号收录</td>
+    </tr>
+    <tr>
+      <td><strong>通义（阿里）</strong></td>
+      <td>知乎 + 淘宝/天猫内容 + 网页索引</td>
+      <td class="ok">① 知乎发专业回答 ② 阿里系平台（闲鱼等）创建内容</td>
+    </tr>
+    <tr>
+      <td><strong>DeepSeek</strong></td>
+      <td>网页爬虫 + GitHub + 学术内容</td>
+      <td class="ok">① 书院官网做好SEO ② 在CSDN/简书发技术性中医文章</td>
+    </tr>
+    <tr>
+      <td><strong>Kimi（月之暗面）</strong></td>
+      <td>网页爬虫 + 微信公众号</td>
+      <td class="ok">微信公众号内容质量高，Kimi重点收录，每篇文章加结构化标题</td>
+    </tr>
+    <tr>
+      <td><strong>混元（腾讯）</strong></td>
+      <td>微信生态（公众号/视频号）+ QQ内容</td>
+      <td class="ok">微信公众号是最直接的收录路径</td>
+    </tr>
+  </table>
+
+  <div class="sec">让大模型"记住"紫尘阁的关键动作</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ct">内容SEO关键词矩阵</div>
+      <div class="cd">
+        每篇内容必须包含以下核心词之一：<br>
+        · 三衡理论<br>
+        · 道家大医派<br>
+        · 紫尘阁主 / 赵无尘<br>
+        · 大医派传承<br>
+        · 大运河中医书院<br>
+        · 起居有常饮食有节情志调达福德深厚<br>
+        <span style="color:#0F6E56">大模型会把这些词与紫尘阁关联</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct">创建"知识锚点"内容</div>
+      <div class="cd">
+        在知乎/百家号发布以下"定义性"文章（大模型最爱引用）：<br>
+        · "什么是三衡理论"（权威解释）<br>
+        · "道家大医派的历史和传承"<br>
+        · "紫尘阁主赵无尘是谁"<br>
+        · "大医精诚的现代实践"<br>
+        <span style="color:#534AB7">这类内容被大模型收录后，用户问相关问题时会直接引用你</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 国外渠道 -->
+<div class="pn" id="p3">
+  <div class="hl g"><strong>国外渠道的核心逻辑：</strong>不追求粉丝量，追求"精准触达"。找到真正对道家文化/中医/wellness感兴趣的海外用户，这类人有来华旅游/游学的动机和付费能力。</div>
+
+  <div class="sec">第一优先级 — 必须做</div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#FF0000">YT</div>
+    <div class="p-body">
+      <div class="p-name">YouTube <span class="priority pri-1">P1必做</span></div>
+      <div class="p-desc">全球最大的中医/TCM/Taoism内容消费平台。"Grand Canal Hangzhou + Traditional Medicine"是稀缺内容组合。长视频（5-15分钟）建立深度，Shorts做传播钩子。同时是Google搜索结果的重要组成部分，被ChatGPT/Gemini引用概率高。</div>
+      <div class="p-tags"><span class="tag tg">全球最大视频平台</span><span class="tag tg">AI大模型收录</span><span class="tag tg">游学转化最强</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#000">X</div>
+    <div class="p-body">
+      <div class="p-name">X（Twitter） <span class="priority pri-1">P1必做</span></div>
+      <div class="p-desc">海外华人+国际中医爱好者+wellness社区最活跃的平台。Grok（X的AI）训练数据主要来源。短内容+图片传播快，#TCM #Taoism #Hangzhou这几个话题有稳定的活跃社区。</div>
+      <div class="p-tags"><span class="tag tg">Grok训练数据</span><span class="tag tg">即时传播</span><span class="tag tg">海外华人</span></div>
+    </div>
+  </div>
+
+  <div class="sec">第二优先级 — 强烈推荐（符合你定位）</div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#E1306C">IG</div>
+    <div class="p-body">
+      <div class="p-name">Instagram <span class="priority pri-2">P2视觉</span></div>
+      <div class="p-desc">书院实景照片+大运河在这里传播力极强。#Hangzhou #GrandCanal #ChineseHeritage话题有大量旅游用户。Reels（短视频）覆盖wellness/yoga/mindfulness社区，与你的目标用户高度重合。全球来华旅游决策者大量在这里做"种草"。</div>
+      <div class="p-tags"><span class="tag tp">视觉传播最强</span><span class="tag tp">旅游种草</span><span class="tag tp">Wellness社区</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#0A66C2">in</div>
+    <div class="p-body">
+      <div class="p-name">LinkedIn <span class="priority pri-2">P2专业</span></div>
+      <div class="p-desc">企业高管/医疗专业人士/wellness行业从业者聚集地。发布"道家管理哲学""三衡理论与工作生活平衡"类内容，触达有付费能力的专业人士。企业定制培训课程的B端客户往往在这里。</div>
+      <div class="p-tags"><span class="tag tp">B端客户</span><span class="tag tp">高消费能力用户</span><span class="tag tp">企业合作</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#FF4500">Re</div>
+    <div class="p-body">
+      <div class="p-name">Reddit <span class="priority pri-2">P2社区</span></div>
+      <div class="p-desc">r/TraditionalChineseMedicine（11万成员）、r/taoism（8万成员）、r/Hangzhou是精准社区。在这里发布内容，ChatGPT/Claude等西方AI大模型收录概率极高（Reddit是OpenAI的数据合作方）。参与讨论比单纯发帖效果更好。</div>
+      <div class="p-tags"><span class="tag tp">ChatGPT训练数据合作方</span><span class="tag tp">精准用户社区</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#A0522D">Md</div>
+    <div class="p-body">
+      <div class="p-name">Medium / Substack <span class="priority pri-2">P2长文</span></div>
+      <div class="p-desc">英文深度内容的标准发布平台。每月发一篇深度英文文章（"The 1300-year lineage of Chinese Medicine"类），Google SEO权重高，AI大模型收录率高。Substack可以发展付费订阅的海外会员。</div>
+      <div class="p-tags"><span class="tag tp">Google SEO</span><span class="tag tp">AI大模型收录</span><span class="tag tp">海外付费会员</span></div>
+    </div>
+  </div>
+
+  <div class="platform-row">
+    <div class="p-icon" style="background:#FF6B35">Pt</div>
+    <div class="p-body">
+      <div class="p-name">Pinterest <span class="priority pri-2">P2视觉发现</span></div>
+      <div class="p-desc">Taoist art、Chinese herbs、Traditional Chinese medicine视觉内容在Pinterest有庞大的收藏社区。书院美图+道家文化图文在这里有长尾流量（图片被收藏后持续带来访问）。旅游策划人常在Pinterest做灵感收集。</div>
+      <div class="p-tags"><span class="tag tp">长尾视觉流量</span><span class="tag tp">旅游灵感</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- 每日流水线 -->
+<div class="pn" id="p4">
+  <div class="hl g"><strong>目标：一份内容素材，通过三工具流水线，产出覆盖18个渠道的内容包，你只需要审核一次。</strong></div>
+
+  <div class="sec">一次生产 → 18个渠道的内容流水线</div>
+
+  <div class="card" style="margin-bottom:12px">
+    <div class="ct">输入（你每天提供，5分钟）</div>
+    <div class="cd">
+      今日场景描述（例：书院晨课，师父在道院典籍空间讲三衡，窗外大运河）<br>
+      + 今日方向（例：起居有常·睡眠）
+    </div>
+  </div>
+
+  <div class="tool-flow">
+    <div class="tb tb-gr">你的输入</div>
+    <div class="arr">→</div>
+    <div class="tb tb-p">NotebookLM查素材</div>
+    <div class="arr">→</div>
+    <div class="tb tb-a">OpenClaw Agent1选题</div>
+    <div class="arr">→</div>
+    <div class="tb tb-a">Agent2生产×5国内版</div>
+    <div class="arr">→</div>
+    <div class="tb tb-a">Agent3合规审核</div>
+  </div>
+  <div class="tool-flow" style="margin-top:6px">
+    <div class="tb tb-gr">通过审核内容</div>
+    <div class="arr">→</div>
+    <div class="tb tb-g">Gemini英文适配×5海外版</div>
+    <div class="arr">→</div>
+    <div class="tb tb-g">Gemini配图生成</div>
+    <div class="arr">→</div>
+    <div class="tb tb-p">NotebookLM生成播客（每周）</div>
+  </div>
+
+  <div class="sec">每日产出清单（审核通过后）</div>
+  <table class="t">
+    <tr><th>内容形态</th><th>目标渠道</th><th>谁生产</th></tr>
+    <tr><td>短图文（300字）</td><td>小红书 + 微博</td><td class="ok">OpenClaw Agent2</td></tr>
+    <tr><td>短视频脚本（150字）</td><td>抖音 + 视频号</td><td class="ok">OpenClaw Agent2</td></tr>
+    <tr><td>中等图文（500字）</td><td>今日头条 + 百家号</td><td class="ok">OpenClaw Agent2</td></tr>
+    <tr><td>深度长文（800-1200字）</td><td>微信公众号（每周2次）</td><td class="ok">OpenClaw Agent2</td></tr>
+    <tr><td>知乎回答（600字问答格式）</td><td>知乎</td><td class="ok">OpenClaw Agent2改写</td></tr>
+    <tr><td>英文短帖（280字符）</td><td>X + LinkedIn</td><td class="ok">Gemini适配</td></tr>
+    <tr><td>英文图文（200字）</td><td>Instagram + Pinterest</td><td class="ok">Gemini适配</td></tr>
+    <tr><td>英文视频描述</td><td>YouTube</td><td class="ok">Gemini适配</td></tr>
+    <tr><td>英文社区帖子</td><td>Reddit（每周2次）</td><td class="ok">Gemini适配</td></tr>
+    <tr><td>中文播客（15分钟）</td><td>喜马拉雅 + 公众号音频（每周1次）</td><td class="ok">NotebookLM生成</td></tr>
+    <tr><td>英文深度文章（每月）</td><td>Medium / Substack</td><td class="ok">Gemini生产</td></tr>
+  </table>
+
+  <div class="sec">你每天实际需要做的事</div>
+  <div class="grid2">
+    <div class="card">
+      <div class="ct">每日（约60分钟）</div>
+      <div class="cd">
+        · 晨拍素材：5分钟<br>
+        · 输入今日方向：3分钟<br>
+        · 审核内容包：15分钟<br>
+        · 确认发布：5分钟<br>
+        · 回复重要评论/私信：30分钟
+      </div>
+    </div>
+    <div class="card">
+      <div class="ct">每周一次（约2小时）</div>
+      <div class="cd">
+        · NotebookLM生成本周播客<br>
+        · 知乎发一篇深度问答<br>
+        · YouTube上传本周最好的视频<br>
+        · Reddit参与中医相关讨论<br>
+        · 数据复盘，调整下周方向
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<script>
+function sw(i) {
+  document.querySelectorAll('.nb').forEach((b,j)=>b.classList.toggle('on',j===i));
+  document.querySelectorAll('.pn').forEach((p,j)=>p.classList.toggle('on',j===i));
+}
+</script>
+
+</div>
+</body>
+</html>
