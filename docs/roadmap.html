@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三衡生活 · 完整落地计划</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
+
+:root {
+  --ink: #0F0E0C;
+  --ink2: #2E2D2A;
+  --ink3: #6B6A65;
+  --bg: #F5F3EE;
+  --white: #FDFCF9;
+  --border: rgba(15,14,12,0.1);
+  --border2: rgba(15,14,12,0.06);
+
+  --sage: #3D5A47;
+  --sage-m: #5A7D64;
+  --sage-l: #EAF0EB;
+
+  --indigo: #2A2660;
+  --indigo-m: #4340A0;
+  --indigo-l: #ECEAF8;
+
+  --amber: #5C3200;
+  --amber-m: #B87020;
+  --amber-l: #FDF3DC;
+
+  --coral: #6E1E10;
+  --coral-m: #C44030;
+  --coral-l: #FDECEA;
+
+  --steel: #1C3048;
+  --steel-m: #2E5878;
+  --steel-l: #E8EFF5;
+
+  --serif: 'Noto Serif SC', serif;
+  --sans: 'Noto Sans SC', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--bg); color: var(--ink2); font-size: 14px; line-height: 1.85; }
+
+/* NAV */
+.nav { position: sticky; top: 0; z-index: 200; background: rgba(245,243,238,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; scrollbar-width: none; padding: 0 40px; }
+.nav::-webkit-scrollbar { display: none; }
+.nav a { flex-shrink: 0; padding: 14px 16px; font-size: 11px; color: var(--ink3); text-decoration: none; border-bottom: 2px solid transparent; transition: .2s; white-space: nowrap; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+.nav a:hover, .nav a.on { color: var(--indigo); border-bottom-color: var(--indigo); }
+
+/* HERO */
+.hero { padding: 80px 56px 72px; background: var(--white); border-bottom: 1px solid var(--border); position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; right: -60px; top: -60px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(67,64,160,.04), transparent 70%); }
+.hero-label { font-size: 10px; letter-spacing: .25em; color: var(--indigo-m); text-transform: uppercase; font-weight: 600; margin-bottom: 20px; }
+.hero-title { font-family: var(--serif); font-size: 52px; font-weight: 700; color: var(--ink); line-height: 1.05; margin-bottom: 14px; max-width: 720px; }
+.hero-title em { color: var(--indigo-m); font-style: normal; }
+.hero-sub { font-size: 16px; color: var(--ink3); max-width: 580px; line-height: 1.75; margin-bottom: 36px; }
+.hero-quote { font-family: var(--serif); font-size: 16px; color: var(--sage); font-style: italic; padding-left: 20px; border-left: 3px solid var(--sage-m); line-height: 1.9; max-width: 560px; }
+.hero-meta { margin-top: 24px; font-size: 11px; color: var(--ink3); letter-spacing: .06em; }
+
+/* BODY */
+.body { max-width: 1060px; margin: 0 auto; padding: 60px 40px 120px; }
+.section { margin-bottom: 88px; }
+
+.ch-label { font-size: 10px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase; color: var(--indigo-m); margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid var(--border); }
+.ch-title { font-family: var(--serif); font-size: 32px; font-weight: 700; color: var(--ink); margin-bottom: 10px; line-height: 1.2; }
+.ch-desc { font-size: 14px; color: var(--ink3); max-width: 760px; line-height: 1.8; margin-bottom: 32px; }
+
+h2 { font-size: 18px; font-weight: 700; color: var(--ink); margin: 48px 0 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border2); }
+h3 { font-size: 14.5px; font-weight: 700; color: var(--ink); margin: 28px 0 10px; }
+p { margin-bottom: 12px; line-height: 1.85; }
+ul, ol { padding-left: 20px; margin-bottom: 12px; }
+li { margin-bottom: 6px; line-height: 1.8; }
+li::marker { color: var(--indigo-m); }
+strong { color: var(--ink); font-weight: 700; }
+hr { border: none; border-top: 1px solid var(--border2); margin: 72px 0; }
+
+/* GRID */
+.g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 16px; }
+.g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-bottom: 14px; }
+
+/* CARD */
+.card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 24px 26px; }
+.card-t { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.di { background: var(--indigo-m); }
+.ds { background: var(--sage-m); }
+.da { background: var(--amber-m); }
+.dc { background: var(--coral-m); }
+.dt { background: var(--steel-m); }
+
+/* CALLOUT */
+.note { padding: 16px 20px; border-radius: 0 10px 10px 0; margin: 16px 0; font-size: 13.5px; line-height: 1.8; }
+.note p { margin: 0 0 5px; } .note p:last-child { margin: 0; }
+.ni { background: var(--indigo-l); border-left: 4px solid var(--indigo-m); color: var(--indigo); }
+.ns { background: var(--sage-l); border-left: 4px solid var(--sage-m); color: var(--sage); }
+.na { background: var(--amber-l); border-left: 4px solid var(--amber-m); color: var(--amber); }
+.nc { background: var(--coral-l); border-left: 4px solid var(--coral-m); color: var(--coral); }
+.nst { background: var(--steel-l); border-left: 4px solid var(--steel-m); color: var(--steel); }
+
+blockquote { border-left: 4px solid var(--indigo-m); background: var(--indigo-l); padding: 16px 22px; border-radius: 0 10px 10px 0; margin: 16px 0; }
+blockquote p { font-family: var(--serif); font-style: italic; font-weight: 600; color: var(--indigo); margin: 0; font-size: 15px; }
+
+/* TABLE */
+.tw { overflow-x: auto; margin: 16px 0; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { background: var(--indigo); color: #fff; padding: 11px 16px; text-align: left; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+td { padding: 11px 16px; border-bottom: 1px solid var(--border2); color: var(--ink2); vertical-align: top; line-height: 1.7; }
+tr:last-child td { border-bottom: none; }
+tr:nth-child(odd) td { background: var(--white); }
+tr:nth-child(even) td { background: var(--bg); }
+tr:hover td { background: var(--indigo-l); transition: .15s; }
+
+/* BADGE */
+.badge { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 10px; font-weight: 700; line-height: 1.7; }
+.bi { background: var(--indigo); color: #fff; }
+.bs { background: var(--sage); color: #fff; }
+.ba { background: var(--amber); color: #fff; }
+.bc { background: var(--coral); color: #fff; }
+.bst { background: var(--steel); color: #fff; }
+.bpl { background: var(--indigo-l); color: var(--indigo); border: 1px solid rgba(67,64,160,.3); }
+
+/* MILESTONE TIMELINE */
+.milestone-track { position: relative; padding-left: 0; margin: 24px 0; }
+.milestone { display: grid; grid-template-columns: 140px 1fr; gap: 0; margin-bottom: 0; }
+.ms-time { padding: 20px 24px 20px 0; text-align: right; border-right: 2px solid var(--border); position: relative; }
+.ms-time::after { content: ''; position: absolute; right: -5px; top: 28px; width: 8px; height: 8px; border-radius: 50%; background: var(--indigo-m); border: 2px solid var(--bg); }
+.milestone.done .ms-time::after { background: var(--sage-m); }
+.milestone.critical .ms-time::after { background: var(--coral-m); width: 10px; height: 10px; right: -6px; }
+.ms-label { font-size: 11px; font-weight: 700; color: var(--indigo-m); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 2px; }
+.milestone.done .ms-label { color: var(--sage-m); }
+.milestone.critical .ms-label { color: var(--coral-m); }
+.ms-date { font-family: var(--mono); font-size: 12px; color: var(--ink3); }
+.ms-body { padding: 16px 0 16px 24px; border-bottom: 1px solid var(--border2); }
+.milestone:last-child .ms-body { border-bottom: none; }
+.ms-title { font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.ms-desc { font-size: 13px; color: var(--ink3); line-height: 1.7; margin-bottom: 8px; }
+.ms-kpis { display: flex; flex-wrap: wrap; gap: 6px; }
+.ms-kpi { font-family: var(--mono); font-size: 11px; padding: 2px 8px; border-radius: 4px; background: var(--bg); border: 1px solid var(--border); color: var(--ink3); }
+
+/* TEAM CARDS */
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin: 20px 0; }
+.team-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px; transition: .2s; }
+.team-card:hover { border-color: var(--indigo-m); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(42,38,96,.08); }
+.team-card.core { border-top: 3px solid var(--indigo-m); }
+.team-card.early { border-top: 3px solid var(--sage-m); }
+.team-card.later { border-top: 3px solid var(--amber-m); }
+.team-card.global { border-top: 3px solid var(--steel-m); }
+.team-role { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--ink3); margin-bottom: 8px; }
+.team-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 10px; }
+.team-must { font-size: 12px; color: var(--ink2); line-height: 1.7; }
+.team-must li { margin-bottom: 4px; }
+.team-when { font-size: 11px; color: var(--ink3); margin-top: 10px; font-family: var(--mono); }
+
+/* GLOBAL PLATFORM */
+.platform-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0; }
+.platform-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
+.platform-name { font-size: 13px; font-weight: 700; color: var(--ink); margin-bottom: 4px; display: flex; align-items: center; gap: 8px; }
+.platform-tag { font-size: 10px; padding: 1px 7px; border-radius: 8px; }
+.platform-desc { font-size: 12.5px; color: var(--ink3); line-height: 1.7; margin-bottom: 10px; }
+.platform-content { font-size: 12px; color: var(--ink2); line-height: 1.65; }
+
+/* POSITIONING */
+.position-box { background: var(--indigo); border-radius: 14px; padding: 44px 48px; margin: 24px 0; color: #fff; }
+.pb-label { font-size: 10px; letter-spacing: .2em; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 12px; font-weight: 600; }
+.pb-main { font-family: var(--serif); font-size: 22px; font-weight: 700; color: #fff; line-height: 1.5; margin-bottom: 16px; max-width: 700px; }
+.pb-alt { font-size: 14px; color: rgba(255,255,255,.65); line-height: 1.8; max-width: 660px; }
+.pb-divider { border: none; border-top: 1px solid rgba(255,255,255,.12); margin: 20px 0; }
+.pb-tag { display: inline-block; padding: 4px 14px; border-radius: 20px; font-size: 12px; font-weight: 600; margin: 4px; background: rgba(255,255,255,.12); color: rgba(255,255,255,.85); }
+
+/* AI WORKFLOW */
+.ai-stack { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 16px 0; }
+.ai-row { display: flex; gap: 16px; align-items: flex-start; padding: 16px 18px; background: var(--white); border: 1px solid var(--border); border-radius: 10px; }
+.ai-icon { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--indigo-m); background: var(--indigo-l); padding: 4px 8px; border-radius: 6px; flex-shrink: 0; margin-top: 2px; white-space: nowrap; }
+.ai-body { flex: 1; }
+.ai-title { font-size: 13.5px; font-weight: 700; color: var(--ink); margin-bottom: 4px; }
+.ai-desc { font-size: 12.5px; color: var(--ink3); line-height: 1.65; }
+
+/* BACKUP PLAN */
+.backup-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+.backup { border-radius: 10px; padding: 20px; }
+.backup.a { background: var(--indigo-l); border: 1px solid rgba(67,64,160,.2); }
+.backup.b { background: var(--sage-l); border: 1px solid rgba(90,125,100,.2); }
+.backup.c { background: var(--amber-l); border: 1px solid rgba(184,112,32,.2); }
+.backup-label { font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; margin-bottom: 8px; }
+.backup.a .backup-label { color: var(--indigo-m); }
+.backup.b .backup-label { color: var(--sage-m); }
+.backup.c .backup-label { color: var(--amber-m); }
+.backup-title { font-size: 14px; font-weight: 700; margin-bottom: 8px; }
+.backup.a .backup-title { color: var(--indigo); }
+.backup.b .backup-title { color: var(--sage); }
+.backup.c .backup-title { color: var(--amber); }
+.backup-body { font-size: 12.5px; line-height: 1.7; }
+.backup.a .backup-body { color: var(--indigo); }
+.backup.b .backup-body { color: var(--sage); }
+.backup.c .backup-body { color: var(--amber); }
+
+/* FOOTER */
+.footer { background: var(--ink); padding: 48px 40px; text-align: center; }
+.footer-main { font-family: var(--serif); font-size: 20px; color: rgba(255,255,255,.7); font-style: italic; margin-bottom: 10px; }
+.footer-sub { font-size: 11px; color: rgba(255,255,255,.3); letter-spacing: .08em; }
+
+@media (max-width: 760px) {
+  .hero { padding: 48px 22px 40px; } .hero-title { font-size: 34px; }
+  .body { padding: 40px 18px 80px; } .nav { padding: 0 12px; }
+  .g2, .g3, .g4, .team-grid, .platform-grid, .backup-grid { grid-template-columns: 1fr; }
+  .milestone { grid-template-columns: 1fr; }
+  .ms-time { text-align: left; border-right: none; border-bottom: 1px solid var(--border); padding: 12px 0; }
+  .ms-time::after { display: none; }
+}
+</style>
+</head>
+<body>
+<div style="background:#FDFCF9;border-bottom:1px solid rgba(14,13,11,.08);padding:10px 24px;font-family:'Noto Serif SC',serif;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <a href="../index.html" style="color:#2B2A27;text-decoration:none;letter-spacing:.05em">← 三衡生活 · 文献库</a>
+  <span style="color:#6A6965;font-size:11px;letter-spacing:.1em">完整落地计划</span>
+</div>
+
+
+<nav class="nav">
+  <a href="#s0" class="on">定位表达</a>
+  <a href="#s1">团队组织</a>
+  <a href="#s2">关键任务</a>
+  <a href="#s3">时间里程碑</a>
+  <a href="#s4">AI工作流</a>
+  <a href="#s5">全球传播</a>
+  <a href="#s6">备选方案</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-label">大医派紫尘阁 · 三衡生活共同体 · 完整落地计划</div>
+  <div class="hero-title">从一人公司到<em>全球文化共同体</em></div>
+  <div class="hero-sub">团队搭建 · 对外定位 · 关键任务 · 时间里程碑 · AI工作流 · 全球传播 · 备选方案</div>
+  <div class="hero-quote">「你若真心想学，我必倾囊相授。」<br>这句话定义了三衡生活的传播方式：真心换真心，不是买卖，是传承。</div>
+  <div class="hero-meta">内部执行文件 · 2025</div>
+</div>
+
+<div class="body">
+
+<!-- ══ S0 对外定位 ══ -->
+<div id="s0" class="section">
+  <div class="ch-label">对外定位</div>
+  <div class="ch-title">如何清晰明了地表达我们是谁</div>
+  <div class="ch-desc">定位不是一句广告语，是一套完整的表达系统。不同场合、不同人群、不同语言，有不同的说法，但都指向同一个核心。</div>
+
+  <div class="position-box">
+    <div class="pb-label">核心定位句（所有表达的根）</div>
+    <div class="pb-main">三衡生活，是1300年道家大医智慧在当下的实践——<br>帮助现代人重新学会在天地之间活着</div>
+    <div class="pb-divider"></div>
+    <div class="pb-alt">不是养生课程，不是中医诊所，不是修行道场。<br>是一种有根的、可感知的、人与人真实连接的生活方式共同体。</div>
+    <div style="margin-top:20px">
+      <span class="pb-tag">道家文化</span>
+      <span class="pb-tag">三衡理论</span>
+      <span class="pb-tag">生活方式</span>
+      <span class="pb-tag">全球共同体</span>
+      <span class="pb-tag">公益传承</span>
+    </div>
+  </div>
+
+  <h2>不同场合的表达方式</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>场合</th><th>表达</th><th>核心目的</th></tr></thead>
+      <tbody>
+        <tr><td><strong>第一次见面（10秒）</strong></td><td>「三衡生活，帮你把身体和天地的节律重新对齐。」</td><td>引发好奇，不解释</td></tr>
+        <tr><td><strong>小红书简介</strong></td><td>「1300年道家大医智慧 · 把中医生活落地到每天的起居饮食 · 坐标杭州大兜路」</td><td>身份标签，本地锚点</td></tr>
+        <tr><td><strong>公众号介绍</strong></td><td>「三衡生活不是养生技巧，是一套让你重新感受身体、整理节律、安顿生活的方式——根源是道家大医派1300年的传承。」</td><td>建立深度认同</td></tr>
+        <tr><td><strong>向媒体介绍</strong></td><td>「我们在做一件事：把1300年道家大医智慧，翻译成现代城市人今天就能实践的生活方式，并在全国和全球建立人与人真实连接的社区网络。」</td><td>可报道的故事角度</td></tr>
+        <tr><td><strong>英文（全球受众）</strong></td><td>「Living in Harmony — Ancient Taoist wisdom for modern life. 1300 years of Daoist medicine, translated into daily practice.」</td><td>文化好奇心入口</td></tr>
+        <tr><td><strong>向义工介绍</strong></td><td>「我们在做的，是把师父倾囊相授的东西，传递给每一个真心想学的人。」</td><td>使命感和归属感</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2>定位三条禁忌</h2>
+  <div class="note nc">
+    <p>❌ <strong>禁忌一：</strong>不说「我们是中医养生品牌」——太窄，跟不上你要做的事的高度</p>
+    <p>❌ <strong>禁忌二：</strong>不说「我们是道家修行道场」——太重，劝退普通人</p>
+    <p>❌ <strong>禁忌三：</strong>不说「我们帮你解决XX问题」——太功利，失去生活方式品牌的向往感</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S1 团队组织 ══ -->
+<div id="s1" class="section">
+  <div class="ch-label">第一章</div>
+  <div class="ch-title">团队搭建：从一人到共同体</div>
+  <div class="ch-desc">搭建顺序比搭建完整更重要。错误的顺序会让每一个人都很忙、但飞轮不转。</div>
+
+  <div class="note ni">
+    <p><strong>组织原则：</strong>三衡生活共同体不是公司结构，是圆心结构。王舰平是圆心，向外依次是核心团队、城市联络人、义工网络、普通成员。圆心负责方向和节奏，不负责每一件具体的事。</p>
+  </div>
+
+  <h2>第一阶段：核心团队（现在～第3个月）</h2>
+  <div class="team-grid">
+    <div class="team-card core">
+      <div class="team-role">岗位01 · 核心 · 立即找</div>
+      <div class="team-title">内容主理人</div>
+      <div class="team-must">
+        <ul>
+          <li>真实认同三衡生活，最好已有实践体验</li>
+          <li>能用人话写出有体感的文字，不需要华丽</li>
+          <li>会用Gemini/GPT改稿，不排斥AI工具</li>
+          <li>能独立完成选题→改稿→发布的完整流程</li>
+          <li>每周稳定投入20小时以上</li>
+        </ul>
+      </div>
+      <div class="team-when">从哪里找：公众号组义工（65人）中实操测试选拔</div>
+    </div>
+    <div class="team-card core">
+      <div class="team-role">岗位02 · 核心 · 第1个月找</div>
+      <div class="team-title">社群与义工协调人</div>
+      <div class="team-must">
+        <ul>
+          <li>在杭州本地，有时间，有耐心</li>
+          <li>擅长维系关系，让人感到被照顾</li>
+          <li>组织过活动或社群运营经验</li>
+          <li>能管理微信群，处理日常联络</li>
+          <li>对三衡生活有真实认同</li>
+        </ul>
+      </div>
+      <div class="team-when">从哪里找：书院线下义工（57人）中找活跃者</div>
+    </div>
+    <div class="team-card core">
+      <div class="team-role">岗位03 · 核心 · 第1个月找</div>
+      <div class="team-title">视觉与多媒体</div>
+      <div class="team-must">
+        <ul>
+          <li>能拍出有质感的照片和短视频（手机足够）</li>
+          <li>懂小红书和视频号的视觉语言</li>
+          <li>审美与三衡生活调性一致（自然、沉静、有根）</li>
+          <li>会基础剪辑（剪映/Capcut级别即可）</li>
+        </ul>
+      </div>
+      <div class="team-when">从哪里找：视觉传播组义工（30人）中选</div>
+    </div>
+  </div>
+
+  <h2>第二阶段：全球传播团队（第3～6个月）</h2>
+  <div class="team-grid">
+    <div class="team-card early">
+      <div class="team-role">岗位04 · 英文内容</div>
+      <div class="team-title">国际内容创作者</div>
+      <div class="team-must">
+        <ul>
+          <li>英文母语或接近母语水平</li>
+          <li>真实了解道家文化或中医，不是表面了解</li>
+          <li>懂YouTube/Reddit/Instagram的内容规律</li>
+          <li>最好本身就是三衡生活的实践者</li>
+        </ul>
+      </div>
+      <div class="team-when">可以是在华外国人，或海外华人，或认同三衡的外国爱好者</div>
+    </div>
+    <div class="team-card early">
+      <div class="team-role">岗位05 · 技术支撑</div>
+      <div class="team-title">AI工作流工程师</div>
+      <div class="team-must">
+        <ul>
+          <li>熟悉OpenClaw/Gemini API/GPT API集成</li>
+          <li>能搭建内容自动化流水线</li>
+          <li>有Python基础，会处理数据和自动化</li>
+          <li>兼职即可，按项目付费</li>
+        </ul>
+      </div>
+      <div class="team-when">可以从技术义工或外包中找，不需要全职</div>
+    </div>
+    <div class="team-card early">
+      <div class="team-role">岗位06 · 城市运营</div>
+      <div class="team-title">城市联络人（3人起）</div>
+      <div class="team-must">
+        <ul>
+          <li>在目标城市（郑州/上海/哈尔滨）本地</li>
+          <li>能组织10-30人的线下活动</li>
+          <li>认同三衡生活，愿意为信仰做事</li>
+          <li>不需要全职，每月组织1次活动即可</li>
+        </ul>
+      </div>
+      <div class="team-when">从义工名单中按城市直接私聊邀请</div>
+    </div>
+  </div>
+
+  <h2>第三阶段：规模化团队（第6～12个月）</h2>
+  <div class="team-grid">
+    <div class="team-card later">
+      <div class="team-role">岗位07</div>
+      <div class="team-title">商业运营</div>
+      <div class="team-must"><ul><li>管理课程报名、会员体系、活动收费</li><li>处理线上线下商业闭环</li><li>有电商或知识付费运营经验</li></ul></div>
+      <div class="team-when">第6个月·商业规模到一定体量后启动</div>
+    </div>
+    <div class="team-card later">
+      <div class="team-role">岗位08</div>
+      <div class="team-title">公益协调人</div>
+      <div class="team-must"><ul><li>管理全国义诊周、公益活动的统筹</li><li>处理义工积分和身份认证体系</li><li>有NGO或公益项目管理经验优先</li></ul></div>
+      <div class="team-when">第6个月·义工规模和公益活动达到需要专人管理</div>
+    </div>
+    <div class="team-card global">
+      <div class="team-role">岗位09</div>
+      <div class="team-title">全球社区联络</div>
+      <div class="team-must"><ul><li>管理海外城市联络人网络</li><li>协调全球三衡生活日等跨时区活动</li><li>多语言能力，了解不同文化的社区运营</li></ul></div>
+      <div class="team-when">第9个月·海外城市节点开始运转后启动</div>
+    </div>
+  </div>
+
+  <h2>团队选拔的核心原则</h2>
+  <div class="note ns">
+    <p><strong>原则一：认同优先于能力。</strong>一个真正认同三衡生活的人，即使能力有缺口，也可以培养。一个能力很强但不认同的人，会把整个团队的气场带跑偏。</p>
+    <p><strong>原则二：用实操测试，不用面试。</strong>给候选人一个真实任务——改写一篇内容初稿，或者组织一次10人小聚——看他做出来的东西，比听他说自己能做什么更真实。</p>
+    <p><strong>原则三：先从义工里找，义工已经被三衡认证过了。</strong>428人义工网络是你最好的人才库，他们对三衡的认同是已经验证的。</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S2 关键任务 ══ -->
+<div id="s2" class="section">
+  <div class="ch-label">第二章</div>
+  <div class="ch-title">落地过程中的关键任务</div>
+  <div class="ch-desc">不是所有任务都同等重要。这里列出的是「如果这个没做好，后面什么都是沙上建塔」的关键任务。</div>
+
+  <h2>P0级任务：地基（缺一不可）</h2>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot di"></div>三衡翻译案例库</div>
+      <p><strong>是什么：</strong>把阁主所有讲课素材中的生活类比案例系统提取，按四大支柱分类整理。</p>
+      <p><strong>为什么P0：</strong>这是整个内容体系的弹药库。没有真实案例，AI生成的内容和任何其他养生号没有区别。</p>
+      <p><strong>怎么做：</strong>专门2周，把所有录音/视频/文字里的「生活类比」提取出来，格式：[原理]+[类比]+[生活动作]。初版100条，持续补充。</p>
+      <p><strong>谁来做：</strong>内容主理人 + 你共同完成初版，之后义工投稿补充。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot di"></div>义诊内容化体系</div>
+      <p><strong>是什么：</strong>把每月初一十五义诊的真实素材，系统化地转化为内容。</p>
+      <p><strong>为什么P0：</strong>义诊是三衡生活最强的真实体感来源，也是公益行动的可见证明。目前这个金矿完全没有被开采。</p>
+      <p><strong>怎么做：</strong>① 义诊前：准备本次主题和内容方向；② 义诊中：录音/拍摄真实来访者故事（征得同意）；③ 义诊后：48小时内转化为1-2篇内容。</p>
+      <p><strong>谁来做：</strong>视觉与多媒体岗位负责记录，内容主理人负责转化。</p>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot ds"></div>城市小聚标准模板</div>
+      <p><strong>是什么：</strong>一套可以被复制到任何城市的线下小聚组织方案。</p>
+      <p><strong>为什么P0：</strong>全国义工发动的前提是有可复制的模板。如果没有标准化，每个城市联络人都要从零想，大多数人会放弃。</p>
+      <p><strong>包含什么：</strong>活动流程（2-3小时标准格式）+ 话题包（每期主题和引导问题）+ 物料包（展示材料、背景音乐、打卡模板）+ 记录表（活动后回传格式）。</p>
+      <p><strong>先在杭州跑通，再复制。</strong></p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot ds"></div>义工激活体系</div>
+      <p><strong>是什么：</strong>一套让428位义工从「休眠」变「活跃」的完整机制。</p>
+      <p><strong>为什么P0：</strong>义工是整个全国网络的毛细血管，但如果没有系统，他们只是一份名单。</p>
+      <p><strong>三个层次：</strong></p>
+      <ul>
+        <li>传播官（最轻）：每周转发2-3条内容，积分制激励</li>
+        <li>内容官（中等）：每月1篇体感文章，署名+官方转载</li>
+        <li>城市联络人（最重）：每月组织1次活动，正式授权+物料支持</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2>P1级任务：引擎（让飞轮转起来）</h2>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot da"></div>内容AI生产流水线</div>
+      <p>建立每日稳定产出的AI辅助流程。目标：每天45分钟，产出3-5平台内容初稿，你和内容主理人只负责审核和手改。详见第四章AI工作流。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot da"></div>低门槛体验产品</div>
+      <p>打磨一个「第一次来杭州」的完整体验流程：预约→到店→义诊/揉腹体验→离开时有一件可以带走的东西（小手册/体感记录本）→后续连接。<br>这是从线上到线下最重要的转化环节。</p>
+    </div>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot da"></div>英文内容起步</div>
+      <p>第3个月开始，建立英文内容的最小可行方案：YouTube一个频道，Instagram一个账号，用中文内容的精华英译版本起步。不追求完美，追求稳定输出。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot da"></div>GEO锚点布局</div>
+      <p>在知乎发布5-10篇高质量的「三衡论系统解读」文章，让AI搜索引擎开始把「三衡理论」和「紫尘阁」关联起来。这是长期搜索资产，一次投入，长期受益。</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S3 时间里程碑 ══ -->
+<div id="s3" class="section">
+  <div class="ch-label">第三章</div>
+  <div class="ch-title">时间表与里程碑</div>
+  <div class="ch-desc">18个月的完整路径。每个里程碑都有可验证的指标，不达标不推进下一阶段。</div>
+
+  <div class="milestone-track">
+
+    <div class="milestone">
+      <div class="ms-time">
+        <div class="ms-label">启动</div>
+        <div class="ms-date">M0·本周</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">地基工程</div>
+        <div class="ms-desc">建翻译案例库初版 · 账号注册 · Gemini Gem搭建 · 义诊内容化启动 · 内容主理人招募开始</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">案例库≥50条</span>
+          <span class="ms-kpi">3个账号注册完成</span>
+          <span class="ms-kpi">AI流程跑通</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="ms-time">
+        <div class="ms-label">第1个月</div>
+        <div class="ms-date">M1</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">内容模型验证</div>
+        <div class="ms-desc">每日内容产出稳定 · 找到2-3个爆款选题结构 · 3人核心团队组建完成 · 杭州第一次城市小聚</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">小红书≥300粉</span>
+          <span class="ms-kpi">公众号≥100关注</span>
+          <span class="ms-kpi">小聚参与≥15人</span>
+          <span class="ms-kpi">核心团队3人到位</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="ms-time">
+        <div class="ms-label">第2个月</div>
+        <div class="ms-date">M2</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">5平台全开 + 义工预热</div>
+        <div class="ms-desc">百家号/头条号开始AI分发 · 视频号试水 · 义工群发预热信息 · 课程层试水（入门课198元）· 郑州/上海城市联络人确认</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">内容总量≥100篇</span>
+          <span class="ms-kpi">课程成交≥10单</span>
+          <span class="ms-kpi">城市联络人3人</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone critical">
+      <div class="ms-time">
+        <div class="ms-label">第3个月 · 关键节点</div>
+        <div class="ms-date">M3</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">全国联动 + 英文起步 + AI收录开始</div>
+        <div class="ms-desc">杭州/郑州/上海三城同步举办节令活动 · YouTube英文频道发布第1条视频 · Instagram账号建立 · GEO锚点文章发布（知乎5篇）· 义工内容共创启动（城市内容官计划）</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">内容总量≥300篇</span>
+          <span class="ms-kpi">义工贡献者≥20人</span>
+          <span class="ms-kpi">英文内容≥10条</span>
+          <span class="ms-kpi">AI开始引用"三衡"</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="ms-time">
+        <div class="ms-label">第6个月</div>
+        <div class="ms-date">M6</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">商业闭环 + 全球内容正式化</div>
+        <div class="ms-desc">会员体系上线（紫薯会员580元/年）· 终南山溯源游学第1期 · YouTube订阅≥1000（英文频道）· 海外华人社区联络人网络开始建立 · Q2三衡大聚（全国城市联络人首次聚首）</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">月营收正向</span>
+          <span class="ms-kpi">会员≥100人</span>
+          <span class="ms-kpi">YouTube≥1000订阅</span>
+          <span class="ms-kpi">城市节点≥5个</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="ms-time">
+        <div class="ms-label">第9个月</div>
+        <div class="ms-date">M9</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">全球节点 + 外国人来华开始</div>
+        <div class="ms-desc">海外城市（多伦多/悉尼/新加坡）各有1个联络人 · 第一批通过YouTube/Reddit了解三衡、来到杭州书院的外国访客 · Reddit道家/中医社区开始出现三衡相关讨论 · 全球三衡生活日筹备</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">海外城市节点≥3</span>
+          <span class="ms-kpi">外国访客≥10人</span>
+          <span class="ms-kpi">英文内容≥200条</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone critical">
+      <div class="ms-time">
+        <div class="ms-label">第12个月 · 里程碑</div>
+        <div class="ms-date">M12</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">三衡大典 · 第一年年度盛会</div>
+        <div class="ms-desc">1000人+年度大聚（含线上全球参与）· 师父亲临，年度讲堂 · 全年公益数据公布 · 「天下无疾」年度计划发布 · 全球三衡生活日同步举办（杭州主场+海外分场）</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">参与人次≥1000</span>
+          <span class="ms-kpi">覆盖城市≥10</span>
+          <span class="ms-kpi">海外参与≥3国</span>
+          <span class="ms-kpi">年营收可持续</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="milestone">
+      <div class="ms-time">
+        <div class="ms-label">第18个月</div>
+        <div class="ms-date">M18</div>
+      </div>
+      <div class="ms-body">
+        <div class="ms-title">共同体成型，自驱动</div>
+        <div class="ms-desc">城市联络人网络可以自运转（不需要王舰平每次推动）· 英文频道有稳定外国观众群 · 每月都有外国人来杭州寻找三衡生活 · 义工体系自驱动（积分、身份、荣誉形成正向激励）</div>
+        <div class="ms-kpis">
+          <span class="ms-kpi">城市节点≥20</span>
+          <span class="ms-kpi">海外城市≥5</span>
+          <span class="ms-kpi">自驱动率≥70%</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S4 AI工作流 ══ -->
+<div id="s4" class="section">
+  <div class="ch-label">第四章</div>
+  <div class="ch-title">借助AI快速实现想法、持续迭代</div>
+  <div class="ch-desc">你已有：OpenClaw+本地大模型、Gemini Pro、GPT Plus、Claude Code。问题不是缺工具，是每个工具用在了错误的地方。下面给出最优分工。</div>
+
+  <h2>工具分工矩阵</h2>
+  <div class="ai-stack">
+    <div class="ai-row">
+      <div class="ai-icon">Gemini Pro</div>
+      <div class="ai-body">
+        <div class="ai-title">内容总控官 + 选题官 + 文案官（主力）</div>
+        <div class="ai-desc">每日定时任务：08:30自动输出10个选题→主选题→5平台初稿。建自定义Gem，存品牌提示词，永久调用。中文内容生成质量最高，月费制适合高频调用。</div>
+      </div>
+    </div>
+    <div class="ai-row">
+      <div class="ai-icon">GPT-4o</div>
+      <div class="ai-body">
+        <div class="ai-title">风格变体官 + 英文内容主力 + 复盘分析官</div>
+        <div class="ai-desc">中文稿→英文版翻译和本地化（用GPT，不用机器翻译）。数据复盘报告。当Gemini出稿你不满意时，用GPT做风格变体。英文受众的表达习惯GPT更准。</div>
+      </div>
+    </div>
+    <div class="ai-row">
+      <div class="ai-icon">Claude</div>
+      <div class="ai-body">
+        <div class="ai-title">长文档处理 + GEO监控 + 战略思考</div>
+        <div class="ai-desc">三衡化中医全文提取和知识库构建。每周GEO监控：问Claude「关于三衡理论你知道什么」，追踪引用进度。复杂战略决策的第二意见。不用于高频日常内容生成（成本高）。</div>
+      </div>
+    </div>
+    <div class="ai-row">
+      <div class="ai-icon">OpenClaw</div>
+      <div class="ai-body">
+        <div class="ai-title">批量改写 + 义工内容处理 + 隐私数据</div>
+        <div class="ai-desc">把公众号/知乎内容批量改写为百家号SEO版和头条号版本，0 API成本，本地运行。义工投稿的非结构化文本标准化处理。义工名单等涉及隐私的数据，全走本地模型，不上传任何API。</div>
+      </div>
+    </div>
+    <div class="ai-row">
+      <div class="ai-icon">NotebookLM</div>
+      <div class="ai-body">
+        <div class="ai-title">三衡知识库守门人</div>
+        <div class="ai-desc">上传三衡化中医全文+阁主所有讲课素材。每次生成内容前先问它：「这个观点在阁主的讲课里是怎么说的？」确保内容从真实的三衡母体里长出来，不是AI编造的。这是防止内容跑偏的最后一道防线。</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>每日标准SOP（全系统协同）</h2>
+  <div class="card" style="font-family:var(--mono);font-size:12.5px;line-height:1.9;color:var(--ink2)">
+    <div style="color:var(--indigo-m);font-weight:500;margin-bottom:12px">## 三衡生活 · 每日内容生产流程</div>
+    <div style="color:var(--sage)">08:30 [自动·Gemini定时]</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ NotebookLM: 今日主题相关原话提取（30秒）</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 选题官(Gemini Gem): 10个候选选题</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 文案官(Gemini Gem): 主选题→5平台中文初稿</div>
+    <div style="color:var(--sage);margin-top:8px">09:00 [你·15分钟]</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 审核：这像三衡生活说的话吗？</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 改3处：标题 / 第一段 / 最后一段</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 不满意？发GPT-4o做风格变体</div>
+    <div style="color:var(--sage);margin-top:8px">09:15 [你·15分钟]</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 手动发布：小红书 + 公众号（按周计划）</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ OpenClaw自动改写：百家号SEO版 + 头条号版 → 排期发布</div>
+    <div style="color:var(--sage);margin-top:8px">09:30 [自动·GPT-4o]</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 英文版生成：中文精华内容 → 英文版本（Instagram/X）</div>
+    <div style="color:var(--sage);margin-top:8px">次日08:20 [自动·GPT-4o复盘]</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 昨日数据分析 → 最高互动内容 → 次日选题建议</div>
+    <div style="color:var(--sage);margin-top:8px">每周五 [Claude·30分钟]</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ GEO监控报告：问各大AI「三衡理论是什么」</div>
+    <div style="padding-left:16px;color:var(--ink3)">→ 知识库更新：新阁主讲课素材录入NotebookLM</div>
+  </div>
+
+  <h2>Gemini Gem核心提示词（直接复制使用）</h2>
+  <div class="card" style="font-family:var(--mono);font-size:12px;line-height:1.85;color:var(--ink2);background:var(--ink);color:#C5C3BB;border-radius:12px">
+    <div style="color:#8ECFB0;margin-bottom:8px"># 三衡生活内容总控官</div>
+    <div style="color:#AFA9EC">身份：</div>
+    <div style="padding-left:12px">大医派紫尘阁外堂主事的AI内容助理。</div>
+    <div style="color:#AFA9EC;margin-top:6px">品牌母句：</div>
+    <div style="padding-left:12px">「你若真心想学，我必倾囊相授。」——赵无尘阁主</div>
+    <div style="color:#AFA9EC;margin-top:6px">核心定位：</div>
+    <div style="padding-left:12px">1300年道家大医智慧，帮助现代人重新学会在天地之间活着。<br>不是养生技巧，是生活方式共同体。</div>
+    <div style="color:#AFA9EC;margin-top:6px">今日主题：【填入】</div>
+    <div style="color:#AFA9EC;margin-top:6px">请输出：</div>
+    <div style="padding-left:12px">① 小红书版（300字内·反常识开头·体感词结尾·带生活动作）<br>② 公众号版（800字·问题→三衡解释→生活实践）<br>③ 英文版摘要（100字·YouTube/Instagram用·不翻译腔）<br>④ 每个版本附：[你要手改的第一句话]</div>
+    <div style="color:#EF9F27;margin-top:6px">禁止：</div>
+    <div style="padding-left:12px">疗效·治愈·根治·替代诊疗·首先其次再次·AI排比句</div>
+    <div style="color:#8ECFB0;margin-top:6px">必须：</div>
+    <div style="padding-left:12px">像真实的人说话·先体感后概念·每条内容有一个今天可做的动作<br>结尾：「杭州大兜路紫尘阁书院，每月初一十五免费义诊。」</div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S5 全球传播 ══ -->
+<div id="s5" class="section">
+  <div class="ch-label">第五章</div>
+  <div class="ch-title">全球同步传播：让外国人来寻找三衡生活</div>
+  <div class="ch-desc">对道家文化和传统中医感兴趣的外国人，在X、YouTube、Reddit、Instagram都有成规模的社区。他们不是要被说服，而是要被找到。</div>
+
+  <blockquote><p>「他们早就在找，只是还没有找到你。」</p></blockquote>
+
+  <h2>目标受众画像</h2>
+  <div class="g3">
+    <div class="card">
+      <div class="card-t"><div class="dot dt"></div>文化寻根者</div>
+      <p>对东方哲学（道家·佛教·禅）有深度兴趣，在西方找不到真实传承，渴望找到有根的源头。关注：r/taoism, r/Taoism, r/ChineseMedicine, r/TCM</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dt"></div>身心探索者</div>
+      <p>已经尝试过瑜伽·冥想·阿育吠陀等，在寻找更深的身体智慧系统。对「中医作为生活方式」感兴趣，而非治病手段。关注：YouTube中医相关频道</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dt"></div>中国文化爱好者</div>
+      <p>对中国传统文化有浪漫化想象，想来中国「寻找真实的道家生活」。可能已经学过太极·气功·中文。社区：r/China, r/ChineseLanguage</p>
+    </div>
+  </div>
+
+  <h2>各平台策略</h2>
+  <div class="platform-grid">
+    <div class="platform-card">
+      <div class="platform-name">
+        YouTube
+        <span class="platform-tag bi">主战场</span>
+      </div>
+      <div class="platform-desc">长视频平台，最适合深度内容。道家/中医频道有稳定受众，搜索流量大。</div>
+      <div class="platform-content">
+        <strong>频道名：</strong>Living in Harmony · Taoist Medicine 或 Sanheng Life<br>
+        <strong>内容类型：</strong><br>
+        · 「A Day in Taoist Life」系列（杭州书院日常记录）<br>
+        · 「1300 Years of Wisdom」系列（三衡理论生活化解读）<br>
+        · 「Master's Teaching」系列（阁主讲课英字幕版）<br>
+        · 「Foreigners Try Sanheng」（邀请外国人体验并记录）<br>
+        <strong>起步频率：</strong>每周1条，坚持比质量更重要
+      </div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">
+        Reddit
+        <span class="platform-tag bst">社区入口</span>
+      </div>
+      <div class="platform-desc">文化类社区是三衡生活最容易自然传播的地方。不能广告式推广，要真实参与。</div>
+      <div class="platform-content">
+        <strong>目标社区：</strong>r/taoism（13万成员）· r/ChineseMedicine · r/TCM · r/China · r/Meditation<br>
+        <strong>参与方式：</strong><br>
+        · 不发推广帖，发真实讨论帖（「我在杭州实践三衡生活的记录」）<br>
+        · 回答社区里关于道家/中医的问题，展示深度知识<br>
+        · AMA（Ask Me Anything）：「I live and practice Taoist medicine in Hangzhou」<br>
+        <strong>关键原则：</strong>先贡献，后被发现，不能反过来
+      </div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">
+        Instagram
+        <span class="platform-tag bs">美学入口</span>
+      </div>
+      <div class="platform-desc">视觉驱动，适合展示三衡生活的美学：节令·书院·食物·起居·杭州。</div>
+      <div class="platform-content">
+        <strong>账号定位：</strong>@sanhengliving 或 @livinginharmony.dao<br>
+        <strong>内容类型：</strong><br>
+        · 节气美学（节气当天的书院画面+英文短文）<br>
+        · 「Today's practice」（每日实践动作，图文说明）<br>
+        · 义诊现场（征得同意的真实画面，无比有力量）<br>
+        · 书院的日常生活美学<br>
+        <strong>Hashtags：</strong>#TaoistLife #ChineseMedicine #TraditionalChina #DaoistWisdom
+      </div>
+    </div>
+    <div class="platform-card">
+      <div class="platform-name">
+        X (Twitter)
+        <span class="platform-tag ba">思想传播</span>
+      </div>
+      <div class="platform-desc">适合短句金言和思想传播。道家哲学本来就是短句式的，和X的格式天然契合。</div>
+      <div class="platform-content">
+        <strong>内容类型：</strong><br>
+        · 阁主金句英译版（每天1条，坚持发）<br>
+        · 三衡论观点的英文表达（「Balance is not a destination...」）<br>
+        · 与道家/中医/东方哲学讨论者互动<br>
+        · 链接YouTube视频<br>
+        <strong>关键策略：</strong>找到英语世界讨论道家的KOL，真实互动，不是机器人式回复
+      </div>
+    </div>
+  </div>
+
+  <h2>让外国人来到杭州的完整路径</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>阶段</th><th>接触点</th><th>转化动作</th><th>时间节点</th></tr></thead>
+      <tbody>
+        <tr><td><strong>发现</strong></td><td>YouTube搜索「Taoist medicine China」· Reddit r/taoism帖子</td><td>订阅频道，关注Instagram</td><td>被动发现，不可预测</td></tr>
+        <tr><td><strong>了解</strong></td><td>持续观看视频，读帖子，了解三衡生活是什么</td><td>发邮件/DM询问「能来杭州吗」</td><td>通常需要3-6个月内容积累</td></tr>
+        <tr><td><strong>计划</strong></td><td>英文版「来杭州体验三衡生活」完整指南（做成页面或PDF）</td><td>预约书院访问，确认时间</td><td>第6个月起开始有真实访客</td></tr>
+        <tr><td><strong>体验</strong></td><td>书院接待·义诊·揉腹·节令饮食·与阁主的见面（第五圈）</td><td>真实体验→深度信任→成为海外传播节点</td><td>第一批访客10人，已是里程碑</td></tr>
+        <tr><td><strong>传播</strong></td><td>他们回国后在YouTube/Instagram/Reddit分享「我在中国找到了三衡生活」</td><td>指数级海外传播，无法用广告买到</td><td>每个真实访客是10个新观众</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note nst">
+    <p><strong>最重要的判断：</strong>外国人来中国寻找道家生活，不是因为广告，是因为他们在某个地方看到了「真实的」东西。义诊现场的真实画面，阁主讲课的真实声音，学员实践的真实变化——这些是任何广告预算买不到的内容力量。</p>
+    <p><strong>英文内容的最大忌讳：翻译腔。</strong>「三衡生活帮助人们实现身体平衡」这种直译句子，外国人一看就知道是机器翻译，立刻失去信任。英文内容需要有英文母语者参与创作，或者用GPT做深度本地化，不是字面翻译。</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S6 备选方案 ══ -->
+<div id="s6" class="section">
+  <div class="ch-label">第六章</div>
+  <div class="ch-title">备选方案：如果主路径遇到阻碍</div>
+  <div class="ch-desc">现实中任何计划都会遇到意外。三个最可能出现的问题，和对应的备选路径。</div>
+
+  <h2>备选一：如果内容增长太慢</h2>
+  <div class="backup-grid">
+    <div class="backup a">
+      <div class="backup-label">主方案</div>
+      <div class="backup-title">靠内容自然增长</div>
+      <div class="backup-body">小红书+公众号日更，等待自然流量，3-6个月见效。</div>
+    </div>
+    <div class="backup b">
+      <div class="backup-label">备选B · 如果M2未达标</div>
+      <div class="backup-title">义工扩散优先</div>
+      <div class="backup-body">把内容传播的重心从平台算法转向义工圈层扩散。428人每人转发一条，覆盖面相当于一个中等规模的广告投放，且信任度远高于广告。</div>
+    </div>
+    <div class="backup c">
+      <div class="backup-label">备选C · 如果上述仍不足</div>
+      <div class="backup-title">线下活动驱动</div>
+      <div class="backup-body">用一次高质量的大型城市活动（50-100人）产生内容和口碑，让活动本身成为传播节点，而不是等内容自然发酵。</div>
+    </div>
+  </div>
+
+  <h2>备选二：如果义工难以激活</h2>
+  <div class="backup-grid">
+    <div class="backup a">
+      <div class="backup-label">主方案</div>
+      <div class="backup-title">积分+身份激励</div>
+      <div class="backup-body">城市内容官·传播官·城市联络人三层身份，积分换课程和书院体验。</div>
+    </div>
+    <div class="backup b">
+      <div class="backup-label">备选B · 如果响应率低</div>
+      <div class="backup-title">精准私聊20人</div>
+      <div class="backup-body">不群发，只找最近2年持续活跃的20个义工一对一私聊。质量比数量重要，20个真正被激活的义工，比200个走过场的义工价值高10倍。</div>
+    </div>
+    <div class="backup c">
+      <div class="backup-label">备选C · 如果义工体系失效</div>
+      <div class="backup-title">学员转化为传播者</div>
+      <div class="backup-body">把课程学员（揉腹训练营/辟谷实修营）作为新的传播主力。深度学员的体感变化，是比义工更有力的传播素材，因为他们有付费行为验证的认同。</div>
+    </div>
+  </div>
+
+  <h2>备选三：如果全球传播起步艰难</h2>
+  <div class="backup-grid">
+    <div class="backup a">
+      <div class="backup-label">主方案</div>
+      <div class="backup-title">自建英文频道</div>
+      <div class="backup-body">YouTube/Instagram/Reddit自建账号，从0开始积累受众。</div>
+    </div>
+    <div class="backup b">
+      <div class="backup-label">备选B · 如果增长太慢</div>
+      <div class="backup-title">借道已有社区</div>
+      <div class="backup-body">找到Reddit/YouTube上已有受众的道家·中医·东方哲学频道，通过合作或客座内容进入他们的受众圈。这比从0建账号快3-5倍。找到有10万+订阅、内容相关的频道，提供真实的阁主故事作为合作素材。</div>
+    </div>
+    <div class="backup c">
+      <div class="backup-label">备选C · 长期方案</div>
+      <div class="backup-title">在华外国人作为桥梁</div>
+      <div class="backup-body">找到在中国生活的外国人（博主·留学生·工作者）中对道家文化真实感兴趣的人，让他们来体验三衡生活，然后用他们的语言向海外受众介绍。这是最自然、最可信的全球传播路径。</div>
+    </div>
+  </div>
+
+  <div class="note ni" style="margin-top:32px">
+    <p><strong>最重要的备选思维：</strong>任何计划遇到阻碍，永远先问「这个阻碍是信号还是噪音？」</p>
+    <p>如果内容没有人看，可能是内容不够好，也可能是平台选错了，也可能是时机不对。不要急着换方案，先花2周搞清楚阻碍的真实原因，然后再决定是调整还是切换路径。</p>
+    <p><strong>三衡生活最大的风险不是任何单一失败，而是没有耐心。</strong>这件事需要3-5年才能真正成型，前18个月只是地基。地基没打好之前，任何上层建筑都会倒。</p>
+  </div>
+</div>
+
+</div><!-- /body -->
+
+<div class="footer">
+  <div class="footer-main">天地之大德曰生，医道之精微曰衡</div>
+  <div class="footer-s">大医派紫尘阁 · 三衡生活共同体 · 完整落地计划 · 内部执行文件 · 2025</div>
+</div>
+
+<script>
+const secs = document.querySelectorAll('[id]');
+const links = document.querySelectorAll('.nav a');
+secs.forEach(s => new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) {
+    links.forEach(a => a.classList.remove('on'));
+    const l = document.querySelector(`.nav a[href="#${e.target.id}"]`);
+    if (l) l.classList.add('on');
+  }
+}), { rootMargin: '-15% 0px -70% 0px' }).observe(s));
+</script>
+</body>
+</html>

@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三衡生活 · 文献库</title>
+<meta name="description" content="大医派紫尘阁 · 三衡生活项目战略文献库">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:    #1A1814;
+    --ink2:   #3A3833;
+    --ink3:   #807C73;
+    --ink4:   #B8B4AB;
+    --bg:     #F5F2EA;
+    --paper:  #FDFCF7;
+    --line:   rgba(26,24,20,.10);
+    --line2:  rgba(26,24,20,.06);
+    --accent: #5C4628;
+    --serif:  'Noto Serif SC', serif;
+    --sans:   'Noto Sans SC', sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--serif);
+    background: var(--bg);
+    color: var(--ink2);
+    font-size: 15px;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+    font-feature-settings: "palt";
+  }
+  a { color: inherit; text-decoration: none; }
+
+  /* 顶栏 —— 极淡 */
+  .topbar {
+    padding: 28px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line2);
+  }
+  .brand {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: .25em;
+    color: var(--ink);
+  }
+  .brand-en {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--ink3);
+    letter-spacing: .15em;
+    text-transform: uppercase;
+  }
+
+  /* HERO */
+  .hero {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 140px 48px 100px;
+    text-align: center;
+  }
+  .hero-eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .35em;
+    color: var(--ink3);
+    text-transform: uppercase;
+    margin-bottom: 36px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: 56px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.25;
+    letter-spacing: .04em;
+    margin-bottom: 28px;
+  }
+  .hero-quote {
+    font-family: var(--serif);
+    font-size: 17px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink2);
+    max-width: 580px;
+    margin: 0 auto 24px;
+    line-height: 2;
+  }
+  .hero-quote-attr {
+    font-family: var(--sans);
+    font-size: 12px;
+    color: var(--ink3);
+    letter-spacing: .15em;
+    margin-bottom: 56px;
+  }
+  .hero-desc {
+    font-family: var(--serif);
+    font-size: 16px;
+    color: var(--ink2);
+    max-width: 560px;
+    margin: 0 auto;
+    line-height: 2.1;
+    font-weight: 300;
+  }
+
+  /* 分隔符 */
+  .divider {
+    text-align: center;
+    margin: 0 0 100px;
+    font-family: var(--serif);
+    color: var(--ink4);
+    font-size: 18px;
+    letter-spacing: .8em;
+  }
+
+  /* 文献区 */
+  .docs-section {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 0 48px 120px;
+  }
+  .section-label {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: .35em;
+    color: var(--ink3);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--ink);
+    text-align: center;
+    margin-bottom: 80px;
+    letter-spacing: .08em;
+  }
+
+  .doc {
+    border-top: 1px solid var(--line);
+    padding: 48px 0;
+    display: grid;
+    grid-template-columns: 80px 1fr auto;
+    gap: 40px;
+    align-items: start;
+    transition: padding .3s ease;
+    cursor: pointer;
+  }
+  .doc:last-child { border-bottom: 1px solid var(--line); }
+  .doc:hover { padding-left: 12px; padding-right: 12px; }
+  .doc:hover .doc-arrow { transform: translateX(8px); color: var(--ink); }
+  .doc:hover .doc-title { color: var(--accent); }
+
+  .doc-num {
+    font-family: var(--serif);
+    font-size: 32px;
+    font-weight: 300;
+    color: var(--ink4);
+    line-height: 1;
+    padding-top: 4px;
+  }
+  .doc-body {
+    min-width: 0;
+  }
+  .doc-cat {
+    font-family: var(--sans);
+    font-size: 10px;
+    letter-spacing: .3em;
+    color: var(--ink3);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .doc-title {
+    font-family: var(--serif);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+    letter-spacing: .04em;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    transition: color .3s;
+  }
+  .doc-desc {
+    font-family: var(--serif);
+    font-size: 14.5px;
+    color: var(--ink2);
+    line-height: 1.95;
+    font-weight: 300;
+    max-width: 540px;
+  }
+  .doc-arrow {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink4);
+    padding-top: 4px;
+    transition: all .3s ease;
+    user-select: none;
+  }
+
+  /* 页脚 */
+  .footer {
+    border-top: 1px solid var(--line2);
+    padding: 60px 48px 80px;
+    text-align: center;
+  }
+  .footer-quote {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-style: italic;
+    color: var(--ink3);
+    margin-bottom: 32px;
+    letter-spacing: .1em;
+  }
+  .footer-meta {
+    font-family: var(--sans);
+    font-size: 11px;
+    color: var(--ink4);
+    letter-spacing: .15em;
+    line-height: 2;
+  }
+  .footer-meta a:hover { color: var(--accent); }
+
+  /* 移动端 */
+  @media (max-width: 720px) {
+    .topbar { padding: 22px 24px; }
+    .topbar .brand-en { display: none; }
+    .hero { padding: 80px 28px 70px; }
+    .hero h1 { font-size: 36px; line-height: 1.3; }
+    .hero-quote { font-size: 15px; }
+    .hero-desc { font-size: 14.5px; }
+    .docs-section { padding: 0 28px 80px; }
+    .section-title { font-size: 22px; margin-bottom: 50px; }
+    .doc { grid-template-columns: 1fr; gap: 12px; padding: 36px 0; }
+    .doc:hover { padding-left: 0; padding-right: 0; }
+    .doc-num { font-size: 24px; }
+    .doc-title { font-size: 20px; }
+    .doc-arrow { display: none; }
+    .footer { padding: 40px 24px 60px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">三衡生活</div>
+  <div class="brand-en">SAN HENG · ARCHIVE</div>
+</header>
+
+<section class="hero">
+  <div class="hero-eyebrow">大医派紫尘阁 · 项目文献库</div>
+  <h1>三衡生活</h1>
+  <p class="hero-quote">「你若真心想学，我必倾囊相授。」</p>
+  <p class="hero-quote-attr">—— 赵无尘 · 阁主</p>
+  <p class="hero-desc">
+    一千三百年道家大医智慧，<br>
+    在当下，帮助现代人重新学会在天地之间活着。
+  </p>
+</section>
+
+<div class="divider">· · ·</div>
+
+<section class="docs-section">
+  <div class="section-label">Strategy Documents</div>
+  <h2 class="section-title">战略文献</h2>
+
+  <a class="doc" href="docs/community.html">
+    <div class="doc-num">01</div>
+    <div class="doc-body">
+      <div class="doc-cat">VISION · 共同体战略</div>
+      <div class="doc-title">三衡生活共同体 · 完整战略</div>
+      <div class="doc-desc">底层模型 · 三衡翻译 · 内容形态 · 社区圈层 · 活动体系 · 师父定位 · 公益商业 · 落地路径</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+
+  <a class="doc" href="docs/structure.html">
+    <div class="doc-num">02</div>
+    <div class="doc-body">
+      <div class="doc-cat">STRUCTURE · 双主体整合</div>
+      <div class="doc-title">紫尘阁 · 双主体整合战略</div>
+      <div class="doc-desc">养生科技 + 道院文化双主体协同 · 地理资产 · 业务归属 · 用户旅程 · 收入模型 · 外国访客路径</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+
+  <a class="doc" href="docs/roadmap.html">
+    <div class="doc-num">03</div>
+    <div class="doc-body">
+      <div class="doc-cat">EXECUTION · 落地计划</div>
+      <div class="doc-title">三衡生活 · 完整落地计划</div>
+      <div class="doc-desc">团队搭建 · 品牌定位 · 关键任务 · 时间里程碑 · AI 工作流 · 全球传播 · 备选方案</div>
+    </div>
+    <div class="doc-arrow">→</div>
+  </a>
+</section>
+
+<footer class="footer">
+  <p class="footer-quote">大医精诚 · 济世救民</p>
+  <p class="footer-meta">
+    内部战略文献 · 持续更新<br>
+    大医派紫尘阁 · 三衡生活
+  </p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紫尘阁 · 双主体整合战略</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;600;700&family=Noto+Sans+SC:wght@300;400;500;700&family=DM+Mono:wght@400;500&display=swap');
+:root{
+  --ink:#0E0D0B;--ink2:#2B2A27;--ink3:#6A6965;
+  --bg:#F4F2ED;--w:#FDFCF9;--bd:rgba(14,13,11,.09);--bd2:rgba(14,13,11,.05);
+  --jade:#1A3D2E;--jade-m:#2E6B4E;--jade-l:#E5F2EB;
+  --navy:#18204A;--navy-m:#2E3FA0;--navy-l:#EAECF8;
+  --gold:#4A2C00;--gold-m:#A06820;--gold-l:#FBF0D8;
+  --crim:#5C1010;--crim-m:#B03030;--crim-l:#FDECEA;
+  --river:#1C3A4A;--river-m:#2E6A8A;--river-l:#E4EFF5;
+  --serif:'Noto Serif SC',serif;--sans:'Noto Sans SC',sans-serif;--mono:'DM Mono',monospace;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink2);font-size:14px;line-height:1.9}
+
+.nav{position:sticky;top:0;z-index:200;background:rgba(244,242,237,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--bd);display:flex;overflow-x:auto;scrollbar-width:none;padding:0 40px}
+.nav::-webkit-scrollbar{display:none}
+.nav a{flex-shrink:0;padding:14px 15px;font-size:11px;color:var(--ink3);text-decoration:none;border-bottom:2px solid transparent;transition:.2s;white-space:nowrap;font-weight:600;letter-spacing:.05em;text-transform:uppercase}
+.nav a:hover,.nav a.on{color:var(--jade);border-bottom-color:var(--jade-m)}
+
+/* HERO */
+.hero{background:var(--w);border-bottom:1px solid var(--bd);padding:72px 56px 60px;position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;right:0;top:0;bottom:0;width:380px;background:linear-gradient(135deg,var(--river-l),var(--jade-l));opacity:.5;clip-path:polygon(15% 0,100% 0,100% 100%,0 100%)}
+.hero-inner{position:relative;z-index:1;max-width:680px}
+.hero-label{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--jade-m);margin-bottom:18px}
+.hero-title{font-family:var(--serif);font-size:46px;font-weight:700;color:var(--ink);line-height:1.05;margin-bottom:14px}
+.hero-title em{color:var(--jade-m);font-style:normal}
+.hero-sub{font-size:15px;color:var(--ink3);line-height:1.75;margin-bottom:28px}
+.hero-insight{padding:16px 22px;background:rgba(46,107,78,.08);border-left:4px solid var(--jade-m);border-radius:0 10px 10px 0;font-size:14px;color:var(--jade);line-height:1.8}
+.hero-meta{margin-top:20px;font-size:11px;color:var(--ink3)}
+
+/* BODY */
+.body{max-width:1060px;margin:0 auto;padding:60px 40px 120px}
+.section{margin-bottom:88px}
+.ch-label{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--jade-m);margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid var(--bd)}
+.ch-title{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--ink);margin-bottom:10px;line-height:1.2}
+.ch-desc{font-size:14px;color:var(--ink3);max-width:760px;line-height:1.8;margin-bottom:32px}
+h2{font-size:18px;font-weight:700;color:var(--ink);margin:48px 0 16px;padding-bottom:8px;border-bottom:1px solid var(--bd2)}
+h3{font-size:14.5px;font-weight:700;color:var(--ink);margin:28px 0 10px}
+p{margin-bottom:10px;line-height:1.9}
+ul,ol{padding-left:20px;margin-bottom:12px}
+li{margin-bottom:7px;line-height:1.8}
+li::marker{color:var(--jade-m)}
+strong{color:var(--ink);font-weight:700}
+hr{border:none;border-top:1px solid var(--bd2);margin:72px 0}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:16px}
+
+.card{background:var(--w);border:1px solid var(--bd);border-radius:12px;padding:24px 26px}
+.card-t{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:14px;display:flex;align-items:center;gap:8px}
+.dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.dj{background:var(--jade-m)}.dn{background:var(--navy-m)}.dg{background:var(--gold-m)}.dc{background:var(--crim-m)}.dr{background:var(--river-m)}
+
+.note{padding:16px 20px;border-radius:0 10px 10px 0;margin:16px 0;font-size:13.5px;line-height:1.8}
+.note p{margin:0 0 5px}.note p:last-child{margin:0}
+.nj{background:var(--jade-l);border-left:4px solid var(--jade-m);color:var(--jade)}
+.nn{background:var(--navy-l);border-left:4px solid var(--navy-m);color:var(--navy)}
+.ng{background:var(--gold-l);border-left:4px solid var(--gold-m);color:var(--gold)}
+.nc{background:var(--crim-l);border-left:4px solid var(--crim-m);color:var(--crim)}
+.nr{background:var(--river-l);border-left:4px solid var(--river-m);color:var(--river)}
+
+blockquote{border-left:4px solid var(--jade-m);background:var(--jade-l);padding:16px 22px;border-radius:0 10px 10px 0;margin:16px 0}
+blockquote p{font-family:var(--serif);font-style:italic;font-weight:600;color:var(--jade);margin:0;font-size:15px}
+
+.tw{overflow-x:auto;margin:16px 0}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{background:var(--jade);color:#fff;padding:11px 16px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
+td{padding:11px 16px;border-bottom:1px solid var(--bd2);color:var(--ink2);vertical-align:top;line-height:1.7}
+tr:last-child td{border-bottom:none}
+tr:nth-child(odd) td{background:var(--w)}
+tr:nth-child(even) td{background:var(--bg)}
+tr:hover td{background:var(--jade-l);transition:.15s}
+
+.badge{display:inline-block;padding:2px 10px;border-radius:20px;font-size:10px;font-weight:700;line-height:1.7}
+.bj{background:var(--jade);color:#fff}.bn{background:var(--navy);color:#fff}
+.bg{background:var(--gold);color:#fff}.bc{background:var(--crim-m);color:#fff}
+.br{background:var(--river);color:#fff}
+
+/* DUAL ENTITY */
+.dual{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--bd);border-radius:14px;overflow:hidden;margin:24px 0}
+.entity-col{padding:28px 30px}
+.entity-col.sci{background:var(--jade-l)}
+.entity-col.cult{background:var(--navy-l)}
+.entity-divider{width:1px;background:var(--bd)}
+.ent-tag{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.entity-col.sci .ent-tag{color:var(--jade-m)}
+.entity-col.cult .ent-tag{color:var(--navy-m)}
+.ent-name{font-family:var(--serif);font-size:20px;font-weight:700;margin-bottom:6px}
+.entity-col.sci .ent-name{color:var(--jade)}
+.entity-col.cult .ent-name{color:var(--navy)}
+.ent-sub{font-size:12px;margin-bottom:16px;font-family:var(--mono)}
+.entity-col.sci .ent-sub{color:var(--jade-m)}
+.entity-col.cult .ent-sub{color:var(--navy-m)}
+.ent-items{font-size:13px;line-height:1.8}
+.entity-col.sci .ent-items{color:var(--jade)}
+.entity-col.cult .ent-items{color:var(--navy)}
+.ent-limit{font-size:12px;margin-top:14px;padding-top:12px;border-top:1px solid rgba(0,0,0,.08)}
+.entity-col.sci .ent-limit{color:rgba(26,61,46,.6)}
+.entity-col.cult .ent-limit{color:rgba(24,32,74,.6)}
+
+/* LOCATION BOX */
+.location{border-radius:14px;overflow:hidden;margin:24px 0;border:1px solid var(--bd)}
+.loc-header{background:var(--river);padding:24px 28px;position:relative;overflow:hidden}
+.loc-header::before{content:'～';position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:80px;color:rgba(255,255,255,.06);font-family:var(--serif)}
+.loc-title{font-family:var(--serif);font-size:22px;font-weight:700;color:#fff;margin-bottom:6px}
+.loc-sub{font-size:13px;color:rgba(255,255,255,.65)}
+.loc-body{padding:24px 28px;background:var(--w)}
+.loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:4px}
+.loc-item{padding:16px;background:var(--river-l);border-radius:10px;border:1px solid rgba(46,106,138,.12)}
+.loc-item-title{font-size:12px;font-weight:700;color:var(--river);margin-bottom:6px}
+.loc-item-body{font-size:12.5px;color:var(--ink2);line-height:1.7}
+
+/* REVENUE FLOW */
+.flow-diagram{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:0;margin:24px 0}
+.flow-col{display:grid;gap:10px}
+.flow-box{padding:14px 18px;border-radius:10px;border:1px solid var(--bd);background:var(--w)}
+.flow-box.jade{background:var(--jade-l);border-color:rgba(46,107,78,.2)}
+.flow-box.navy{background:var(--navy-l);border-color:rgba(46,63,160,.2)}
+.flow-box.gold{background:var(--gold-l);border-color:rgba(160,104,32,.2)}
+.flow-box-title{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.flow-box.jade .flow-box-title{color:var(--jade)}
+.flow-box.navy .flow-box-title{color:var(--navy)}
+.flow-box.gold .flow-box-title{color:var(--gold)}
+.flow-box-fee{font-family:var(--mono);font-size:11px;color:var(--ink3)}
+.flow-arrow{text-align:center;padding:0 16px;font-size:20px;color:var(--ink3)}
+.flow-center{display:flex;flex-direction:column;align-items:center;gap:6px;padding:0 20px}
+.flow-center-box{background:var(--jade);color:#fff;border-radius:10px;padding:14px 20px;text-align:center}
+.flow-center-title{font-family:var(--serif);font-size:16px;font-weight:700;color:#fff;margin-bottom:4px}
+.flow-center-sub{font-size:11px;color:rgba(255,255,255,.65)}
+
+/* USER JOURNEY */
+.journey{display:grid;grid-template-columns:1fr;gap:0;border:1px solid var(--bd);border-radius:12px;overflow:hidden;margin:20px 0}
+.journey-step{display:grid;grid-template-columns:56px 1fr 140px;align-items:stretch;border-bottom:1px solid var(--bd2)}
+.journey-step:last-child{border-bottom:none}
+.step-num{display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:20px;font-weight:700;color:rgba(46,107,78,.25);padding:18px 0;border-right:1px solid var(--bd2);background:var(--bg)}
+.step-body{padding:18px 20px;background:var(--w)}
+.step-name{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.step-desc{font-size:12.5px;color:var(--ink3);line-height:1.65}
+.step-trigger{font-size:12px;color:var(--jade-m);margin-top:4px;font-weight:600}
+.step-price{display:flex;align-items:center;justify-content:flex-end;padding:18px 18px;background:var(--w);border-left:1px solid var(--bd2);font-family:var(--mono);font-size:12px;color:var(--ink3);text-align:right}
+
+/* FOREIGN VISITOR */
+.visitor-path{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0;align-items:start}
+.vp-step{background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:16px;text-align:center;position:relative}
+.vp-step::after{content:'→';position:absolute;right:-12px;top:50%;transform:translateY(-50%);color:var(--ink3);font-size:16px;z-index:1}
+.vp-step:last-child::after{display:none}
+.vp-num{font-family:var(--serif);font-size:22px;font-weight:700;color:rgba(46,107,78,.2);margin-bottom:6px}
+.vp-title{font-size:12.5px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.vp-desc{font-size:11px;color:var(--ink3);line-height:1.6}
+
+/* ANNUAL FINANCE */
+.finance-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:20px 0}
+.fin-card{background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:18px;position:relative;overflow:hidden}
+.fin-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px}
+.fin-card.y1::before{background:var(--jade-m)}
+.fin-card.y2::before{background:var(--gold-m)}
+.fin-card.y3::before{background:var(--navy-m)}
+.fin-card.total::before{background:var(--river-m)}
+.fin-label{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink3);margin-bottom:8px}
+.fin-val{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--ink);line-height:1}
+.fin-unit{font-size:11px;color:var(--ink3);margin-top:4px}
+.fin-breakdown{font-size:11.5px;color:var(--ink3);margin-top:10px;line-height:1.65;border-top:1px solid var(--bd2);padding-top:10px}
+
+.footer{background:var(--ink);padding:48px 40px;text-align:center}
+.footer-m{font-family:var(--serif);font-size:20px;color:rgba(255,255,255,.65);font-style:italic;margin-bottom:10px}
+.footer-s{font-size:11px;color:rgba(255,255,255,.28);letter-spacing:.08em}
+
+@media(max-width:760px){
+  .hero{padding:48px 22px 40px}.hero-title{font-size:30px}.hero::after{display:none}
+  .body{padding:40px 18px 80px}.nav{padding:0 12px}
+  .g2,.g3,.dual,.loc-grid,.flow-diagram,.visitor-path,.finance-grid{grid-template-columns:1fr}
+  .entity-divider{display:none}.flow-arrow{transform:rotate(90deg)}
+  .journey-step{grid-template-columns:40px 1fr}.step-price{display:none}
+}
+</style>
+</head>
+<body>
+<div style="background:#FDFCF9;border-bottom:1px solid rgba(14,13,11,.08);padding:10px 24px;font-family:'Noto Serif SC',serif;font-size:13px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+  <a href="../index.html" style="color:#2B2A27;text-decoration:none;letter-spacing:.05em">← 三衡生活 · 文献库</a>
+  <span style="color:#6A6965;font-size:11px;letter-spacing:.1em">双主体整合</span>
+</div>
+
+
+<nav class="nav">
+  <a href="#s0" class="on">结构总览</a>
+  <a href="#s1">地理资产</a>
+  <a href="#s2">业务归属</a>
+  <a href="#s3">用户旅程</a>
+  <a href="#s4">收入模型</a>
+  <a href="#s5">外国访客</a>
+  <a href="#s6">立即行动</a>
+</nav>
+
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-label">大医派紫尘阁 · 双主体整合战略</div>
+    <div class="hero-title">两个主体<em>已经做对了</em><br>现在要做的是让它们协同</div>
+    <div class="hero-sub">养生科技负责有形的身体服务，道院文化负责无形的智慧传播——这个分工在法律和商业上都是最优解。问题不是结构，是两个主体之间的协同机制还没有建立。</div>
+    <div class="hero-insight">🔑 <strong>最大的被低估资产：</strong>京杭大运河边 · 大兜路历史文化街区——这不只是一个养生馆地址，这是全球范围内极稀缺的「真实中国文化场域」。这个位置本身，就是三衡生活全球传播最强的视觉锤。</div>
+    <div class="hero-meta">内部战略文件 · 2025</div>
+  </div>
+</div>
+
+<div class="body">
+
+<!-- ══ S0 结构总览 ══ -->
+<div id="s0" class="section">
+  <div class="ch-label">首先看清楚</div>
+  <div class="ch-title">你现有的结构，比你想的更完整</div>
+  <div class="ch-desc">两个主体的分工，恰好解决了最难的合规问题。但它们目前是两条平行线，还没有形成一套有机的生态。</div>
+
+  <div class="dual">
+    <div class="entity-col sci">
+      <div class="ent-tag">主体一 · 已有</div>
+      <div class="ent-name">养生科技公司</div>
+      <div class="ent-sub">杭州拱墅区大兜路 · 京杭大运河边</div>
+      <div class="ent-items">
+        <ul>
+          <li>健康产品销售（实体+线上）</li>
+          <li>养生理疗服务（艾灸·无极灸·揉腹·泡浴·按摩·刮痧·针灸）</li>
+          <li>中医门诊部（有执业资质）</li>
+          <li>书院实体空间</li>
+          <li>义诊活动承办方</li>
+        </ul>
+      </div>
+      <div class="ent-limit">⚑ 法律边界：有资质的服务可做，无资质的诊疗行为不可做。师父以文化顾问身份参与，不以道医身份营业。</div>
+    </div>
+    <div class="entity-divider"></div>
+    <div class="entity-col cult">
+      <div class="ent-tag">主体二 · 已有</div>
+      <div class="ent-name">道院文化公司</div>
+      <div class="ent-sub">三衡生活内容与传承的法律载体</div>
+      <div class="ent-items">
+        <ul>
+          <li>三衡生活内容创作与传播</li>
+          <li>课程·训练营·实修营（教育培训）</li>
+          <li>师父传承指导（文化顾问形式）</li>
+          <li>高端企业健康文化顾问（管理咨询形式）</li>
+          <li>家庭三衡生活方案</li>
+          <li>义工体系·城市活动·全球传播</li>
+          <li>终南山溯源游学（文化旅行）</li>
+        </ul>
+      </div>
+      <div class="ent-limit">⚑ 法律优势：文化传播·教育培训·管理咨询均无强制医疗资质要求，表达合规即可。</div>
+    </div>
+  </div>
+
+  <h2>两个主体的协同关系</h2>
+  <div class="tw">
+    <table>
+      <thead><tr><th>用户行为</th><th>由谁承接</th><th>法律性质</th><th>收入归属</th></tr></thead>
+      <tbody>
+        <tr><td>来书院做艾灸/揉腹/泡浴</td><td><span class="badge bj">养生科技</span></td><td>养生理疗服务（有资质）</td><td>养生科技收入</td></tr>
+        <tr><td>购买健康产品</td><td><span class="badge bj">养生科技</span></td><td>商品销售</td><td>养生科技收入</td></tr>
+        <tr><td>参加三衡生活开放日（原义诊）</td><td><span class="badge bj">养生科技</span>空间<br><span class="badge bn">道院文化</span>内容</td><td>文化交流活动（道院文化主导）</td><td>公益/道院文化承办</td></tr>
+        <tr><td>参加课程/训练营</td><td><span class="badge bn">道院文化</span></td><td>教育培训</td><td>道院文化收入</td></tr>
+        <tr><td>购买会员</td><td><span class="badge bn">道院文化</span></td><td>会员服务</td><td>道院文化收入</td></tr>
+        <tr><td>企业顾问合同</td><td><span class="badge bn">道院文化</span></td><td>管理咨询服务</td><td>道院文化收入</td></tr>
+        <tr><td>家庭三衡方案</td><td><span class="badge bn">道院文化</span></td><td>文化生活顾问</td><td>道院文化收入</td></tr>
+        <tr><td>传承人私人学堂</td><td><span class="badge bn">道院文化</span></td><td>传统文化传承教育</td><td>道院文化收入</td></tr>
+        <tr><td>终南山溯源游学</td><td><span class="badge bn">道院文化</span></td><td>文化旅行</td><td>道院文化收入</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note nj">
+    <p><strong>关键结论：</strong>两个主体之间不是竞争，是漏斗。养生科技是漏斗的入口（有形的身体体验），道院文化是漏斗的纵深（无形的智慧传承）。</p>
+    <p>一个人来书院做艾灸（养生科技），感受好了，就可能进入三衡课程（道院文化）；进入课程了，就可能成为会员和义工；成为义工了，就可能成为城市联络人；最终可能进入师父的传承圈层。</p>
+    <p><strong>这个漏斗已经存在，只是还没有被设计和激活。</strong></p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S1 地理资产 ══ -->
+<div id="s1" class="section">
+  <div class="ch-label">第一章 · 最被低估的资产</div>
+  <div class="ch-title">京杭大运河边的大兜路：全球稀缺的文化场域</div>
+  <div class="ch-desc">你的地址不只是一个经营地点。大兜路历史文化街区 + 京杭大运河，是中国历史上最重要的文化通道之一。这个地理位置，对全球希望寻访「真实中国文化」的人来说，具有极强的叙事吸引力。</div>
+
+  <div class="location">
+    <div class="loc-header">
+      <div class="loc-title">杭州拱墅区大兜路 · 京杭大运河边</div>
+      <div class="loc-sub">中国最长的人工河流 · 2014年列入世界遗产 · 千年商贾与文化要道</div>
+    </div>
+    <div class="loc-body">
+      <p>大运河不是一条河，是中国2500年文明流动的见证。在这条河边做三衡生活，不是巧合，是天时地利人和的叠加——</p>
+      <div class="loc-grid">
+        <div class="loc-item">
+          <div class="loc-item-title">对中国用户的意义</div>
+          <div class="loc-item-body">历史文化街区本身就是一种信任背书。在运河边谈生活方式，不是在卖产品，是在接续文明。「杭州大兜路」五个字，比任何品牌故事都有质感。</div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-item-title">对外国访客的意义</div>
+          <div class="loc-item-body">这是他们梦想中的「真实中国」——不是购物中心，不是景区，是真正有历史、有文化、有活态传承的空间。在这里体验道家生活方式，是全球找不到第二个的经历。</div>
+        </div>
+        <div class="loc-item">
+          <div class="loc-item-title">对内容传播的意义</div>
+          <div class="loc-item-body">运河边的书院画面，是最强的视觉锤。日出时的运河、节令活动的庭院、阁主在运河边讲道——这些画面在YouTube/Instagram上，对外国受众的吸引力是商业拍摄无法替代的。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2>地理位置的四种用法</h2>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot dr"></div>用法一：内容场景</div>
+      <p>把书院和运河作为固定的内容背景。每个节气的活动，都在运河边拍摄。「运河边的节气生活」是一个持续的内容系列，比任何精心设计的摄影棚都更有真实感和文化分量。</p>
+      <p>英文标签：<strong>#GrandCanalHangzhou #DaoistLife #AncientChina</strong>——这些标签在Instagram/YouTube上搜索量稳定，且竞争对手极少。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dr"></div>用法二：外国访客的核心体验设计</div>
+      <p>为外国访客设计「运河边的三衡生活日」：清晨沿运河散步 + 书院起居体验 + 三衡理论讲解 + 节令食事 + 黄昏运河冥想。</p>
+      <p>这个体验无法在北京、上海或任何其他城市复制，杭州运河边的紫尘阁是唯一的。对来华外国访客，这本身就是旅行目的地，不只是一个拜访地点。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dg"></div>用法三：高端企业顾问的背书</div>
+      <p>在大兜路书院举办企业顾问的「季度深度对话」，而不是去企业的办公室。让高端客户来到这个空间，本身就是一种仪式感的建立。</p>
+      <p>「在运河边，和1300年传承的道家大医传人谈生命智慧」——这个场景的定价，远超任何会议室里的顾问费用。</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dn"></div>用法四：文化事件的主场</div>
+      <p>年度三衡大典选在大兜路历史街区举办，申请街区联动，可能获得政府文化活动支持。运河边的年度活动，具备申请杭州文化地标活动的资格。</p>
+      <p>这同时是向杭州市政府展示「传统文化活态传承」价值的机会，有机会获得非商业支持资源。</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S2 业务归属 ══ -->
+<div id="s2" class="section">
+  <div class="ch-label">第二章</div>
+  <div class="ch-title">每项业务的最优归属</div>
+  <div class="ch-desc">把所有业务放到正确的主体下，是整个合规框架最重要的基础动作。</div>
+
+  <div class="flow-diagram">
+    <div class="flow-col">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--jade-m);margin-bottom:8px">养生科技承接</div>
+      <div class="flow-box jade">
+        <div class="flow-box-title">艾灸 / 无极灸体验</div>
+        <div class="flow-box-fee">199—699元/次</div>
+      </div>
+      <div class="flow-box jade">
+        <div class="flow-box-title">揉腹放松引导</div>
+        <div class="flow-box-fee">399元/次</div>
+      </div>
+      <div class="flow-box jade">
+        <div class="flow-box-title">泡浴 / 刮痧 / 推拿</div>
+        <div class="flow-box-fee">按项目定价</div>
+      </div>
+      <div class="flow-box jade">
+        <div class="flow-box-title">健康产品销售</div>
+        <div class="flow-box-fee">艾条·浴足包·茶饮等</div>
+      </div>
+      <div class="flow-box jade">
+        <div class="flow-box-title">书院体验空间租借</div>
+        <div class="flow-box-fee">给道院文化活动场地</div>
+      </div>
+    </div>
+
+    <div class="flow-center">
+      <div class="flow-arrow">⟵</div>
+      <div class="flow-center-box">
+        <div class="flow-center-title">用户</div>
+        <div class="flow-center-sub">从任意入口进入<br>沿漏斗向深走</div>
+      </div>
+      <div class="flow-arrow">⟶</div>
+    </div>
+
+    <div class="flow-col">
+      <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-m);margin-bottom:8px">道院文化承接</div>
+      <div class="flow-box navy">
+        <div class="flow-box-title">三衡生活开放日（原义诊）</div>
+        <div class="flow-box-fee">免费 · 公益</div>
+      </div>
+      <div class="flow-box navy">
+        <div class="flow-box-title">三衡系列课程</div>
+        <div class="flow-box-fee">198—29,800元/课</div>
+      </div>
+      <div class="flow-box navy">
+        <div class="flow-box-title">会员体系</div>
+        <div class="flow-box-fee">580—9,800元/年</div>
+      </div>
+      <div class="flow-box navy">
+        <div class="flow-box-title">终南山溯源游学</div>
+        <div class="flow-box-fee">9,800—19,800元/期</div>
+      </div>
+      <div class="flow-box gold">
+        <div class="flow-box-title">企业顾问 / 家庭方案</div>
+        <div class="flow-box-fee">10—200万/年</div>
+      </div>
+      <div class="flow-box gold">
+        <div class="flow-box-title">传承人私人学堂</div>
+        <div class="flow-box-fee">50—300万/年或终身</div>
+      </div>
+    </div>
+  </div>
+
+  <h2>三衡生活开放日的合规设计</h2>
+  <p>原来的「义诊」，现在改名为<strong>「三衡生活开放日」</strong>，完整合规设计如下：</p>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot dj"></div>活动定义与名称</div>
+      <ul>
+        <li><strong>主办方：</strong>道院文化公司（文化活动）</li>
+        <li><strong>场地：</strong>养生科技书院（场地借用）</li>
+        <li><strong>活动性质：</strong>传统文化交流会 / 三衡生活分享会</li>
+        <li><strong>频率：</strong>每月初一、十五（保留节令仪式感）</li>
+        <li><strong>内容：</strong>三衡生活方式分享 + 生活状态交流 + 节令养生知识讲解</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dc"></div>明确不做的事</div>
+      <ul>
+        <li>不使用「义诊」「问诊」「看诊」等词</li>
+        <li>不对具体疾病做任何诊断</li>
+        <li>不给出处方或用药建议</li>
+        <li>活动结束前必须说：「如有健康问题，请就医」</li>
+        <li>师父以「道家文化传承人」身份参与，不以「道医」身份</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S3 用户旅程 ══ -->
+<div id="s3" class="section">
+  <div class="ch-label">第三章</div>
+  <div class="ch-title">完整用户旅程：从陌生人到传道者</div>
+  <div class="ch-desc">这是整个双主体协同最终要实现的用户路径。每一步都有清晰的触发机制和价值交换。</div>
+
+  <div class="journey">
+    <div class="journey-step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-name">第一次接触</div>
+        <div class="step-desc">通过小红书/公众号看到内容，或朋友推荐，或路过大兜路书院。</div>
+        <div class="step-trigger">→ 触发：关注公众号 / 进书院看看</div>
+      </div>
+      <div class="step-price">免费</div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-name">三衡生活开放日（原义诊）</div>
+        <div class="step-desc">参加每月初一或十五的免费交流会。不是诊疗，是文化分享。第一次真正感受到三衡生活的温度和真实性。</div>
+        <div class="step-trigger">→ 触发：预约书院初体验 / 加入打卡社群</div>
+      </div>
+      <div class="step-price">免费<br><span style="font-size:10px;color:var(--ink3)">道院文化主办</span></div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-name">书院初体验</div>
+        <div class="step-desc">在养生科技书院体验艾灸或腹部放松引导。第一次付费，验证意愿。这是两个主体协同的关键节点：养生科技提供有形体验，道院文化提供价值框架。</div>
+        <div class="step-trigger">→ 触发：购买三衡理论入门课 / 参加城市小聚</div>
+      </div>
+      <div class="step-price">199—499元<br><span style="font-size:10px;color:var(--ink3)">养生科技收入</span></div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-name">课程学员</div>
+        <div class="step-desc">进入道院文化的课程体系。从三衡入门课（198元）到揉腹训练营（5980元）到辟谷实修营（8800元），根据投入意愿选择。</div>
+        <div class="step-trigger">→ 触发：成为紫薯会员 / 参加义工 / 参加终南山游学</div>
+      </div>
+      <div class="step-price">198—29,800元<br><span style="font-size:10px;color:var(--ink3)">道院文化收入</span></div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">5</div>
+      <div class="step-body">
+        <div class="step-name">深度会员与义工</div>
+        <div class="step-desc">成为紫薯会员（580-9800元/年），进入义工体系，可能成为城市联络人。这一层的用户不只是消费者，是共同体的建设者。</div>
+        <div class="step-trigger">→ 触发：成为城市合伙人 / 企业顾问推荐 / 家庭方案</div>
+      </div>
+      <div class="step-price">580—9,800元/年<br><span style="font-size:10px;color:var(--ink3)">道院文化收入</span></div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">6</div>
+      <div class="step-body">
+        <div class="step-name">高端顾问与游学</div>
+        <div class="step-desc">进入企业顾问（30-200万/年）或家庭方案（10-50万/年）。或参加终南山溯源游学（9800-19800元），与师父深度连接。这一层用户是最强的传播节点。</div>
+        <div class="step-trigger">→ 触发：有意进入传承圈层</div>
+      </div>
+      <div class="step-price">10—200万/年<br><span style="font-size:10px;color:var(--ink3)">道院文化收入</span></div>
+    </div>
+    <div class="journey-step">
+      <div class="step-num">7</div>
+      <div class="step-body">
+        <div class="step-name">传承人私人学堂</div>
+        <div class="step-desc">每年全球不超过10位。进入师父直接指导的传承体系。不是购买服务，是进入一段传承关系。这是整个共同体金字塔的顶端，也是三衡道统在当代延续的方式。</div>
+        <div class="step-trigger">→ 成为传道者，带动下一个循环</div>
+      </div>
+      <div class="step-price">50—300万<br><span style="font-size:10px;color:var(--ink3)">道院文化收入</span></div>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S4 收入模型 ══ -->
+<div id="s4" class="section">
+  <div class="ch-label">第四章</div>
+  <div class="ch-title">收入模型：三年财务目标</div>
+  <div class="ch-desc">基于现有资源的保守估算。不追求最乐观，追求有依据。</div>
+
+  <div class="finance-grid">
+    <div class="fin-card y1">
+      <div class="fin-label">第一年（内容+体验）</div>
+      <div class="fin-val">200—500</div>
+      <div class="fin-unit">万元 / 年</div>
+      <div class="fin-breakdown">
+        养生科技：书院服务+产品 80-150万<br>
+        道院文化：课程+会员 80-200万<br>
+        企业顾问：1-2个客户 50-100万<br>
+        游学：2-3期 30-60万
+      </div>
+    </div>
+    <div class="fin-card y2">
+      <div class="fin-label">第二年（义工+全球）</div>
+      <div class="fin-val">500—1500</div>
+      <div class="fin-unit">万元 / 年</div>
+      <div class="fin-breakdown">
+        养生科技：规模化 150-300万<br>
+        道院文化：课程+会员规模化 200-500万<br>
+        企业顾问：3-8个客户 100-500万<br>
+        家庭方案：5-10个家庭 50-200万<br>
+        传承学堂：2-3位学员 100-300万
+      </div>
+    </div>
+    <div class="fin-card y3">
+      <div class="fin-label">第三年（传承+全球）</div>
+      <div class="fin-val">1500—5000</div>
+      <div class="fin-unit">万元 / 年</div>
+      <div class="fin-breakdown">
+        养生科技：多城市扩展 300-600万<br>
+        道院文化：全规模 500-2000万<br>
+        企业顾问：10-30个客户 500-2000万<br>
+        传承学堂：5-10位学员 500-1500万<br>
+        海外业务：外国访客+全球活动 100-500万
+      </div>
+    </div>
+    <div class="fin-card total">
+      <div class="fin-label">定价护城河</div>
+      <div class="fin-val">不可复制</div>
+      <div class="fin-unit">1300年传承 · 唯一性</div>
+      <div class="fin-breakdown">
+        无论市场如何变化，以下不可被竞争：<br>
+        · 赵无尘阁主的传承唯一性<br>
+        · 三衡论的完整世界观体系<br>
+        · 大兜路运河边的文化场域<br>
+        · 428人义工的社区网络<br>
+        这四样，决定了定价权永远在你这里
+      </div>
+    </div>
+  </div>
+
+  <div class="note nj">
+    <p><strong>最重要的财务判断：</strong>养生科技的收入是现金流（稳定但有上限），道院文化的收入是飞轮（前期慢，后期加速，没有上限）。</p>
+    <p>用养生科技的现金流支撑道院文化前期的投入，用道院文化的飞轮覆盖长期增长。这是最稳健的双主体财务结构。</p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S5 外国访客 ══ -->
+<div id="s5" class="section">
+  <div class="ch-label">第五章</div>
+  <div class="ch-title">外国人来到杭州运河边寻找三衡生活</div>
+  <div class="ch-desc">大兜路 + 运河 + 道家传承，这个组合对全球希望体验「真实中国文化」的人来说，是一个无法在别处找到的体验。</div>
+
+  <div class="visitor-path">
+    <div class="vp-step">
+      <div class="vp-num">1</div>
+      <div class="vp-title">线上发现</div>
+      <div class="vp-desc">YouTube/Reddit/Instagram看到运河边的三衡生活内容</div>
+    </div>
+    <div class="vp-step">
+      <div class="vp-num">2</div>
+      <div class="vp-title">产生向往</div>
+      <div class="vp-desc">「我要去中国，去那条大运河边，找到这个地方」</div>
+    </div>
+    <div class="vp-step">
+      <div class="vp-num">3</div>
+      <div class="vp-title">预约访问</div>
+      <div class="vp-desc">通过英文预约系统，提前联系书院，安排访问行程</div>
+    </div>
+    <div class="vp-step">
+      <div class="vp-num">4</div>
+      <div class="vp-title">沉浸体验</div>
+      <div class="vp-desc">运河边一日三衡体验：晨走+书院+节令食事+对话</div>
+    </div>
+    <div class="vp-step">
+      <div class="vp-num">5</div>
+      <div class="vp-title">成为传播者</div>
+      <div class="vp-desc">回国发布内容，带来下一批访客，自然裂变</div>
+    </div>
+  </div>
+
+  <h2>为外国访客设计的专属产品</h2>
+  <div class="g2">
+    <div class="card">
+      <div class="card-t"><div class="dot dr"></div>运河边三衡生活日（基础）</div>
+      <p><strong>时长：</strong>全天（8小时）</p>
+      <p><strong>流程：</strong></p>
+      <ul>
+        <li>清晨：沿京杭大运河晨走 + 三衡晨起仪式</li>
+        <li>上午：书院三衡生活方式讲解（中英双语）</li>
+        <li>午间：节令食事 + 饮食有节讲解</li>
+        <li>下午：腹部放松体验 + 艾灸体验（养生科技）</li>
+        <li>傍晚：运河边冥想 + 三衡入门手册赠送</li>
+      </ul>
+      <p><strong>定价：</strong>688—1888元（视人数和服务深度）</p>
+      <p><strong>外国访客感受到的：</strong>「这是真实的中国，不是博物馆展览。」</p>
+    </div>
+    <div class="card">
+      <div class="card-t"><div class="dot dg"></div>传承寻访（高端）</div>
+      <p><strong>时长：</strong>3-7天</p>
+      <p><strong>流程：</strong></p>
+      <ul>
+        <li>杭州大兜路书院沉浸体验</li>
+        <li>与阁主的深度对话（英文翻译）</li>
+        <li>三衡理论系统讲解（文化教育）</li>
+        <li>可选：前往终南山溯源（接续正式游学产品）</li>
+        <li>定制三衡生活方式方案带回本国</li>
+      </ul>
+      <p><strong>定价：</strong>9,800—29,800元（含住宿安排协助）</p>
+      <p><strong>目标人群：</strong>已有一定道家/中医基础的深度爱好者，或意向成为海外城市联络人的人</p>
+    </div>
+  </div>
+
+  <h2>外国访客的内容价值</h2>
+  <div class="note nr">
+    <p><strong>每一个来到杭州的外国访客，都是一个内容节点。</strong></p>
+    <p>他们回国后在YouTube/Instagram/Reddit分享「我在中国京杭大运河边找到了道家生活」，这种内容对海外受众的可信度，是你自己发布的任何英文内容的10倍。</p>
+    <p>因此，接待外国访客不只是一项服务，更是内容生产投资。每一次接待，都要：①拍摄他们的体验过程（征得同意）；②请他们在离开前录制一段真实感受（中文字幕）；③关注他们回国后发布的内容，第一时间转发。</p>
+    <p><strong>前10位外国访客的内容，很可能带来后100位。</strong></p>
+  </div>
+</div>
+
+<hr>
+
+<!-- ══ S6 立即行动 ══ -->
+<div id="s6" class="section">
+  <div class="ch-label">第六章 · 最重要</div>
+  <div class="ch-title">按这个顺序，本周就开始</div>
+
+  <div class="tw">
+    <table>
+      <thead><tr><th>优先级</th><th>任务</th><th>主体</th><th>时间</th><th>为什么这个最重要</th></tr></thead>
+      <tbody>
+        <tr>
+          <td><span class="badge bj">P0</span></td>
+          <td><strong>找律师，出合规意见书</strong></td>
+          <td>两个主体</td>
+          <td>本周</td>
+          <td>所有其他动作的法律地基。花1-3万，确认哪些业务名称和表达方式是安全的</td>
+        </tr>
+        <tr>
+          <td><span class="badge bj">P0</span></td>
+          <td><strong>把「义诊」改名为「三衡生活开放日」</strong></td>
+          <td>道院文化主导</td>
+          <td>本周</td>
+          <td>最简单的合规动作，立即执行，不需要等律师</td>
+        </tr>
+        <tr>
+          <td><span class="badge bj">P0</span></td>
+          <td><strong>用手机拍摄下一次开放日全过程</strong></td>
+          <td>养生科技场地+道院文化内容</td>
+          <td>下次开放日</td>
+          <td>这是整个内容体系的第一批真实素材，也是GEO内容的最强锚点</td>
+        </tr>
+        <tr>
+          <td><span class="badge bn">P1</span></td>
+          <td><strong>制作双语（中英）书院介绍页</strong></td>
+          <td>道院文化</td>
+          <td>第1个月</td>
+          <td>外国访客预约的第一步。没有英文页面，海外用户无法进入漏斗</td>
+        </tr>
+        <tr>
+          <td><span class="badge bn">P1</span></td>
+          <td><strong>拍摄大兜路运河的晨景</strong></td>
+          <td>两个主体内容</td>
+          <td>第1个月</td>
+          <td>这是三衡生活最强的视觉锤，拍一次可以用一年</td>
+        </tr>
+        <tr>
+          <td><span class="badge bn">P1</span></td>
+          <td><strong>向政府申请「大兜路文化活动」备案</strong></td>
+          <td>道院文化</td>
+          <td>第1个月</td>
+          <td>让开放日获得政府文化活动的正式身份，增加合规性和公信力</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg">P2</span></td>
+          <td><strong>设计第一份企业顾问方案书</strong></td>
+          <td>道院文化</td>
+          <td>第2个月</td>
+          <td>高端顾问需要专业的方案文档，不能靠口头介绍</td>
+        </tr>
+        <tr>
+          <td><span class="badge bg">P2</span></td>
+          <td><strong>建立养生科技→道院文化的转化机制</strong></td>
+          <td>两个主体协同</td>
+          <td>第2个月</td>
+          <td>让每一个来书院做艾灸的人，都知道道院文化的存在</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note nj" style="margin-top:32px">
+    <p><strong>最后一个关键判断：</strong></p>
+    <p>你现在有两个主体、一个绝佳的地理位置、428位义工、1300年传承、一套完整的世界观体系。</p>
+    <p>这些资产，任何一样单独拿出来都很强；放在一起，是一个别人几乎无法复制的结构。</p>
+    <p><strong>你现在最缺的不是资源，而是协同机制——让两个主体之间的用户能自然流动，让地理位置成为内容，让义工成为传播节点，让传承成为定价依据。</strong></p>
+    <p>这件事从本周的一次开放日开始，带着手机去拍，然后发出来。</p>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-m">天地之大德曰生，医道之精微曰衡</div>
+  <div class="footer-s">大医派紫尘阁 · 双主体整合战略 · 内部执行文件 · 2025</div>
+</div>
+
+<script>
+const secs=document.querySelectorAll('[id]');
+const links=document.querySelectorAll('.nav a');
+secs.forEach(s=>new IntersectionObserver(es=>es.forEach(e=>{
+  if(e.isIntersecting){links.forEach(a=>a.classList.remove('on'));const l=document.querySelector(`.nav a[href="#${e.target.id}"]`);if(l)l.classList.add('on');}
+}),{rootMargin:'-15% 0px -70% 0px'}).observe(s));
+</script>
+</body>
+</html>
